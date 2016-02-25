@@ -3,9 +3,12 @@ This is a WordPress Plugin.Readily organize &amp; present your fine works with o
 
 Copyright (c) 2016 UIUX Lab [@uiux_lab](http://twitter.com/uiux_lab)
 
-Licensed under the [GPL3.0](http://www.gnu.org/licenses/gpl-3.0.en.html).
 
-[UIUX Lab](http://uiux.cc)
+[Plugin URI](http://uiux.cc/wp-plugins/uix-portfolio/)
+
+### Licensing
+
+Licensed under the [GPL3.0](http://www.gnu.org/licenses/gpl-3.0.en.html).
 
 ### Description
 
