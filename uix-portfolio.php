@@ -1,0 +1,757 @@
+<?php
+/*
+Plugin Name: Uix Portfolio
+Plugin URI: http://uiux.cc/wp-plugins/uix-portfolio/
+Description: Readily organize & present your fine works with our free portfolio post type plugin.
+Author: UIUX Lab
+Author URI: http://uiux.cc
+Version: 1.0.0
+Text Domain: uix-portfolio
+License: GPLv2 or later
+*/
+
+class UixPortfolio {
+	
+	const PREFIX = 'uix';
+	const HELPER = 'uix-portfolio-helper';
+
+
+	
+	/**
+	 * Initialize
+	 *
+	 */
+	public static function init() {
+	
+		self::meta_boxes();
+		
+		add_filter( 'plugin_action_links_' . plugin_basename( __FILE__ ), array( __CLASS__, 'actions_links' ), -10 );
+		add_action( 'admin_enqueue_scripts', array( __CLASS__, 'backstage_scripts' ) );
+		add_action( 'wp_enqueue_scripts', array( __CLASS__, 'frontpage_scripts' ) );
+		add_action( 'wp_enqueue_scripts', array( __CLASS__, 'print_custom_stylesheet' ) );
+		add_action( 'current_screen', array( __CLASS__, 'gallery' ) );
+		add_action( 'current_screen', array( __CLASS__, 'usage_notice' ) );
+		add_action( 'admin_init', array( __CLASS__, 'check_update' ) );
+		add_action( 'admin_init', array( __CLASS__, 'templates' ) );
+		add_action( 'admin_init', array( __CLASS__, 'tc_i18n' ) );
+		add_action( 'admin_init', array( __CLASS__, 'load_helper' ) );
+		add_action( 'admin_menu', array( __CLASS__, 'options_admin_menu' ) );
+		add_action( 'init', array( __CLASS__, 'post_views' ) );
+		add_action( 'init', array( __CLASS__, 'customizer' ) );
+		add_action( 'after_setup_theme', array( __CLASS__, 'image_sizes' ) );
+		add_action( 'wp_head', array( __CLASS__, 'cat' ) );
+		add_action( 'wp_head', array( __CLASS__, 'infinite_scroll' ) );
+		add_action( 'wp_head', array( __CLASS__, 'filterable' ) );
+		add_action( 'wp_head', array( __CLASS__, 'masonry' ) );
+		add_action( 'wp_head', array( __CLASS__, 'gallery_app' ) );
+		add_filter( 'body_class', array( __CLASS__, 'new_class' ) );
+		add_action( 'widgets_init', array( __CLASS__, 'register_my_widget' ) );
+		
+
+		
+
+	}
+	
+	
+	/*
+	 * Enqueue scripts and styles.
+	 *
+	 *
+	 */
+	public static function frontpage_scripts() {
+	
+
+	    global $uix_portfolio_temp;
+        if ( $uix_portfolio_temp === true ) { 
+			// Add flexslider
+			wp_enqueue_script( 'js-flexslider-2.5.0', self::plug_directory() .'assets/js/jquery.flexslider.min.js', array( 'jquery' ), '2.5.0', true );	
+			wp_enqueue_style( 'flexslider-2.5.0', self::plug_directory() .'assets/css/flexslider.css', false, '2.5.0', 'all' );
+			
+			// Easing
+			wp_enqueue_script( 'jquery-easing-1.3', self::plug_directory() .'assets/js/jquery.easing.js', false, '1.3', false );	
+			
+			// Shuffle
+			wp_enqueue_script( 'js-shuffle-3.1.1', self::plug_directory() .'assets/js/jquery.shuffle.js', array( 'jquery' ), '3.1.1', true );
+			
+			// Masonry
+			wp_enqueue_script( 'js-masonry-2.1.08', self::plug_directory() .'assets/js/masonry.js', array( 'jquery' ), '2.1.08', true );
+			
+			//Main stylesheets and scripts to Front-End
+			wp_enqueue_style( self::PREFIX . '-portfolio-frontend-style', get_template_directory_uri() .'/uix-portfolio-style.css', false, self::ver(), 'all');
+			wp_enqueue_script( self::PREFIX . '-portfolio-frontend-js', get_template_directory_uri() .'/uix-portfolio-script.js', array( 'jquery' ), self::ver(), true );	
+
+		}
+	
+
+	}
+	
+	
+
+	
+	/*
+	 * Enqueue scripts and styles  in the backstage
+	 *
+	 *
+	 */
+	public static function backstage_scripts() {
+	
+		  //Check if screen’s ID, base, post type, and taxonomy, among other data points
+		  $currentScreen = get_current_screen();
+		  
+		
+		  if( $currentScreen->base === "customize" ) {
+			  
+				if ( is_admin()) {
+						
+						wp_enqueue_style( self::PREFIX . '-portfolio-mce-main', self::plug_directory() .'style.css', false, self::ver(), 'all');
+		
+							
+				}
+  
+		  } 
+	
+
+	}
+	
+	
+	
+	/**
+	 * Internationalizing  Plugin
+	 *
+	 */
+	public static function tc_i18n() {
+	
+	
+	    load_plugin_textdomain( 'uix-portfolio', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/'  );
+		
+
+	}
+	
+	
+	/*
+	 * Extend the default WordPress body classes.
+	 *
+	 *
+	 */
+	public static function new_class( $classes ) {
+	
+	    global $uix_portfolio_temp;
+        if ( $uix_portfolio_temp === true ) { 
+			$classes[] = 'uix-portfolio-body';
+		}
+		
+		return $classes;
+
+	}
+	
+	
+	/*
+	 * Create customizable menu in backstage  panel
+	 *
+	 * Add a submenu page
+	 *
+	 */
+	 public static function options_admin_menu() {
+	
+	    //settings
+		$hook = add_submenu_page(
+			'edit.php?post_type=uix-portfolio',
+			__( 'Uix Portfolio Settings', 'uix-portfolio' ),
+			__( 'Settings', 'uix-portfolio' ),
+			'manage_options',
+			'uix-portfolio-custom-submenu-page',
+			array( __CLASS__, 'uix_portfolio_options_page' )
+		);
+		
+		add_action("load-{$hook}", create_function('','
+			header("Location: '.admin_url( "customize.php" ).'");
+			exit;
+		'));
+	
+	
+        //helper
+		add_submenu_page(
+			'edit.php?post_type=uix-portfolio',
+			__( 'Helper', 'uix-portfolio' ),
+			__( 'Helper', 'uix-portfolio' ),
+			'manage_options',
+			self::HELPER,
+			'uix_portfolio_options_page' 
+		);
+		
+		
+
+	
+		
+	 }
+	 
+	public static function uix_portfolio_options_page(){
+		
+	}
+	
+	
+	
+	/*
+	 * Load helper
+	 *
+	 */
+	 public static function load_helper() {
+		 
+		 require_once 'helper/settings.php';
+	 }
+	
+	
+	
+	/*
+	 * Adds image sizes for portfolio items
+	 *
+	 * @link	http://codex.wordpress.org/Function_Reference/add_image_size
+	 *
+	 */
+	public static function image_sizes() {
+	
+	
+		add_image_size( 'uix-portfolio-entry', get_theme_mod( 'custom_uix_portfolio_cover_size_w', 475 ), get_theme_mod( 'custom_uix_portfolio_cover_size_h', 329 ), true );
+		add_image_size( 'uix-portfolio-gallery-post', get_theme_mod( 'custom_uix_portfolio_single_size_w', 1920 ), get_theme_mod( 'custom_uix_portfolio_single_size_h', 9999 ), false );
+
+	}
+	
+
+	/*
+	 * Enable update check on every request.
+	 *
+	 *
+	 */
+	public static function check_update() {
+	
+		require_once 'inc/plugin-update-checker.php';
+		$myUpdateChecker = PucFactory::buildUpdateChecker(
+			'http://uiux.cc/wp-plugins/'.self::get_slug().'/update/info.json',
+			__FILE__
+		);
+
+	}
+	
+	
+	/**
+	 * Add plugin actions links
+	 */
+	public static function actions_links( $links ) {
+		$links[] = '<a href="' . admin_url( "customize.php" ) . '">' . __( 'Settings', 'uix-portfolio' ) . '</a>';
+		$links[] = '<a href="' . admin_url( "admin.php?page=".self::HELPER."&tab=usage" ) . '">' . __( 'How to use?', 'uix-portfolio' ) . '</a>';
+		return $links;
+	}
+	
+	
+	/*
+	 * Get plugin slug
+	 *
+	 *
+	 */
+	public static function get_slug() {
+
+         return dirname( plugin_basename( __FILE__ ) );
+	
+	}
+	
+	
+	/*
+	 * Custom Metaboxes and Fields
+	 *
+	 *
+	 */
+	public static function meta_boxes() {
+	
+		if ( ! class_exists( 'cmb_Meta_Box' ) ) {
+			require_once 'post-extensions/custom-metaboxes-and-fields/init.php';
+		}
+
+	}
+	
+	/*
+	 * Building WordPress themes using the Kirki Customizer
+	 *
+	 *
+	 */
+	public static function customizer() {
+		
+		if ( !class_exists( 'Kirki' ) ) {
+		    require_once 'customizer-extras/kirki/kirki.php';
+		}
+		
+		require_once 'customizer-extras/options-init.php';
+
+
+	}	
+	
+	/*
+	 *  Gallery metabox
+	 *
+	 *
+	 */
+	public static function gallery() {
+		
+		
+		  //Check if screen’s ID, base, post type, and taxonomy, among other data points
+		  $currentScreen = get_current_screen();
+
+		  if( $currentScreen->id === "uix-portfolio" ) {
+			  require_once 'gallery-metabox/init.php';
+		  }
+		
+	
+	}	
+	
+	public static function gallery_app() {
+		
+		require_once 'gallery-metabox/front-display.php';
+	
+	}	
+	
+	/*
+	 *  Add admin one-time notifications
+	 *
+	 *
+	 */
+	public static function usage_notice() {
+		
+		
+		  //Check if screen’s ID, base, post type, and taxonomy, among other data points
+		  $currentScreen = get_current_screen();
+
+		  if( ( mb_strlen( strpos( $currentScreen->id, 'uix_portfolio' ), 'UTF8' ) > 0 || mb_strlen( strpos( $currentScreen->id, 'uix-portfolio' ), 'UTF8' ) > 0 ) && mb_strlen( strpos( $currentScreen->id, '_page_' ), 'UTF8' ) <= 0 ) {
+			  add_action( 'admin_notices', array( __CLASS__, 'usage_notice_app' ) );
+		  }
+		
+	
+	}	
+	
+	public static function usage_notice_app() {
+		
+			echo '
+			<div class="notice notice-success is-dismissible">
+				<p> 
+				'.__( 'Do you want to create a portfolio website with WordPress?  Learn how to add portfolio to your themes.', 'uix-portfolio' ).'
+				<a href="' . admin_url( "admin.php?page=".self::HELPER."&tab=usage" ) . '">' . __( 'How to use?', 'uix-portfolio' ) . '</a>
+					
+				</p>
+			</div>';
+	
+	}	
+	
+	
+	/*
+	 * Callback the plugin directory
+	 *
+	 *
+	 */
+	public static function plug_directory() {
+
+	  return plugin_dir_url( __FILE__ );
+
+	}
+	
+	
+	
+	/*
+	 * Custom post extensions
+	 *
+	 *
+	 */
+	public static function post_ex() {
+	
+		require_once 'post-extensions/post-extensions-init.php';
+
+		
+	}
+	
+
+	/*
+	 *  Output portfolio categories for dropdown styles
+	 *
+	 *
+	 */
+	public static function cat() {
+	
+		require_once 'inc/class-walker-uix_portfolio_category.php';
+		
+	}
+	
+	
+	/**
+	 *  Register widget area.
+	 */
+	public static function register_my_widget( $links ) {
+		// Recent portfolio widget
+		require 'inc/class-widgets.php';
+		register_widget( 'Uix_Portfolio_Recent_Portfolio_Widget' );
+		
+		register_sidebar( array(
+			'name'          => __( 'Primary Sidebar', 'uix-portfolio' ),
+			'id'            => 'sidebar-1',
+			'description'   => __( 'Appears on posts and pages in the sidebar.', 'uix-portfolio' ),
+			'before_widget' => '<div id="%1$s" class="widget side %2$s">',
+			'after_widget'  => '</div>',
+			'before_title'  => '<h4 class="widget-title">',
+			'after_title'   => '</h4>',
+		) );
+	}
+	
+	
+	
+	/**
+	 * List categories for specific taxonomy
+	 * 
+	 * @link    http://codex.wordpress.org/Function_Reference/wp_get_post_terms
+	 * @usage   if ( UixPortfolio::list_post_terms( 'uix_portfolio_category', false ) ) { ... }
+	 */
+	public static function list_post_terms( $taxonomy = 'uix_portfolio_category', $echo = true ) {
+	
+		$list_terms = array();
+		$terms      = wp_get_post_terms( get_the_ID(), $taxonomy );
+		
+		if ( is_array ( $terms ) ) {
+			
+			foreach ( $terms as $term ) {
+				$permalink      = get_term_link( $term->term_id, $taxonomy );
+				$list_terms[]   = '<a href="'. $permalink .'" title="'. $term->name .'">'. $term->name .'</a>';
+			}
+			if ( ! $list_terms ) {
+				return;
+			}
+			$list_terms = implode( ', ', $list_terms );
+			if ( $echo ) {
+				echo $list_terms;
+			} else {
+				return $list_terms;
+			}
+			
+			
+		}
+
+	}
+	
+	/*
+	 * Move template files to your theme directory
+	 *
+	 *
+	 */
+	public static function templates() {
+		
+		
+		$filenames = array();
+		$filepath = WP_PLUGIN_DIR .'/'.self::get_slug(). '/theme_templates/';
+		$themepath = get_stylesheet_directory() . '/';
+
+		foreach ( glob( dirname(__FILE__). "/theme_templates/*") as $file ) {
+			$filenames[] = str_replace( dirname(__FILE__). "/theme_templates/", '', $file );
+		}	
+		
+	
+		self::init_filesystem();
+		global $wp_filesystem;
+
+		foreach ( $filenames as $filename ) {
+			if ( ! file_exists( $themepath . $filename ) ) {
+				$filecontent = $wp_filesystem->get_contents( $filepath . $filename );
+				$wp_filesystem->put_contents(  $themepath . $filename, $filecontent, FS_CHMOD_FILE);
+			} 
+		}
+		
+	}
+	
+
+	/**
+	 * Initialize the WP_Filesystem
+	 *
+	 */
+	public static function init_filesystem() {
+		global $wp_filesystem;
+		if ( empty( $wp_filesystem ) ) {
+			require_once ( ABSPATH . '/wp-admin/includes/file.php' );
+			WP_Filesystem();
+		}
+	}
+	
+
+	/*
+	 * Returns current plugin version.
+	 *
+	 *
+	 */
+	public static function ver() {
+	
+		if ( ! function_exists( 'get_plugins' ) ) {
+			require_once( ABSPATH . 'wp-admin/includes/plugin.php' );
+		}
+		$plugin_folder = get_plugins( '/' . self::get_slug() );
+		$plugin_file = basename( ( __FILE__ ) );
+		return $plugin_folder[$plugin_file]['Version'];
+
+
+	}
+	
+	
+	
+	/*
+	 * Infinite scroll support
+	 *
+	 *
+	 */
+	public static function infinite_scroll() {
+	
+		require_once 'inc/infinite-scroll.php';
+
+	}
+	
+	
+	/*
+	 *Filterable support
+	 *
+	 */
+	public static function filterable() {
+	
+		require_once 'inc/filterable.php';
+
+	}
+	
+	/*
+	 * Masonry support
+	 *
+	 */
+	public static function masonry() {
+	
+		require_once 'inc/masonry.php';
+
+	}
+	
+	
+	/*
+	 * Get and set post views
+	 *
+	 *
+	 */
+	public static function post_views() {
+	
+		require_once 'inc/set-post-views.php';
+
+	}
+	
+
+
+	/*
+	 * Print Custom Stylesheet
+	 *
+	 *
+	 */
+	public static function print_custom_stylesheet() {
+	
+		$custom_css = get_theme_mod( 'custom_uix_portfolio_css' );
+		wp_add_inline_style( self::PREFIX . '-portfolio-frontend-style', $custom_css );
+
+	
+	}
+		
+	
+		
+	/*
+	 * Returns category class
+	 *
+	 *
+	 */
+	public static function cat_class( $str ) {
+	
+		return str_replace( ',', ' ', str_replace( ',-', ' ', strtolower( strip_tags( str_replace( ' ', '-', $str ) ) ) ) )	;
+
+	}	
+	
+	/*
+	 * Returns Category Filter
+	 *
+	 *
+	 */
+	public static function cat_class_filter( $str ) {
+	
+		$v = self::cat_class( $str );
+		$nv = str_replace( ' ', '","', $v );
+		
+		return 'data-groups=\'["'.$nv.'"]\'';
+
+	}	
+		
+
+	/*
+	 * Load more button
+	 *
+	 *
+	 */
+	public static function loadmore() {
+	
+		echo '<div class="pagination-infinitescroll">';
+		next_posts_link( __( 'Load More', 'uix-portfolio' ) );
+		echo '</div>';
+
+	}
+	
+	
+
+	/*
+	 * Numbered Pagination
+	 *
+	 *
+	 */
+	public static function pagination( $show=3, $custom_prev = '&larr; Previous', $custom_next = 'Next &rarr;', $li = true, $inf_enable = false, $custom_query = '' ) {
+	
+		
+		$pagehtml = '';
+		
+		$pageshow = '';
+		
+		$pagehtml_1 = '<ul class="pager">';
+		
+		$pagehtml_2 = '</ul>';
+		
+
+		// Get currect number of pages and define total var
+		if ( $custom_query ) {
+			$total = $custom_query->max_num_pages;
+		} else {
+			global $wp_query;
+			$total = $wp_query->max_num_pages;
+		}
+		
+
+		// Display pagination if total var is greater then 1 ( current query is paginated )
+		if ( $total > 1 )  {
+
+			// Set current page if not defined
+			if ( ! $current_page = get_query_var( 'paged') ) {
+				 $current_page = 1;
+			 }
+
+			// Get currect format
+			if ( get_option( 'permalink_structure') ) {
+				$format = 'page/%#%/';
+			} else {
+				$format = '&paged=%#%';
+			}
+
+			// Display pagination
+			$paginate = paginate_links(array(
+				'base'      => str_replace( 999999999, '%#%', esc_url( get_pagenum_link( 999999999 ) ) ),
+				'format'    => $format,
+				'current'   => max( 1, get_query_var( 'paged') ),
+				'total'     => $total,
+				'mid_size'  => 2,
+				'end_size'  => $show,//How many numbers on either the start and the end list edges.
+				'type'      => 'list',
+				'prev_text' => $custom_prev,
+				'next_text' => $custom_next,
+			) );
+			
+			foreach ((array)$paginate as $value) {
+				
+				if ($li === true){
+					if ( strpos( $value, 'prev') ){
+						$pagehtml .= '<li class="previous">'.$value.'</li>';
+					}elseif ( strpos( $value, 'next' ) ){
+						$pagehtml .= '<li class="next">'.$value.'</li>';
+					}elseif ( strpos( $value, 'current' ) ){
+						$pagehtml .= '<li class="active">'.$value.'</li>';
+					}else{
+						$pagehtml .= '<li>'.$value.'</li>';	
+					}
+					
+	
+				}else{
+					
+					$pagehtml_1 = '';
+					$pagehtml_2 = '';
+					$pagehtml .= $value;
+	
+					
+				}
+				
+				
+			}
+			
+			$pageshow = $pagehtml_1.$pagehtml.$pagehtml_2;
+			
+			
+			//Use Infinite Scroll
+			if ( $inf_enable == true ) $pageshow = '';
+
+			
+			echo $pageshow;
+			
+			
+			
+			
+		}
+	}
+
+
+	/*
+	 * Load more button
+	 *
+	 *
+	 */
+	public static function pagejump( $custom_prev = '&larr; Previous', $custom_next = 'Next &rarr;', $li = true, $inf_enable = false, $pages = '' ) {
+	
+		// Set correct paged var
+		global $paged;
+		
+
+		$pageshow = '';
+		
+		
+		if ( empty( $paged ) ) {
+			$paged = 1;
+		}
+
+		// Get pages var
+		if ( ! $pages ) {
+			global $wp_query;
+			$pages = $wp_query->max_num_pages;
+			if ( ! $pages ) {
+				$pages = 1;
+			}
+		}
+
+		// Display next/previous pagination
+		if ( 1 != $pages ) {
+			
+			if ($li === true){
+              
+				$pageshow .= '<ul class="pager"><li class="previous">';
+				$pageshow .= get_previous_posts_link( '&larr; ' . __( 'Newer Posts', 'uix-portfolio' ) );
+				$pageshow .= '</li><li class="next">';
+				$pageshow .= get_next_posts_link( __( 'Older Posts', 'uix-portfolio' ) .' &rarr;' );
+				$pageshow .= '</li></ul>';
+	
+
+			}else{
+				
+				$pageshow .= get_previous_posts_link( '&larr; ' . __( 'Newer Posts', 'uix-portfolio' ) );
+				$pageshow .= get_next_posts_link( __( 'Older Posts', 'uix-portfolio' ) .' &rarr;' );
+				
+			}
+				
+			
+		}
+		
+
+		//Use Infinite Scroll
+		if ( $inf_enable == true ) $pageshow = '';
+	
+		
+		echo $pageshow;
+
+	}
+
+
+
+}
+
+add_action( 'plugins_loaded', array( 'UixPortfolio', 'init' ) );
+UixPortfolio::post_ex();

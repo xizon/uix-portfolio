@@ -1,0 +1,270 @@
+<?php
+/**
+ * Building WordPress themes using the Kirki Customizer
+ *
+ */
+
+if ( class_exists( 'Kirki' )  && class_exists( 'UixPortfolio' )  ) {
+	
+	global $wp_customize;
+	
+	/*
+	*
+	* Kirki customizer configuration
+	*
+	*/
+	
+	Kirki::add_config( 'uix_portfolio_kirki_custom', array(
+		'capability'    => 'edit_theme_options',
+		'option_type'   => 'theme_mod',
+	) );
+	
+
+	
+	
+	//Function of "Allowing html in text"
+	function uix_portfolio_kirki_do_not_filter_anything( $value ) {
+		return $value;
+	}
+		
+	
+			
+	//This function adds some styles to the WordPress Customizer
+	function uix_portfolio_kirki_custom_style() {
+	
+		wp_enqueue_style( 'kirki-customizer-custom-css', UixPortfolio::plug_directory() .  'customizer-extras/css/main.css', null, null );
+
+	}
+	if ( $wp_customize ) {
+	
+		add_action( 'customize_controls_print_styles', 'uix_portfolio_kirki_custom_style', 100 );
+		
+	}
+	
+
+
+    /*
+     * ------------------------------------------------------------------------------------------------
+     */
+
+	
+	Kirki::add_section( 'panel-theme-uix-portfolio', array(
+		'title'          => __( 'Uix Portfolio Settings', 'uix-portfolio' ),
+		'priority'       => 1,
+		'capability'     => 'edit_theme_options',
+	) );
+	
+	
+	/**
+	 * Add the configuration.
+	 * 
+	 * will inherit these options
+	 */
+	
+		
+
+
+	Kirki::add_field( 'uix_portfolio_kirki_custom', array(
+		'type'        => 'slider',
+		'settings'    => 'custom_uix_portfolio_show',
+		'label'       => __( 'Portfolio Pages Show at Most', 'uix-portfolio' ),
+		'description' => '',
+		'section'     => 'panel-theme-uix-portfolio',
+		'default'     => '10',
+		'priority'    => 10,
+		'choices' => array(
+			'min' => 2,
+			'max' => 100,
+			'step' => 2,
+		),
+	) );
+
+
+	
+	Kirki::add_field( 'uix_portfolio_kirki_custom', array(
+		'type'        => 'radio-image',
+		'settings'    => 'custom_uix_portfolio_layout',
+		'label'       => __( 'Portfolio Layout', 'uix-portfolio' ),
+		'description' => '',
+		'section'     => 'panel-theme-uix-portfolio',
+		'default'     => 'standard',
+		'priority'    => 10,
+		'choices'     => array(
+			'standard'   => UixPortfolio::plug_directory() . 'customizer-extras/images/layout-style-1.png',
+			'filterable' => UixPortfolio::plug_directory() . 'customizer-extras/images/layout-style-2.png',
+			'masonry'  => UixPortfolio::plug_directory() . 'customizer-extras/images/layout-style-3.png',
+		),
+	) );
+	
+	
+
+	Kirki::add_field( 'uix_portfolio_kirki_custom', array(
+		'type'        => 'switch',
+		'settings'    => 'custom_uix_portfolio_infinitescroll_list',
+		'label'       => __( 'Add Infinite Scroll to Your Portfolio', 'uix-portfolio' ),
+		'description' => __( 'Automatically append the next page of posts (via AJAX) to your page when a user scrolls to the bottom or clicks button of loading from the bottom.', 'uix-portfolio' ),
+		'section'     => 'panel-theme-uix-portfolio',
+		'default'     => false,
+		'priority'    => 10,
+	) );
+
+
+	
+	
+	Kirki::add_field( 'uix_portfolio_kirki_custom', array(
+		'type'        => 'switch',
+		'settings'    => 'custom_uix_portfolio_infinitescroll_eff',
+		'label'       => __( 'Infinite Scrolling Occurs when You Scroll to The Bottom', 'uix-portfolio' ),
+		'description' => __( 'Close to the bottom the refresh occurs, and this option acts on posts. When this option is enabled, you will see the effect.', 'uix-portfolio' ),
+		'section'     => 'panel-theme-uix-portfolio',
+		'default'     => false,
+		'priority'    => 10,
+	) );
+
+
+
+	Kirki::add_field( 'uix_portfolio_kirki_custom', array(
+		'type'        => 'custom',
+		'settings'    => 'custom_uix_portfolio_cover_size_title',
+		'label'       => __( 'Image size for cover thumbnails', 'uix-portfolio' ),
+		'description' => '',
+		'section'     => 'panel-theme-uix-portfolio',
+		'default'     => '',
+		'priority'    => 10,
+	) );
+
+
+	Kirki::add_field( 'uix_portfolio_kirki_custom', array(
+		'type'        => 'text',
+		'settings'    => 'custom_uix_portfolio_cover_size_w',
+		'label'       => '',
+		'description' => __( 'Max Width (in px)', 'uix-portfolio' ),
+		'section'     => 'panel-theme-uix-portfolio',
+		'default'     => '475',
+		'priority'    => 10
+	) );
+	
+	Kirki::add_field( 'uix_portfolio_kirki_custom', array(
+		'type'        => 'text',
+		'settings'    => 'custom_uix_portfolio_cover_size_h',
+		'label'       => '',
+		'description' => __( 'Max Height (in px)', 'uix-portfolio' ),
+		'section'     => 'panel-theme-uix-portfolio',
+		'default'     => '329',
+		'priority'    => 10
+	) );
+	
+	Kirki::add_field( 'uix_portfolio_kirki_custom', array(
+		'type'        => 'custom',
+		'settings'    => 'custom_uix_portfolio_single_size_title',
+		'label'       => __( 'Image size for single post page', 'uix-portfolio' ),
+		'description' => '',
+		'section'     => 'panel-theme-uix-portfolio',
+		'default'     => '',
+		'priority'    => 10,
+	) );
+
+
+	Kirki::add_field( 'uix_portfolio_kirki_custom', array(
+		'type'        => 'text',
+		'settings'    => 'custom_uix_portfolio_single_size_w',
+		'label'       => '',
+		'description' => __( 'Max Width (in px)', 'uix-portfolio' ),
+		'section'     => 'panel-theme-uix-portfolio',
+		'default'     => '9999',
+		'priority'    => 10
+	) );
+	
+	Kirki::add_field( 'uix_portfolio_kirki_custom', array(
+		'type'        => 'text',
+		'settings'    => 'custom_uix_portfolio_single_size_h',
+		'label'       => '',
+		'description' => __( 'Max Height (in px)', 'uix-portfolio' ),
+		'section'     => 'panel-theme-uix-portfolio',
+		'default'     => '9999',
+		'priority'    => 10
+	) );
+	
+
+
+	
+	//Read css file value
+	global $org_csspath;
+	$org_csspath = get_template_directory_uri() .'/uix-portfolio-style.css';
+	
+	function uix_portfolio_view_style() {
+		
+		global $org_csspath;
+		UixPortfolio::init_filesystem();
+		global $wp_filesystem;
+		$style_org_code = $wp_filesystem->get_contents( $org_csspath );
+	
+		
+		echo '
+		         <div class="uix-dialog-mask"></div>
+				 <div class="uix-dialog" id="uix-portfolio-view-css-container">  
+					<textarea rows="15" style=" width:95%;" class="regular-text">'.$style_org_code.'</textarea>
+					<a href="javascript:" id="uix_portfolio_close_css" class="close button button-primary">'.__( 'Close', 'uix-portfolio' ).'</a>  
+				</div>
+				<script type="text/javascript">
+					
+				( function($) {
+					
+					$( function() {
+						
+						var dialog = $( "#uix-portfolio-view-css-container, .uix-dialog-mask" );  
+						
+						$( "#uix_portfolio_view_css" ).click( function() {
+							dialog.show();
+						});
+						$( "#uix_portfolio_close_css" ).click( function() {
+							dialog.hide();
+						});
+					
+			
+					} );
+					
+				} ) ( jQuery );
+				
+				</script>
+		
+		';	
+	}
+	
+    add_action( 'customize_controls_print_scripts', 'uix_portfolio_view_style' );
+
+
+	Kirki::add_field( 'uix_portfolio_kirki_custom', array(
+		'type'        => 'custom',
+		'settings'    => 'custom_uix_portfolio_css_tip',
+		'label'       => __( 'Custom CSS', 'uix-portfolio' ),
+		'description' => __( 'You can overview the original styles to overwrite it. It will be on creating new styles to your website, without modifying original <code>.css</code> files.', 'uix-portfolio' ),
+		'section'     => 'panel-theme-uix-portfolio',
+		'default'     => '
+        <p>'.__( 'CSS file root directory:', 'uix-portfolio' ).'
+            <a href="javascript:" id="uix_portfolio_view_css" >'.$org_csspath.'</a>
+        </p>  
+		',
+		'priority'    => 10
+	) );
+	
+	Kirki::add_field( 'uix_portfolio_kirki_custom', array(
+		'type'        => 'code',
+		'settings'    => 'custom_uix_portfolio_css',
+		'label'       => '',
+		'description' => '',
+		'section'     => 'panel-theme-uix-portfolio',
+		'default'     => '',
+		'priority'    => 10,
+		'choices'     => array(
+			'language' => 'css',
+			'theme'    => 'monokai',
+			'height'   => 250,
+		),
+	) );
+
+	
+
+
+
+}
