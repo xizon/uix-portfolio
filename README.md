@@ -7,7 +7,9 @@ Licensed under the [GPL3.0](http://www.gnu.org/licenses/gpl-3.0.en.html).
 
 [UIUX Lab](http://uiux.cc)
 
-##Enables a portfolio post type and taxonomies.
+### Description
+
+Enables a portfolio post type and taxonomies
 
 This plugin registers a custom post type for portfolio items. It also registers separate portfolio taxonomies for tags and categories. If featured images are selected, they will be displayed in the column view. It doesn't change how portfolio items are displayed in your theme.
 
