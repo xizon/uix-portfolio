@@ -1,4 +1,4 @@
-# uix-portfolio
+# Uix Portfolio
 This is a WordPress Plugin.Readily organize &amp; present your fine works with our free portfolio post type plugin.
 
 Copyright (c) 2016 UIUX Lab [@uiux_lab](http://twitter.com/uiux_lab)
