@@ -1,6 +1,12 @@
 # uix-portfolio
 This is a WordPress Plugin.Readily organize &amp; present your fine works with our free portfolio post type plugin.
 
+Copyright (c) 2016 UIUX Lab [@uiux_lab](http://twitter.com/uiux_lab)
+
+Licensed under the [GPL3.0](http://www.gnu.org/licenses/gpl-3.0.en.html).
+
+[UIUX Lab](http://uiux.cc)
+
 ##Enables a portfolio post type and taxonomies.
 
 This plugin registers a custom post type for portfolio items. It also registers separate portfolio taxonomies for tags and categories. If featured images are selected, they will be displayed in the column view. It doesn't change how portfolio items are displayed in your theme.
@@ -33,7 +39,7 @@ Initial Release.
 
 ###Credits
 
-####I would like to give special thanks to credits. The following is a guide to the list of credits for this plugin:
+#####I would like to give special thanks to credits. The following is a guide to the list of credits for this plugin:
 
 - [Automatic Theme & Plugin Updater for Self-Hosted Themes/Plugins](https://github.com/jeremyclark13/automatic-theme-plugin-update)
 - [Gallery Metabox](https://github.com/uixplorer/gallery-metabox)
