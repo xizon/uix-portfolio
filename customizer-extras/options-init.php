@@ -201,8 +201,8 @@ if ( class_exists( 'Kirki' )  && class_exists( 'UixPortfolio' )  ) {
 	
 		
 		echo '
-		         <div class="uix-dialog-mask"></div>
-				 <div class="uix-dialog" id="uix-portfolio-view-css-container">  
+		         <div class="uix-portfolio-dialog-mask"></div>
+				 <div class="uix-portfolio-dialog" id="uix-portfolio-view-css-container">  
 					<textarea rows="15" style=" width:95%;" class="regular-text">'.$style_org_code.'</textarea>
 					<a href="javascript:" id="uix_portfolio_close_css" class="close button button-primary">'.__( 'Close', 'uix-portfolio' ).'</a>  
 				</div>
@@ -212,7 +212,7 @@ if ( class_exists( 'Kirki' )  && class_exists( 'UixPortfolio' )  ) {
 					
 					$( function() {
 						
-						var dialog = $( "#uix-portfolio-view-css-container, .uix-dialog-mask" );  
+						var dialog = $( "#uix-portfolio-view-css-container, .uix-portfolio-dialog-mask" );  
 						
 						$( "#uix_portfolio_view_css" ).click( function() {
 							dialog.show();
