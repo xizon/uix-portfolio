@@ -56,17 +56,17 @@ Initial Release.
 
 ###How to use?
 
-1.After activating your theme, you can see a prompt pointed out as absolutely critical. Go to "Appearance -> Install Plugins".
+1.After activating your theme, you can see a prompt pointed out as absolutely critical. Go to **"Appearance -> Install Plugins"**.
 Or, upload the plugin to wordpress, Activate it. (Access the path (/wp-content/plugins/) And upload files there.)
 
 ![](https://github.com/xizon/Uix-Portfolio/blob/master/helper/img/plug.jpg)
 
-2.Please check if you have the 10 template files 'uix-portfolio-style.css', 'uix-portfolio-script.js', 'uix-portfolio.php', 'taxonomy-uix_portfolio_category.php', 'single-uix-portfolio.php', 'content_uix_portfolio-video.php', 'content_uix_portfolio-gallery.php', 'content_uix_portfolio.php', 'partials-uix_portfolio_catgory_filterable.php' and 'partials-uix_portfolio_catgory_standard.php' in your templates directory. If you can't find these files, then just copy them from the directory '/wp-content/plugins/uix-portfolio/theme_templates/' to your templates directory.
+2.Please check if you have the **10** template files `uix-portfolio-style.css`, `uix-portfolio-script.js`, `uix-portfolio.php`, `taxonomy-uix_portfolio_category.php`, `single-uix-portfolio.php`, `content_uix_portfolio-video.php`, `content_uix_portfolio-gallery.php`, `content_uix_portfolio.php`, `partials-uix_portfolio_catgory_filterable.php` and `partials-uix_portfolio_catgory_standard.php` in your templates directory. If you can't find these files, then just copy them from the directory **"/wp-content/plugins/uix-portfolio/theme_templates/"** to your templates directory.
 
 ![](https://github.com/xizon/Uix-Portfolio/blob/master/helper/img/temp.jpg)
 
 
-3.Create a new WordPress file or edit an existing one. Just make sure to select this new created template file as the "Template" for this page from the "Attributes" section. Save the page and hit "Preview" to see how it looks. ( You should specify the template name, in this case I used "Uix Portfolio". The "Template Name: Uix Portfolio" tells WordPress that this will be a custom page template. )
+3.Create a new WordPress file or edit an existing one. Just make sure to select this new created template file as the **"Template"** for this page from the **"Attributes"** section. Save the page and hit **"Preview"** to see how it looks. ( You should specify the template name, in this case I used `Uix Portfolio`. The "Template Name: Uix Portfolio" tells WordPress that this will be a custom page template. )
 
 ![](https://github.com/xizon/Uix-Portfolio/blob/master/helper/img/menu.jpg)
 
@@ -84,11 +84,11 @@ Or, upload the plugin to wordpress, Activate it. (Access the path (/wp-content/p
 ![](https://github.com/xizon/Uix-Portfolio/blob/master/helper/img/add-item.jpg)
 
 
-6.You can pretty much custom every aspect of the look and feel of this page by modifying the "*.php" template files.
+6.You can pretty much custom every aspect of the look and feel of this page by modifying the `*.php` template files.
 
 ![](https://github.com/xizon/Uix-Portfolio/blob/master/helper/img/editor.jpg)
 
 
-7.The Uix Portfolio plugin allows users to easily enable a "Customizer Page" to themes. Go to "Appearance -> Customize".
+7.The Uix Portfolio plugin allows users to easily enable a "Customizer Page" to themes. Go to **"Appearance -> Customize"**.
 
 ![](https://github.com/xizon/Uix-Portfolio/blob/master/helper/img/customize.jpg)
