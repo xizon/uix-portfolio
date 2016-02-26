@@ -58,27 +58,37 @@ Initial Release.
 
 1. After activating your theme, you can see a prompt pointed out as absolutely critical. Go to "Appearance -> Install Plugins".
 Or, upload the plugin to wordpress, Activate it. (Access the path (/wp-content/plugins/) And upload files there.)
+
 ![](https://github.com/xizon/Uix-Portfolio/blob/master/helper/img/plug.jpg)
 
 2. Please check if you have the 10 template files 'uix-portfolio-style.css', 'uix-portfolio-script.js', 'uix-portfolio.php', 'taxonomy-uix_portfolio_category.php', 'single-uix-portfolio.php', 'content_uix_portfolio-video.php', 'content_uix_portfolio-gallery.php', 'content_uix_portfolio.php', 'partials-uix_portfolio_catgory_filterable.php' and 'partials-uix_portfolio_catgory_standard.php' in your templates directory. If you can't find these files, then just copy them from the directory '/wp-content/plugins/uix-portfolio/theme_templates/' to your templates directory.
+
 ![](https://github.com/xizon/Uix-Portfolio/blob/master/helper/img/temp.jpg)
 
 
 3. Create a new WordPress file or edit an existing one. Just make sure to select this new created template file as the "Template" for this page from the "Attributes" section. Save the page and hit "Preview" to see how it looks. ( You should specify the template name, in this case I used "Uix Portfolio". The "Template Name: Uix Portfolio" tells WordPress that this will be a custom page template. )
+
 ![](https://github.com/xizon/Uix-Portfolio/blob/master/helper/img/menu.jpg)
+
 ![](https://github.com/xizon/Uix-Portfolio/blob/master/helper/img/add-page.jpg)
 
 4. In your dashboard go to Appearance and select Menus. You’ll be able to add items to the menu. On the left you have your portfolio pages.
+
 ![](https://github.com/xizon/Uix-Portfolio/blob/master/helper/img/add-menu-1.jpg)
+
 ![](https://github.com/xizon/Uix-Portfolio/blob/master/helper/img/add-menu-2.jpg)
 
+
 5. Create uix portfolio item and publish portfolio then.
+
 ![](https://github.com/xizon/Uix-Portfolio/blob/master/helper/img/add-item.jpg)
 
 
 6. You can pretty much custom every aspect of the look and feel of this page by modifying the "*.php" template files.
+
 ![](https://github.com/xizon/Uix-Portfolio/blob/master/helper/img/editor.jpg)
 
 
 7. The Uix Portfolio plugin allows users to easily enable a "Customizer Page" to themes. Go to "Appearance -> Customize".
+
 ![](https://github.com/xizon/Uix-Portfolio/blob/master/helper/img/customize.jpg)
