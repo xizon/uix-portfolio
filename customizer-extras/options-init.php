@@ -171,7 +171,7 @@ if ( class_exists( 'Kirki' )  && class_exists( 'UixPortfolio' )  ) {
 		'label'       => '',
 		'description' => __( 'Max Width (in px)', 'uix-portfolio' ),
 		'section'     => 'panel-theme-uix-portfolio',
-		'default'     => '9999',
+		'default'     => '1920',
 		'priority'    => 10
 	) );
 	
