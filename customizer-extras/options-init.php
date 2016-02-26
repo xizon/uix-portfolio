@@ -189,21 +189,21 @@ if ( class_exists( 'Kirki' )  && class_exists( 'UixPortfolio' )  ) {
 
 	
 	//Read css file value
-	global $org_csspath;
-	$org_csspath = get_template_directory_uri() .'/uix-portfolio-style.css';
+	global $org_csspath_uix_portfolio;
+	$org_csspath_uix_portfolio = get_template_directory_uri() .'/uix-portfolio-style.css';
 	
 	function uix_portfolio_view_style() {
 		
-		global $org_csspath;
+		global $org_csspath_uix_portfolio;
 		UixPortfolio::init_filesystem();
 		global $wp_filesystem;
-		$style_org_code = $wp_filesystem->get_contents( $org_csspath );
+		$style_org_code_uix_portfolio = $wp_filesystem->get_contents( $org_csspath_uix_portfolio );
 	
 		
 		echo '
 		         <div class="uix-portfolio-dialog-mask"></div>
 				 <div class="uix-portfolio-dialog" id="uix-portfolio-view-css-container">  
-					<textarea rows="15" style=" width:95%;" class="regular-text">'.$style_org_code.'</textarea>
+					<textarea rows="15" style=" width:95%;" class="regular-text">'.$style_org_code_uix_portfolio.'</textarea>
 					<a href="javascript:" id="uix_portfolio_close_css" class="close button button-primary">'.__( 'Close', 'uix-portfolio' ).'</a>  
 				</div>
 				<script type="text/javascript">
@@ -212,13 +212,13 @@ if ( class_exists( 'Kirki' )  && class_exists( 'UixPortfolio' )  ) {
 					
 					$( function() {
 						
-						var dialog = $( "#uix-portfolio-view-css-container, .uix-portfolio-dialog-mask" );  
+						var dialog_uix_portfolio = $( "#uix-portfolio-view-css-container, .uix-portfolio-dialog-mask" );  
 						
 						$( "#uix_portfolio_view_css" ).click( function() {
-							dialog.show();
+							dialog_uix_portfolio.show();
 						});
 						$( "#uix_portfolio_close_css" ).click( function() {
-							dialog.hide();
+							dialog_uix_portfolio.hide();
 						});
 					
 			
@@ -242,7 +242,7 @@ if ( class_exists( 'Kirki' )  && class_exists( 'UixPortfolio' )  ) {
 		'section'     => 'panel-theme-uix-portfolio',
 		'default'     => '
         <p>'.__( 'CSS file root directory:', 'uix-portfolio' ).'
-            <a href="javascript:" id="uix_portfolio_view_css" >'.$org_csspath.'</a>
+            <a href="javascript:" id="uix_portfolio_view_css" >'.$org_csspath_uix_portfolio.'</a>
         </p>  
 		',
 		'priority'    => 10
