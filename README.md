@@ -19,8 +19,9 @@ This plugin registers a custom post type for portfolio items. It also registers 
 
 ### Updates 
 
-** Version 1.0.0 **
+##### Version 1.0.0
 Initial Release.
+
 
 ### Tested under
 
