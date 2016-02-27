@@ -65,7 +65,7 @@ Or, upload the plugin to wordpress, Activate it. (Access the path (/wp-content/p
     
         
         <p>
-           <?php _e( '8. You can overview the original styles to overwrite it. It will be on creating new styles to your website, without modifying original <code>.css<code> files. Go to <strong>"Appearance -> Customize"</strong>.', 'uix-portfolio' ); ?>
+           <?php _e( '8. You can overview the original styles to overwrite it. It will be on creating new styles to your website, without modifying original <code>.css</code> files. Go to <strong>"Appearance -> Customize"</strong>.', 'uix-portfolio' ); ?>
         </p>   
         <p>
            <img src="<?php echo UixPortfolio::plug_directory(); ?>helper/img/css.jpg" alt="">
