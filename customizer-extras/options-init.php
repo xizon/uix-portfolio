@@ -8,13 +8,15 @@ if ( class_exists( 'Kirki' )  && class_exists( 'UixPortfolio' )  ) {
 	
 	global $wp_customize;
 	
+	$uix_portfolio_kirki_config_id = 'uiuxlabtheme_kirki_custom';
+	
 	/*
 	*
 	* Kirki customizer configuration
 	*
 	*/
 	
-	Kirki::add_config( 'uix_portfolio_kirki_custom', array(
+	Kirki::add_config( $uix_portfolio_kirki_config_id, array(
 		'capability'    => 'edit_theme_options',
 		'option_type'   => 'theme_mod',
 	) );
@@ -64,7 +66,7 @@ if ( class_exists( 'Kirki' )  && class_exists( 'UixPortfolio' )  ) {
 		
 
 
-	Kirki::add_field( 'uix_portfolio_kirki_custom', array(
+	Kirki::add_field( $uix_portfolio_kirki_config_id, array(
 		'type'        => 'slider',
 		'settings'    => 'custom_uix_portfolio_show',
 		'label'       => __( 'Portfolio Pages Show at Most', 'uix-portfolio' ),
@@ -81,7 +83,7 @@ if ( class_exists( 'Kirki' )  && class_exists( 'UixPortfolio' )  ) {
 
 
 	
-	Kirki::add_field( 'uix_portfolio_kirki_custom', array(
+	Kirki::add_field( $uix_portfolio_kirki_config_id, array(
 		'type'        => 'radio-image',
 		'settings'    => 'custom_uix_portfolio_layout',
 		'label'       => __( 'Portfolio Layout', 'uix-portfolio' ),
@@ -98,7 +100,7 @@ if ( class_exists( 'Kirki' )  && class_exists( 'UixPortfolio' )  ) {
 	
 	
 
-	Kirki::add_field( 'uix_portfolio_kirki_custom', array(
+	Kirki::add_field( $uix_portfolio_kirki_config_id, array(
 		'type'        => 'switch',
 		'settings'    => 'custom_uix_portfolio_infinitescroll_list',
 		'label'       => __( 'Add Infinite Scroll to Your Portfolio', 'uix-portfolio' ),
@@ -111,7 +113,7 @@ if ( class_exists( 'Kirki' )  && class_exists( 'UixPortfolio' )  ) {
 
 	
 	
-	Kirki::add_field( 'uix_portfolio_kirki_custom', array(
+	Kirki::add_field( $uix_portfolio_kirki_config_id, array(
 		'type'        => 'switch',
 		'settings'    => 'custom_uix_portfolio_infinitescroll_eff',
 		'label'       => __( 'Infinite Scrolling Occurs when You Scroll to The Bottom', 'uix-portfolio' ),
@@ -123,7 +125,7 @@ if ( class_exists( 'Kirki' )  && class_exists( 'UixPortfolio' )  ) {
 
 
 
-	Kirki::add_field( 'uix_portfolio_kirki_custom', array(
+	Kirki::add_field( $uix_portfolio_kirki_config_id, array(
 		'type'        => 'custom',
 		'settings'    => 'custom_uix_portfolio_cover_size_title',
 		'label'       => __( 'Image Size for Cover Thumbnails', 'uix-portfolio' ),
@@ -134,7 +136,7 @@ if ( class_exists( 'Kirki' )  && class_exists( 'UixPortfolio' )  ) {
 	) );
 
 
-	Kirki::add_field( 'uix_portfolio_kirki_custom', array(
+	Kirki::add_field( $uix_portfolio_kirki_config_id, array(
 		'type'        => 'text',
 		'settings'    => 'custom_uix_portfolio_cover_size_w',
 		'label'       => '',
@@ -144,7 +146,7 @@ if ( class_exists( 'Kirki' )  && class_exists( 'UixPortfolio' )  ) {
 		'priority'    => 10
 	) );
 	
-	Kirki::add_field( 'uix_portfolio_kirki_custom', array(
+	Kirki::add_field( $uix_portfolio_kirki_config_id, array(
 		'type'        => 'text',
 		'settings'    => 'custom_uix_portfolio_cover_size_h',
 		'label'       => '',
@@ -154,7 +156,7 @@ if ( class_exists( 'Kirki' )  && class_exists( 'UixPortfolio' )  ) {
 		'priority'    => 10
 	) );
 	
-	Kirki::add_field( 'uix_portfolio_kirki_custom', array(
+	Kirki::add_field( $uix_portfolio_kirki_config_id, array(
 		'type'        => 'custom',
 		'settings'    => 'custom_uix_portfolio_single_size_title',
 		'label'       => __( 'Image Size for Entry', 'uix-portfolio' ),
@@ -165,7 +167,7 @@ if ( class_exists( 'Kirki' )  && class_exists( 'UixPortfolio' )  ) {
 	) );
 
 
-	Kirki::add_field( 'uix_portfolio_kirki_custom', array(
+	Kirki::add_field( $uix_portfolio_kirki_config_id, array(
 		'type'        => 'text',
 		'settings'    => 'custom_uix_portfolio_single_size_w',
 		'label'       => '',
@@ -175,7 +177,7 @@ if ( class_exists( 'Kirki' )  && class_exists( 'UixPortfolio' )  ) {
 		'priority'    => 10
 	) );
 	
-	Kirki::add_field( 'uix_portfolio_kirki_custom', array(
+	Kirki::add_field( $uix_portfolio_kirki_config_id, array(
 		'type'        => 'text',
 		'settings'    => 'custom_uix_portfolio_single_size_h',
 		'label'       => '',
@@ -234,7 +236,7 @@ if ( class_exists( 'Kirki' )  && class_exists( 'UixPortfolio' )  ) {
     add_action( 'customize_controls_print_scripts', 'uix_portfolio_view_style' );
 
 
-	Kirki::add_field( 'uix_portfolio_kirki_custom', array(
+	Kirki::add_field( $uix_portfolio_kirki_config_id, array(
 		'type'        => 'custom',
 		'settings'    => 'custom_uix_portfolio_css_tip',
 		'label'       => __( 'Custom CSS', 'uix-portfolio' ),
@@ -248,7 +250,7 @@ if ( class_exists( 'Kirki' )  && class_exists( 'UixPortfolio' )  ) {
 		'priority'    => 10
 	) );
 	
-	Kirki::add_field( 'uix_portfolio_kirki_custom', array(
+	Kirki::add_field( $uix_portfolio_kirki_config_id, array(
 		'type'        => 'code',
 		'settings'    => 'custom_uix_portfolio_css',
 		'label'       => '',
