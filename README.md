@@ -85,7 +85,7 @@ Or, upload the plugin to wordpress, Activate it. (Access the path (/wp-content/p
 ![](https://github.com/xizon/Uix-Portfolio/blob/master/helper/img/add-item.jpg)
 
 
-6.You can pretty much custom every aspect of the look and feel of this page by modifying the `*.php` template files. **Best Practices for Editing WordPress Template Files:**
+6.You can pretty much custom every aspect of the look and feel of this page by modifying the `*.php` template files **(Access the path to the themes directory)**. **Best Practices for Editing WordPress Template Files:**
 
   (1) WordPress comes with a theme and plugin editor as part of the core functionality. You can find it in your install by going to **"Appearance > Editor"** from your sidebar.
 
