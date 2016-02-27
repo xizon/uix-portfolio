@@ -12,6 +12,6 @@ msgstr ""
 "Language-Team: LANGUAGE <LL@li.org>\n"
 
 #: inc/core/admin-views.php:9
-msgid "Welcome to Shortcodes Ultimate"
+msgid ""
 msgstr ""
 
