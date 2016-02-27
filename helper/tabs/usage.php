@@ -42,11 +42,19 @@ Or, upload the plugin to wordpress, Activate it. (Access the path (/wp-content/p
            <img src="<?php echo UixPortfolio::plug_directory(); ?>helper/img/add-item.jpg" alt="">
         </p> 
         <p>
-           <?php _e( '6. You can pretty much custom every aspect of the look and feel of this page by modifying the <code>"*.php"</code> template files.', 'uix-portfolio' ); ?>
+           <?php _e( '6. You can pretty much custom every aspect of the look and feel of this page by modifying the <code>*.php</code> template files <strong>(Access the path to the themes directory)</strong> . Best Practices for Editing WordPress Template Files:', 'uix-portfolio' ); ?>
+        </p> 
+        <p>
+           <?php _e( '&nbsp;&nbsp;&nbsp;&nbsp;(1) WordPress comes with a theme and plugin editor as part of the core functionality. You can find it in your install by going to <strong>"Appearance > Editor"</strong> from your sidebar.', 'uix-portfolio' ); ?>
         </p>   
+          
         <p>
            <img src="<?php echo UixPortfolio::plug_directory(); ?>helper/img/editor.jpg" alt="">
         </p> 
+        
+        <p>
+           <?php _e( '&nbsp;&nbsp;&nbsp;&nbsp;(2) You can connect to your site via an <strong>FTP</strong> client, download a copy of the file you want to change, make the changes and then upload the file back to the server, overwriting the file that’s on the server.', 'uix-portfolio' ); ?>
+        </p>  
         
         <p>
            <?php _e( '7. The Uix Portfolio plugin allows users to easily enable a "Customizer Page" to themes. Go to <strong>"Appearance -> Customize"</strong>.', 'uix-portfolio' ); ?>
