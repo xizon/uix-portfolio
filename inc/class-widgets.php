@@ -55,7 +55,7 @@ class Uix_Portfolio_Recent_Portfolio_Widget extends WP_Widget {
                       <a href="<?php the_permalink(); ?>">
 						  <?php 
                             if ( has_post_thumbnail() ) {
-                                the_post_thumbnail( 'uiuxlabtheme-portfolio-entry', array(
+                                the_post_thumbnail( 'uix-portfolio-entry', array(
                                     'alt' => get_the_title(),
                                     'class'	=> 'portfolio-img',
                                 ) ); 
