@@ -88,11 +88,11 @@ Or, upload the plugin to wordpress, Activate it. (Access the path (/wp-content/p
 6.You can pretty much custom every aspect of the look and feel of this page by modifying the `*.php` template files **(Access the path to the themes directory)**. **Best Practices for Editing WordPress Template Files:**
 
   (1) WordPress comes with a theme and plugin editor as part of the core functionality. You can find it in your install by going to **"Appearance > Editor"** from your sidebar.
+  
+  ![](https://github.com/xizon/Uix-Portfolio/blob/master/helper/img/editor.jpg)
 
   (2) You can connect to your site via an **FTP** client, download a copy of the file you want to change, make the changes and then upload the file back to the server, overwriting the file that’s on the server.
 
-
-![](https://github.com/xizon/Uix-Portfolio/blob/master/helper/img/editor.jpg)
 
 
 7.The Uix Portfolio plugin allows users to easily enable a "Customizer Page" to themes. Go to **"Appearance -> Customize"**.
