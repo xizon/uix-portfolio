@@ -98,3 +98,8 @@ Or, upload the plugin to wordpress, Activate it. (Access the path (/wp-content/p
 7.The Uix Portfolio plugin allows users to easily enable a "Customizer Page" to themes. Go to **"Appearance -> Customize"**.
 
 ![](https://github.com/xizon/Uix-Portfolio/blob/master/helper/img/customize.jpg)
+
+
+8.You can overview the original styles to overwrite it. It will be on creating new styles to your website, without modifying original `.css` files. Go to **"Appearance -> Customize"**.
+
+![](https://github.com/xizon/Uix-Portfolio/blob/master/helper/img/css.jpg)
