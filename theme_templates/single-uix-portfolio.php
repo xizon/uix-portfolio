@@ -29,7 +29,7 @@ get_header(); ?>
 // Start the loop.
 while ( have_posts() ) : the_post();
 ?>
-	<div class="container">
+	<div class="uix-portfolio-container">
     
     
                 <article itemscope itemtype="http://schema.org/Article">
