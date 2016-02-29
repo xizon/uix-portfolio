@@ -60,7 +60,7 @@ get_header();
 
 ?>
 
-    <div class="container">
+    <div class="uix-portfolio-container">
             
             <header>
                 <h1 class="uix-portfolio-heading">
