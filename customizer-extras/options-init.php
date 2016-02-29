@@ -8,7 +8,7 @@ if ( class_exists( 'Kirki' )  && class_exists( 'UixPortfolio' )  ) {
 	
 	global $wp_customize;
 	
-	$uix_portfolio_kirki_config_id = 'uiuxlabtheme_kirki_custom';
+	$uix_portfolio_kirki_config_id = 'uix_portfolio_kirki_custom';
 	
 	/*
 	*
