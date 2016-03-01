@@ -80,12 +80,20 @@ Or, upload the plugin to wordpress, Activate it. (Access the path (/wp-content/p
 ![](https://github.com/xizon/Uix-Portfolio/blob/master/helper/img/add-menu-2.jpg)
 
 
-5.Create uix portfolio item and publish portfolio then.
+5. Or use the Uix Slides Widget to add it to a sidebar. Go to **"Appearance -> Widgets"** in the WordPress Administration Screens. Find the **"Recent Portfolio (Uix Portfolio Widget)"** in the list of Widgets and click and drag the Widget to the spot you wish it to appear.
+
+![](https://github.com/xizon/Uix-Portfolio/blob/master/helper/img/widget-1.jpg)
+
+![](https://github.com/xizon/Uix-Portfolio/blob/master/helper/img/widget-2.jpg)
+
+
+
+6.Create uix portfolio item and publish portfolio then.
 
 ![](https://github.com/xizon/Uix-Portfolio/blob/master/helper/img/add-item.jpg)
 
 
-6.You can pretty much custom every aspect of the look and feel of this page by modifying the `*.php` template files **(Access the path to the themes directory)**. **Best Practices for Editing WordPress Template Files:**
+7.You can pretty much custom every aspect of the look and feel of this page by modifying the `*.php` template files **(Access the path to the themes directory)**. **Best Practices for Editing WordPress Template Files:**
 
 　(1) WordPress comes with a theme and plugin editor as part of the core functionality. You can find it in your install by going to **"Appearance > Editor"** from your sidebar.
   
@@ -95,11 +103,11 @@ Or, upload the plugin to wordpress, Activate it. (Access the path (/wp-content/p
 
 
 
-7.The Uix Portfolio plugin allows users to easily enable a "Customizer Page" to themes. Go to **"Appearance -> Customize"**.
+8.The Uix Portfolio plugin allows users to easily enable a "Customizer Page" to themes. Go to **"Appearance -> Customize"**.
 
 ![](https://github.com/xizon/Uix-Portfolio/blob/master/helper/img/customize.jpg)
 
 
-8.You can overview the original styles to overwrite it. It will be on creating new styles to your website, without modifying original `.css` files. Go to **"Appearance -> Customize"**.
+9.You can overview the original styles to overwrite it. It will be on creating new styles to your website, without modifying original `.css` files. Go to **"Appearance -> Customize"**.
 
 ![](https://github.com/xizon/Uix-Portfolio/blob/master/helper/img/css.jpg)
