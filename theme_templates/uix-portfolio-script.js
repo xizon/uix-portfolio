@@ -25,6 +25,20 @@
 
 		} );
 		
+		
+		/*! 
+		 * ************************************
+		 * prettyPhoto
+		 *************************************
+		 */
+		 $( "a[rel^='uix-portfolio-prettyPhoto']" ).prettyPhoto({
+			 animation_speed:'normal',
+			 theme:'dark_rounded',
+			 slideshow:3000,
+			 utoplay_slideshow: false
+		 });
+		
+		
 	
 	} ); 
 
