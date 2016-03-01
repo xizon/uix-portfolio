@@ -35,14 +35,25 @@ Or, upload the plugin to wordpress, Activate it. (Access the path (/wp-content/p
            <img src="<?php echo UixPortfolio::plug_directory(); ?>helper/img/add-menu-1.jpg" alt=""> <img src="<?php echo UixPortfolio::plug_directory(); ?>helper/img/add-menu-2.jpg" alt="">
         </p> 
         
+        
         <p>
-           <?php _e( '5. Create uix portfolio item and publish portfolio then.', 'uix-portfolio' ); ?>
+           <?php _e( '5. Or use the Uix Slides Widget to add it to a sidebar. Go to <strong>"Appearance -> Widgets"</strong> in the WordPress Administration Screens. Find the <strong>"Recent Portfolio (Uix Portfolio Widget)"</strong> in the list of Widgets and click and drag the Widget to the spot you wish it to appear.', 'uix-portfolio' ); ?>
+        </p>  
+        <p>
+           <img src="<?php echo UixPortfolio::plug_directory(); ?>helper/img/widget-1.jpg" alt=""> <br>           
+           <img src="<?php echo UixPortfolio::plug_directory(); ?>helper/img/widget-2.jpg" alt="">
+        </p> 
+        
+        
+        
+        <p>
+           <?php _e( '6. Create uix portfolio item and publish portfolio then.', 'uix-portfolio' ); ?>
         </p>  
         <p>
            <img src="<?php echo UixPortfolio::plug_directory(); ?>helper/img/add-item.jpg" alt="">
         </p> 
         <p>
-           <?php _e( '6. You can pretty much custom every aspect of the look and feel of this page by modifying the <code>*.php</code> template files <strong>(Access the path to the themes directory)</strong> . Best Practices for Editing WordPress Template Files:', 'uix-portfolio' ); ?>
+           <?php _e( '7. You can pretty much custom every aspect of the look and feel of this page by modifying the <code>*.php</code> template files <strong>(Access the path to the themes directory)</strong> . Best Practices for Editing WordPress Template Files:', 'uix-portfolio' ); ?>
         </p> 
         <p>
            <?php _e( '&nbsp;&nbsp;&nbsp;&nbsp;(1) WordPress comes with a theme and plugin editor as part of the core functionality. You can find it in your install by going to <strong>"Appearance > Editor"</strong> from your sidebar.', 'uix-portfolio' ); ?>
@@ -57,20 +68,15 @@ Or, upload the plugin to wordpress, Activate it. (Access the path (/wp-content/p
         </p>  
         
         <p>
-           <?php _e( '7. The Uix Portfolio plugin allows users to easily enable a "Customizer Page" to themes. Go to <strong>"Appearance -> Customize"</strong>.', 'uix-portfolio' ); ?>
+           <?php _e( '8. The Uix Portfolio plugin allows users to easily enable a "Customizer Page" to themes. Go to <strong>"Appearance -> Customize"</strong>.', 'uix-portfolio' ); ?>
         </p>   
         <p>
            <img src="<?php echo UixPortfolio::plug_directory(); ?>helper/img/customize.jpg" alt="">
         </p>      
-    
-        
         <p>
-           <?php _e( '8. You can overview the original styles to overwrite it. It will be on creating new styles to your website, without modifying original <code>.css</code> files. Go to <strong>"Appearance -> Customize"</strong>.', 'uix-portfolio' ); ?>
-        </p>   
+           <?php _e( '9. You can overview the original styles to overwrite it. It will be on creating new styles to your website, without modifying original <code>.css</code> files. Go to <strong>"Appearance -> Customize"</strong>.', 'uix-portfolio' ); ?>
+        </p> 
         <p>
            <img src="<?php echo UixPortfolio::plug_directory(); ?>helper/img/css.jpg" alt="">
         </p>   
-    
-    
-    
 <?php } ?>
