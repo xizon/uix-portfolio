@@ -5,7 +5,7 @@ msgstr ""
 "Project-Id-Version: Uix Portfolio 1.0.0\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/tags/_s\n"
 "POT-Creation-Date: 2015-06-12 21:51:31+0000\n"
-"POT-Revision-Date: Sat Feb 27 2016 15:01:09 GMT+0800 (CST)\n"
+"POT-Revision-Date: Tue Mar 01 2016 11:29:55 GMT+0800 (CST)\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -46,7 +46,7 @@ msgstr ""
 msgid "http://uiux.cc"
 msgstr ""
 
-#: ../uix-portfolio.php:161 ../customizer-extras/options-init.php:52
+#: ../uix-portfolio.php:161 ../customizer-extras/options-init.php:54
 msgid "Uix Portfolio Settings"
 msgstr ""
 
@@ -93,68 +93,68 @@ msgstr ""
 msgid "Older Posts"
 msgstr ""
 
-#: ../customizer-extras/options-init.php:70
+#: ../customizer-extras/options-init.php:72
 msgid "Portfolio Pages Show at Most"
 msgstr ""
 
-#: ../customizer-extras/options-init.php:87
+#: ../customizer-extras/options-init.php:89
 msgid "Portfolio Layout"
 msgstr ""
 
-#: ../customizer-extras/options-init.php:104
+#: ../customizer-extras/options-init.php:106
 msgid "Add Infinite Scroll to Your Portfolio"
 msgstr ""
 
-#: ../customizer-extras/options-init.php:105
+#: ../customizer-extras/options-init.php:107
 msgid ""
 "Automatically append the next page of posts (via AJAX) to your page when a "
 "user scrolls to the bottom or clicks button of loading from the bottom."
 msgstr ""
 
-#: ../customizer-extras/options-init.php:117
+#: ../customizer-extras/options-init.php:119
 msgid "Infinite Scrolling Occurs when You Scroll to The Bottom"
 msgstr ""
 
-#: ../customizer-extras/options-init.php:118
+#: ../customizer-extras/options-init.php:120
 msgid ""
 "Close to the bottom the refresh occurs, and this option acts on posts. When "
 "this option is enabled, you will see the effect."
 msgstr ""
 
-#: ../customizer-extras/options-init.php:129
+#: ../customizer-extras/options-init.php:131
 msgid "Image Size for Cover Thumbnails"
 msgstr ""
 
-#: ../customizer-extras/options-init.php:141 ../customizer-extras/options-init.
-#: php:172
+#: ../customizer-extras/options-init.php:143 ../customizer-extras/options-init.
+#: php:174
 msgid "Max Width (in px)"
 msgstr ""
 
-#: ../customizer-extras/options-init.php:151 ../customizer-extras/options-init.
-#: php:182
+#: ../customizer-extras/options-init.php:153 ../customizer-extras/options-init.
+#: php:184
 msgid "Max Height (in px)"
 msgstr ""
 
-#: ../customizer-extras/options-init.php:160
+#: ../customizer-extras/options-init.php:162
 msgid "Image Size for Entry"
 msgstr ""
 
-#: ../customizer-extras/options-init.php:207
+#: ../customizer-extras/options-init.php:209
 msgid "Close"
 msgstr ""
 
-#: ../customizer-extras/options-init.php:240
+#: ../customizer-extras/options-init.php:242
 msgid "Custom CSS"
 msgstr ""
 
-#: ../customizer-extras/options-init.php:241
+#: ../customizer-extras/options-init.php:243
 msgid ""
 "You can overview the original styles to overwrite it. It will be on creating "
 "new styles to your website, without modifying original <code>.css</code> "
 "files."
 msgstr ""
 
-#: ../customizer-extras/options-init.php:244
+#: ../customizer-extras/options-init.php:246
 msgid "CSS file root directory:"
 msgstr ""
 
