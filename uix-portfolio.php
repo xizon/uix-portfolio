@@ -78,6 +78,11 @@ class UixPortfolio {
 			// Masonry
 			wp_enqueue_script( 'js-masonry-2.1.08', self::plug_directory() .'assets/js/masonry.js', array( 'jquery' ), '2.1.08', true );
 			
+			// prettyPhoto
+			wp_enqueue_script(  'js-prettyPhoto-3.1.5', self::plug_directory() .'assets/js/jquery.prettyPhoto.js', array( 'jquery' ), '3.1.5', true );
+			wp_enqueue_style(  'prettyPhoto-3.1.5', self::plug_directory() .'assets/css/jquery.prettyPhoto.css', false, '3.1.5', 'all');
+					
+					
 			//Main stylesheets and scripts to Front-End
 			wp_enqueue_style( self::PREFIX . '-portfolio-frontend-style', get_template_directory_uri() .'/uix-portfolio-style.css', false, self::ver(), 'all');
 			wp_enqueue_script( self::PREFIX . '-portfolio-frontend-js', get_template_directory_uri() .'/uix-portfolio-script.js', array( 'jquery' ), self::ver(), true );	
