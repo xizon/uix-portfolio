@@ -39,7 +39,10 @@ This plugin registers a custom post type for portfolio items. It also registers 
  - Kirki (http://kirki.org/)
  - Flexslider (https://github.com/woothemes/FlexSlider)
  - Masonry (http://masonry.desandro.com/)
+ - prettyPhoto (http://www.no-margin-for-errors.com/projects/prettyphoto-jquery-lightbox-clone/#prettyPhoto)
  - Shuffle (filtering and sorting) (https://github.com/Vestride/Shuffle)
+ 
+ 
  
 
 == Installation ==
