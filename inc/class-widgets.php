@@ -10,7 +10,7 @@ class Uix_Portfolio_Recent_Portfolio_Widget extends WP_Widget {
 
 
 	public function __construct() {
-		parent::__construct( 'Uix_Portfolio_recent_portfolio_widget', __( 'Recent Portfolio', 'uix-portfolio' ), array(
+		parent::__construct( 'Uix_Portfolio_recent_portfolio_widget', __( 'Recent Portfolio (Uix Portfolio Widget)', 'uix-portfolio' ), array(
 			'classname'   => 'Uix_Portfolio_recent_portfolio_widget',
 			'description' => __( 'Use this widget to list your recent portfolio.', 'uix-portfolio' ),
 		) );
