@@ -53,6 +53,7 @@ Initial Release.
 - [Kirki](http://kirki.org/)
 - [Flexslider](https://github.com/woothemes/FlexSlider)
 - [Masonry](http://masonry.desandro.com/v2/index.html)
+- [prettyPhoto](http://www.no-margin-for-errors.com/projects/prettyphoto-jquery-lightbox-clone/#prettyPhoto)
 - [Shuffle (filtering and sorting)](https://github.com/Vestride/Shuffle)
 
 ###How to use?
