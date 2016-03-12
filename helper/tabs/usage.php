@@ -15,7 +15,7 @@ Or, upload the plugin to wordpress, Activate it. (Access the path (/wp-content/p
            <img src="<?php echo UixPortfolio::plug_directory(); ?>helper/img/plug.jpg" alt="">
         </p> 
         <p>
-           <?php _e( '2. Please check if you have the 10 template files <code>"uix-portfolio-style.css", "uix-portfolio-script.js", "uix-portfolio.php", "taxonomy-uix_portfolio_category.php", "single-uix-portfolio.php", "content_uix_portfolio-video.php", "content_uix_portfolio-gallery.php", "content_uix_portfolio.php", "partials-uix_portfolio_catgory_filterable.php"</code> and <code>"partials-uix_portfolio_catgory_standard.php"</code> in your templates directory. If you can"t find these files, then just copy them from the directory "/wp-content/plugins/uix-portfolio/theme_templates/" to your templates directory.', 'uix-portfolio' ); ?>
+           <?php _e( '2. Please check if you have the 10 template files <code>"uix-portfolio-style.css"</code>, <code>"uix-portfolio-script.js"</code>, <code>"uix-portfolio.php"</code>, <code>"taxonomy-uix_portfolio_category.php"</code>, <code>"single-uix-portfolio.php"</code>, <code>"content_uix_portfolio-video.php"</code>, <code>"content_uix_portfolio-gallery.php"</code>, <code>"content_uix_portfolio.php"</code>, <code>"partials-uix_portfolio_catgory_filterable.php"</code> and <code>"partials-uix_portfolio_catgory_standard.php"</code> in your templates directory. If you can"t find these files, then just copy them from the directory "/wp-content/plugins/uix-portfolio/theme_templates/" to your templates directory.', 'uix-portfolio' ); ?>
            
           
         </p>  
