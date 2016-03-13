@@ -191,7 +191,6 @@ if ( class_exists( 'Kirki' )  && class_exists( 'UixPortfolio' )  ) {
 
 	
 	//Read css file value
-<<<<<<< HEAD
 	global $org_cssname_uix_portfolio;
 	global $org_csspath_uix_portfolio;
 
@@ -246,39 +245,6 @@ if ( class_exists( 'Kirki' )  && class_exists( 'UixPortfolio' )  ) {
 						} );
 						
 					} ) ( jQuery );
-=======
-	global $org_csspath_uix_portfolio;
-	$org_csspath_uix_portfolio = get_template_directory_uri() .'/uix-portfolio-style.css';
-	
-	function uix_portfolio_view_style() {
-		
-		global $org_csspath_uix_portfolio;
-		UixPortfolio::init_filesystem();
-		global $wp_filesystem;
-		$style_org_code_uix_portfolio = $wp_filesystem->get_contents( $org_csspath_uix_portfolio );
-	
-		
-		echo '
-		         <div class="uix-portfolio-dialog-mask"></div>
-				 <div class="uix-portfolio-dialog" id="uix-portfolio-view-css-container">  
-					<textarea rows="15" style=" width:95%;" class="regular-text">'.$style_org_code_uix_portfolio.'</textarea>
-					<a href="javascript:" id="uix_portfolio_close_css" class="close button button-primary">'.__( 'Close', 'uix-portfolio' ).'</a>  
-				</div>
-				<script type="text/javascript">
-					
-				( function($) {
-					
-					$( function() {
-						
-						var dialog_uix_portfolio = $( "#uix-portfolio-view-css-container, .uix-portfolio-dialog-mask" );  
-						
-						$( "#uix_portfolio_view_css" ).click( function() {
-							dialog_uix_portfolio.show();
-						});
-						$( "#uix_portfolio_close_css" ).click( function() {
-							dialog_uix_portfolio.hide();
-						});
->>>>>>> origin/master
 					
 					</script>
 			
