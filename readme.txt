@@ -33,7 +33,7 @@ This plugin registers a custom post type for portfolio items. It also registers 
 
 
 = Credits and Special Thanks =
- - Automatic Theme & Plugin Updater for Self-Hosted Themes/Plugins (https://github.com/jeremyclark13/automatic-theme-plugin-update)
+ - Plugin Update Checker Library (http://w-shadow.com)
  - Gallery Metabox (https://github.com/uixplorer/gallery-metabox)
  - Custom Metaboxes and Fields (https://github.com/WebDevStudios/Custom-Metaboxes-and-Fields-for-WordPress)
  - Kirki (http://kirki.org/)
