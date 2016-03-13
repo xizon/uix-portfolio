@@ -38,7 +38,7 @@ if ( is_singular() ) {
                     <?php
                     // Display image with lightbox
                     if (  'on' == gallery_is_lightbox_enabled() ) { ?>
-                        <a href="<?php echo $img_url; ?>" title="<?php echo $img_alt; ?>" class="uix-lightbox-item">
+                        <a href="<?php echo $img_url; ?>" title="<?php echo esc_attr( get_the_title() ); ?>"  rel="uix-portfolio-prettyPhoto[unusual]">
                             <?php echo $img_html; ?>
                         </a>
                     <?php

@@ -9,7 +9,7 @@ if ( !class_exists( 'UixPortfolio' ) ) {
     echo '
 		<p><strong><span style="display: block; margin: 0.5em 0.5em 0 0; clear: both;">'.__( 'This theme comes packaged with the following plugins:', 'uix-portfolio' ).' </span>
 		<span style="display: block; margin: 0.5em 0.5em 0 0; clear: both;">'.__( 'The following required plugin is currently inactive:', 'uix-portfolio' ).' <em>Uix Portfolio</em>.</span>
-		<span style="display: block; margin: 0.5em 0.5em 0 0; clear: both;"><a href="'.admin_url().'/themes.php?page='.UIUXLABTHEME_THEME_SLUG.'-install-required-plugins&#038;plugin_status=activate">'.__( 'Begin activating plugin', 'uix-portfolio' ).'</a></span>
+		<span style="display: block; margin: 0.5em 0.5em 0 0; clear: both;"><a href="'.admin_url().'/themes.php?page='.wp_get_theme()->get( 'TextDomain' ).'-install-required-plugins&#038;plugin_status=activate">'.__( 'Begin activating plugin', 'uix-portfolio' ).'</a></span>
 		</strong></p>
 	';
     return;
@@ -29,7 +29,7 @@ get_header(); ?>
 // Start the loop.
 while ( have_posts() ) : the_post();
 ?>
-	<div class="container">
+	<div class="uix-portfolio-container">
     
     
                 <article itemscope itemtype="http://schema.org/Article">

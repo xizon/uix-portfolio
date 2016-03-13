@@ -14,6 +14,8 @@ class UixPortfolio {
 	
 	const PREFIX = 'uix';
 	const HELPER = 'uix-portfolio-helper';
+	const NOTICEID = 'uix-portfolio-helper-tip';
+
 
 
 	
@@ -32,9 +34,9 @@ class UixPortfolio {
 		add_action( 'current_screen', array( __CLASS__, 'gallery' ) );
 		add_action( 'current_screen', array( __CLASS__, 'usage_notice' ) );
 		add_action( 'admin_init', array( __CLASS__, 'check_update' ) );
-		add_action( 'admin_init', array( __CLASS__, 'templates' ) );
 		add_action( 'admin_init', array( __CLASS__, 'tc_i18n' ) );
 		add_action( 'admin_init', array( __CLASS__, 'load_helper' ) );
+		add_action( 'admin_init', array( __CLASS__, 'nag_ignore' ) );
 		add_action( 'admin_menu', array( __CLASS__, 'options_admin_menu' ) );
 		add_action( 'init', array( __CLASS__, 'post_views' ) );
 		add_action( 'init', array( __CLASS__, 'customizer' ) );
@@ -76,6 +78,11 @@ class UixPortfolio {
 			// Masonry
 			wp_enqueue_script( 'js-masonry-2.1.08', self::plug_directory() .'assets/js/masonry.js', array( 'jquery' ), '2.1.08', true );
 			
+			// prettyPhoto
+			wp_enqueue_script(  'js-prettyPhoto-3.1.5', self::plug_directory() .'assets/js/jquery.prettyPhoto.js', array( 'jquery' ), '3.1.5', true );
+			wp_enqueue_style(  'prettyPhoto-3.1.5', self::plug_directory() .'assets/css/jquery.prettyPhoto.css', false, '3.1.5', 'all');
+					
+					
 			//Main stylesheets and scripts to Front-End
 			wp_enqueue_style( self::PREFIX . '-portfolio-frontend-style', get_template_directory_uri() .'/uix-portfolio-style.css', false, self::ver(), 'all');
 			wp_enqueue_script( self::PREFIX . '-portfolio-frontend-js', get_template_directory_uri() .'/uix-portfolio-script.js', array( 'jquery' ), self::ver(), true );	
@@ -126,6 +133,23 @@ class UixPortfolio {
 		
 
 	}
+	
+	/*
+	 * The function finds the position of the first occurrence of a string inside another string.
+	 *
+	 * As strpos may return either FALSE (substring absent) or 0 (substring at start of string), strict versus loose equivalency operators must be used very carefully.
+	 *
+	 */
+	public static function inc_str( $str, $incstr ) {
+	
+		if ( mb_strlen( strpos( $str, $incstr ), 'UTF8' ) > 0 ) {
+			return true;
+		} else {
+			return false;
+		}
+
+	}
+
 	
 	
 	/*
@@ -319,8 +343,9 @@ class UixPortfolio {
 		  //Check if screen’s ID, base, post type, and taxonomy, among other data points
 		  $currentScreen = get_current_screen();
 
-		  if( ( mb_strlen( strpos( $currentScreen->id, 'uix_portfolio' ), 'UTF8' ) > 0 || mb_strlen( strpos( $currentScreen->id, 'uix-portfolio' ), 'UTF8' ) > 0 ) && mb_strlen( strpos( $currentScreen->id, '_page_' ), 'UTF8' ) <= 0 ) {
+		  if( ( self::inc_str( $currentScreen->id, 'uix_portfolio' ) || self::inc_str( $currentScreen->id, 'uix-portfolio' ) ) && !self::inc_str( $currentScreen->id, '_page_' ) ) {
 			  add_action( 'admin_notices', array( __CLASS__, 'usage_notice_app' ) );
+			  add_action( 'admin_notices', array( __CLASS__, 'template_notice_required' ) );
 		  }
 		
 	
@@ -328,17 +353,69 @@ class UixPortfolio {
 	
 	public static function usage_notice_app() {
 		
-			echo '
-			<div class="notice notice-success is-dismissible">
-				<p> 
+		global $current_user ;
+		$user_id = $current_user->ID;
+		
+		/* Check that the user hasn't already clicked to ignore the message */
+		if ( ! get_user_meta( $user_id, self::NOTICEID ) ) {
+			echo '<div class="updated"><p>
 				'.__( 'Do you want to create a portfolio website with WordPress?  Learn how to add portfolio to your themes.', 'uix-portfolio' ).'
 				<a href="' . admin_url( "admin.php?page=".self::HELPER."&tab=usage" ) . '">' . __( 'How to use?', 'uix-portfolio' ) . '</a>
-					
-				</p>
-			</div>';
+				 | 
+			';
+			printf( __( '<a href="%1$s">Hide Notice</a>' ), '?post_type='.self::get_slug().'&'.self::NOTICEID.'=0');
+			
+			echo "</p></div>";
+		}
 	
 	}	
 	
+	public static function template_notice_required() {
+		
+		if( !self::tempfile_exists() ) {
+			echo '
+				<div class="error notice">
+					<p>' . __( '<strong>You need to create Uix Portfolio template files in your templates directory. You can create the files on the WordPress admin panel.</strong>', 'uix-portfolio' ) . ' <a class="button button-primary" href="' . admin_url( "admin.php?page=".self::HELPER."&tab=temp" ) . '">' . __( 'Create now!', 'uix-portfolio' ) . '</a><br>' . __( 'As a workaround you can use FTP, access the Uix Portfolio template files path <code>/wp-content/plugins/uix-portfolio/theme_templates/</code> and upload files to your theme templates directory <code>/wp-content/themes/{your-theme}/</code>. ', 'uix-portfolio' ) . '</p>
+				</div>
+			';
+	
+		}
+	
+	}	
+
+	
+	public static function nag_ignore() {
+		    global $current_user;
+			$user_id = $current_user->ID;
+			
+			/* If user clicks to ignore the notice, add that to their user meta */
+			if ( isset( $_GET[ self::NOTICEID ]) && '0' == $_GET[ self::NOTICEID ] ) {
+				 add_user_meta( $user_id, self::NOTICEID, 'true', true);
+
+				if ( wp_get_referer() ) {
+					/* Redirects user to where they were before */
+					wp_safe_redirect( wp_get_referer() );
+				} else {
+					/* This will never happen, I can almost gurantee it, but we should still have it just in case*/
+					wp_safe_redirect( home_url() );
+				}
+		    }
+	}
+	
+	/*
+	 * Checks whether a template file or directory exists
+	 *
+	 *
+	 */
+	public static function tempfile_exists() {
+
+	      if( !file_exists( get_stylesheet_directory() . '/uix-portfolio.php' ) ) {
+			  return false;
+		  } else {
+			  return true;
+		  }
+
+	}
 	
 	/*
 	 * Callback the plugin directory
@@ -431,48 +508,139 @@ class UixPortfolio {
 
 	}
 	
+	
 	/*
-	 * Move template files to your theme directory
+	 * Copy template files to your theme directory
 	 *
 	 *
 	 */
-	public static function templates() {
-		
-		
-		$filenames = array();
-		$filepath = WP_PLUGIN_DIR .'/'.self::get_slug(). '/theme_templates/';
-		$themepath = get_stylesheet_directory() . '/';
-
-		foreach ( glob( dirname(__FILE__). "/theme_templates/*") as $file ) {
-			$filenames[] = str_replace( dirname(__FILE__). "/theme_templates/", '', $file );
-		}	
-		
 	
-		self::init_filesystem();
-		global $wp_filesystem;
-
-		foreach ( $filenames as $filename ) {
-			if ( ! file_exists( $themepath . $filename ) ) {
-				$filecontent = $wp_filesystem->get_contents( $filepath . $filename );
-				$wp_filesystem->put_contents(  $themepath . $filename, $filecontent, FS_CHMOD_FILE);
-			} 
-		}
+	public static function templates( $nonceaction, $nonce ){
 		
-	}
+		  global $wp_filesystem;
+			
+		  $filenames = array();
+		  $filepath = WP_PLUGIN_DIR .'/'.self::get_slug(). '/theme_templates/';
+		  $themepath = get_stylesheet_directory() . '/';
+		  $fileable = true;
+
+		
+		  $url = wp_nonce_url( $nonce, $nonceaction );
+		
+		  $contentdir = $filepath; 
+		  
+		  if ( self::wpfilesystem_connect_fs( $url, '', $contentdir, '' ) ) {
 	
+				foreach ( glob( dirname(__FILE__). "/theme_templates/*") as $file ) {
+					$filenames[] = str_replace( dirname(__FILE__). "/theme_templates/", '', $file );
+				}	
+		
+				foreach ( $filenames as $filename ) {
+					
+					if ( ! file_exists( $themepath . $filename ) ) {
+						
+						$filecontent = $wp_filesystem->get_contents( $filepath . $filename );
+						$wp_filesystem->put_contents(  $themepath . $filename, $filecontent, FS_CHMOD_FILE );
+			
+					} 
+				}
+		
+				return __( '<div class="notice notice-success"><p>Operation successfully completed!</p></div>', 'uix-portfolio' );
+				
+		  } 
+	}	 
+
 
 	/**
 	 * Initialize the WP_Filesystem
+	 * 
+	 * Example:
+	 
+            $output = "";
+			$wpnonce_url = 'edit.php?post_type='.UixPortfolio::get_slug().'&page='.UixPortfolio::HELPER;
+			$wpnonce_action = 'temp-filesystem-nonce';
+
+            if ( !empty( $_POST ) ) {
+				
+				
+                  $output = UixPortfolio::wpfilesystem_write_file( $wpnonce_action, $wpnonce_url, 'helper/tabs/', '1.txt', 'This is test.' );
+				  echo $output;
+			
+            } else {
+				
+				wp_nonce_field( $wpnonce_action );
+				echo '<p class="submit"><input type="submit" name="submit" id="submit" class="button button-primary" value="'.__( 'Click This Button to Copy Files', 'uix-portfolio' ).'"  /></p>';
+				
+			}
 	 *
 	 */
-	public static function init_filesystem() {
-		global $wp_filesystem;
-		if ( empty( $wp_filesystem ) ) {
-			require_once ( ABSPATH . '/wp-admin/includes/file.php' );
-			WP_Filesystem();
-		}
+	public static function wpfilesystem_connect_fs( $url, $method, $context, $fields = null) {
+		  global $wp_filesystem;
+		  if ( false === ( $credentials = request_filesystem_credentials( $url, $method, false, $context, $fields) ) ) {
+			return false;
+		  }
+		
+		  //check if credentials are correct or not.
+		  if( !WP_Filesystem( $credentials ) ) {
+			request_filesystem_credentials( $url, $method, true, $context);
+			return false;
+		  }
+		
+		  return true;
 	}
 	
+	public static function wpfilesystem_write_file( $nonceaction, $nonce, $path, $pathname, $text ){
+		  global $wp_filesystem;
+		  
+		
+		  $url = wp_nonce_url( $nonce, $nonceaction );
+		
+		  $contentdir = trailingslashit( WP_PLUGIN_DIR .'/'.self::get_slug() ).$path; 
+		  
+		  if ( self::wpfilesystem_connect_fs( $url, '', $contentdir, '' ) ) {
+			  
+				$dir = $wp_filesystem->find_folder( $contentdir );
+				$file = trailingslashit( $dir ) . $pathname;
+				$wp_filesystem->put_contents( $file, $text, FS_CHMOD_FILE );
+			
+				return __( '<div class="notice notice-success"><p>Operation successfully completed!</p></div>', 'uix-portfolio' );
+				
+		  } 
+	}	
+	
+	 
+	public static function wpfilesystem_read_file( $nonceaction, $nonce, $path, $pathname, $type = 'plugin' ){
+		  global $wp_filesystem;
+		
+		  $url = wp_nonce_url( $nonce, $nonceaction );
+	
+		  if ( $type == 'plugin' ) {
+			  $contentdir = trailingslashit( WP_PLUGIN_DIR .'/'.self::get_slug() ).$path; 
+		  } 
+		  if ( $type == 'theme' ) {
+			  $contentdir = trailingslashit( get_template_directory() ).$path; 
+		  } 	  
+		
+		  
+		  if ( self::wpfilesystem_connect_fs( $url, '', $contentdir ) ) {
+			  
+				$dir = $wp_filesystem->find_folder( $contentdir );
+				$file = trailingslashit( $dir ) . $pathname;
+				
+				
+				if( $wp_filesystem->exists( $file ) ) {
+					
+				    return $wp_filesystem->get_contents( $file );
+	
+				} else {
+					return '';
+				}
+		
+		
+		  } 
+	}	 
+	
+
 
 	/*
 	 * Returns current plugin version.

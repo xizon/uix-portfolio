@@ -3,7 +3,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 	die( '-1' );
 }
 
+
 if( !isset( $_GET[ 'tab' ] ) || $_GET[ 'tab' ] == 'about' ) {
+	
 ?>
 
         <p>
@@ -25,6 +27,8 @@ if( !isset( $_GET[ 'tab' ] ) || $_GET[ 'tab' ] == 'about' ) {
         <?php _e( '* There are some simple options to the theme customizer.', 'uix-portfolio' ); ?><br>
         <?php _e( '* Filterable Portfolio to display portfolio items to your site.', 'uix-portfolio' ); ?><br>
         <?php _e( '* The plugin supports a powerful Masonry grid layout  that will present your content in a dynamic, fluid fashion that looks and feels great both on desktop and mobile based devices, perfect for very visual websites that deal in lots of image-based content in various aspect ratios.', 'uix-portfolio' ); ?><br>
-        </p>    
-
+        </p>   
+        
+   
+    
 <?php } ?>
