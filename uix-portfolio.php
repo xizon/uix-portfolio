@@ -14,8 +14,12 @@ class UixPortfolio {
 	
 	const PREFIX = 'uix';
 	const HELPER = 'uix-portfolio-helper';
+<<<<<<< HEAD
 	const NOTICEID = 'uix-portfolio-helper-tip';
 
+=======
+	const NOTICEID = 'uix-portfolio-notice-helper';
+>>>>>>> origin/master
 
 
 	
@@ -363,13 +367,18 @@ class UixPortfolio {
 				<a href="' . admin_url( "admin.php?page=".self::HELPER."&tab=usage" ) . '">' . __( 'How to use?', 'uix-portfolio' ) . '</a>
 				 | 
 			';
+<<<<<<< HEAD
 			printf( __( '<a href="%1$s">Hide Notice</a>' ), '?post_type='.self::get_slug().'&'.self::NOTICEID.'=0');
+=======
+			printf( __( '<a href="%1$s">Hide Notice</a>' ), '?post_type=uix-portfolio&'.self::NOTICEID.'=0');
+>>>>>>> origin/master
 			
 			echo "</p></div>";
 		}
 	
 	}	
 	
+<<<<<<< HEAD
 	public static function template_notice_required() {
 		
 		if( !self::tempfile_exists() ) {
@@ -384,6 +393,8 @@ class UixPortfolio {
 	}	
 
 	
+=======
+>>>>>>> origin/master
 	public static function nag_ignore() {
 		    global $current_user;
 			$user_id = $current_user->ID;
@@ -402,6 +413,7 @@ class UixPortfolio {
 		    }
 	}
 	
+<<<<<<< HEAD
 	/*
 	 * Checks whether a template file or directory exists
 	 *
@@ -416,6 +428,9 @@ class UixPortfolio {
 		  }
 
 	}
+=======
+
+>>>>>>> origin/master
 	
 	/*
 	 * Callback the plugin directory
@@ -514,8 +529,13 @@ class UixPortfolio {
 	 *
 	 *
 	 */
+<<<<<<< HEAD
 	
 	public static function templates( $nonceaction, $nonce ){
+=======
+	public static function templates() {
+
+>>>>>>> origin/master
 		
 		  global $wp_filesystem;
 			
@@ -525,12 +545,33 @@ class UixPortfolio {
 		  $fileable = true;
 
 		
+<<<<<<< HEAD
 		  $url = wp_nonce_url( $nonce, $nonceaction );
+=======
+	
+		self::init_filesystem();
+		global $wp_filesystem;
+
+		foreach ( $filenames as $filename ) {
+			if ( ! file_exists( $themepath . $filename ) ) {
+				
+				if ( is_writeable( $themepath . $filename ) ) {
+					$filecontent = $wp_filesystem->get_contents( $filepath . $filename );
+					$wp_filesystem->put_contents(  $themepath . $filename, $filecontent, FS_CHMOD_FILE);
+	
+				} else {
+				    add_action( 'admin_notices', array( __CLASS__, 'init_filesystem_error' ) );
+				}
+		
+			} 
+		}
+>>>>>>> origin/master
 		
 		  $contentdir = $filepath; 
 		  
 		  if ( self::wpfilesystem_connect_fs( $url, '', $contentdir, '' ) ) {
 	
+<<<<<<< HEAD
 				foreach ( glob( dirname(__FILE__). "/theme_templates/*") as $file ) {
 					$filenames[] = str_replace( dirname(__FILE__). "/theme_templates/", '', $file );
 				}	
@@ -550,6 +591,11 @@ class UixPortfolio {
 		  } 
 	}	 
 
+=======
+	
+	
+	
+>>>>>>> origin/master
 
 	/**
 	 * Initialize the WP_Filesystem
@@ -574,6 +620,7 @@ class UixPortfolio {
 			}
 	 *
 	 */
+<<<<<<< HEAD
 	public static function wpfilesystem_connect_fs( $url, $method, $context, $fields = null) {
 		  global $wp_filesystem;
 		  if ( false === ( $credentials = request_filesystem_credentials( $url, $method, false, $context, $fields) ) ) {
@@ -641,6 +688,40 @@ class UixPortfolio {
 	}	 
 	
 
+=======
+	public static function init_filesystem() {
+		global $wp_filesystem;
+		if ( empty( $wp_filesystem ) ) {
+			require_once ( ABSPATH . '/wp-admin/includes/file.php' );
+			
+		
+		//Getting Credentials
+		$url = wp_nonce_url( 'plugins.php' );
+		if (false === ($creds = request_filesystem_credentials($url, '', false, false, null) ) ) {
+			return; // stop processing here
+		}
+		
+		//Initializing WP_Filesystem_Base
+		if ( ! WP_Filesystem($creds) ) {
+			request_filesystem_credentials($url, '', true, false, null);
+			return;
+		}	
+		
+			WP_Filesystem();
+		}
+	}
+	
+	public static function init_filesystem_error() {
+		echo '
+			<div class="error notice">
+				<p>'.__( '<em><strong>You need to make this file writable before you can save your changes. See <a target="_blank" href="https://codex.wordpress.org/Changing_File_Permissions">the Codex</a> for more information.</strong></em><br><br>Please check if you have the 10 template files <code>"uix-portfolio-style.css"</code>, <code>"uix-portfolio-script.js"</code>, <code>"uix-portfolio.php"</code>, <code>"taxonomy-uix_portfolio_category.php"</code>, <code>"single-uix-portfolio.php"</code>, <code>"content_uix_portfolio-video.php"</code>, <code>"content_uix_portfolio-gallery.php"</code>, <code>"content_uix_portfolio.php"</code>, <code>"partials-uix_portfolio_catgory_filterable.php"</code> and <code>"partials-uix_portfolio_catgory_standard.php"</code> in your templates directory. If you can"t find these files, then just copy them from the directory "/wp-content/plugins/uix-portfolio/theme_templates/" to your templates directory.', 'uix-portfolio' ).'</p>
+			</div>
+		';
+	}
+	
+
+	
+>>>>>>> origin/master
 
 	/*
 	 * Returns current plugin version.
