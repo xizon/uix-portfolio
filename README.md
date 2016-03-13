@@ -63,7 +63,10 @@ Or, upload the plugin to wordpress, Activate it. (Access the path (/wp-content/p
 
 ![](https://github.com/xizon/Uix-Portfolio/blob/master/helper/img/plug.jpg)
 
-2.Please check if you have the **10** template files `uix-portfolio-style.css`, `uix-portfolio-script.js`, `uix-portfolio.php`, `taxonomy-uix_portfolio_category.php`, `single-uix-portfolio.php`, `content_uix_portfolio-video.php`, `content_uix_portfolio-gallery.php`, `content_uix_portfolio.php`, `partials-uix_portfolio_catgory_filterable.php` and `partials-uix_portfolio_catgory_standard.php` in your templates directory. If you can't find these files, then just copy them from the directory **"/wp-content/plugins/uix-portfolio/theme_templates/"** to your templates directory.
+2.You need to create Uix Portfolio template files in your templates directory. You can create the files on the WordPress admin panel. As a workaround you can use FTP, access the Uix Portfolio template files path (`/wp-content/plugins/uix-portfolio/theme_templates/`) and upload files to your theme templates directory (`/wp-content/themes/{your-theme}/`).  
+
+
+Please check if you have the **10** template files `uix-portfolio-style.css`, `uix-portfolio-script.js`, `uix-portfolio.php`, `taxonomy-uix_portfolio_category.php`, `single-uix-portfolio.php`, `content_uix_portfolio-video.php`, `content_uix_portfolio-gallery.php`, `content_uix_portfolio.php`, `partials-uix_portfolio_catgory_filterable.php` and `partials-uix_portfolio_catgory_standard.php` in your templates directory. If you can't find these files, then just copy them from the directory **"/wp-content/plugins/uix-portfolio/theme_templates/"** to your templates directory.
 
 ![](https://github.com/xizon/Uix-Portfolio/blob/master/helper/img/temp.jpg)
 
