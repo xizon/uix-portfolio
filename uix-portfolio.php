@@ -524,7 +524,7 @@ class UixPortfolio {
 		  $themepath = get_stylesheet_directory() . '/';
 		  $fileable = true;
 
-		
+
 		  $url = wp_nonce_url( $nonce, $nonceaction );
 		
 		  $contentdir = $filepath; 
@@ -534,8 +534,10 @@ class UixPortfolio {
 				foreach ( glob( dirname(__FILE__). "/theme_templates/*") as $file ) {
 					$filenames[] = str_replace( dirname(__FILE__). "/theme_templates/", '', $file );
 				}	
-		
+		        
+				
 				foreach ( $filenames as $filename ) {
+					
 					
 					if ( ! file_exists( $themepath . $filename ) ) {
 						
@@ -544,8 +546,15 @@ class UixPortfolio {
 			
 					} 
 				}
+				
+				if ( self::tempfile_exists() ) {
+					return __( '<div class="notice notice-success"><p>Operation successfully completed!</p></div>', 'uix-portfolio' );
+				} else {
+					return __( '<div class="notice notice-error"><p><strong>There was a problem copying your template files:</strong> 
+Your host root directory in WordPress can not be found. Please check your server settings. You can upload files to theme templates directory using FTP.</p></div>', 'uix-portfolio' );
+				}
 		
-				return __( '<div class="notice notice-success"><p>Operation successfully completed!</p></div>', 'uix-portfolio' );
+				
 				
 		  } 
 	}	 

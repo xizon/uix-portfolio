@@ -5,7 +5,7 @@ msgstr ""
 "Project-Id-Version: Uix Portfolio 1.0.0\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/tags/_s\n"
 "POT-Creation-Date: 2015-06-12 21:51:31+0000\n"
-"POT-Revision-Date: Sun Mar 13 2016 17:18:01 GMT+0800 (CST)\n"
+"POT-Revision-Date: Wed Mar 16 2016 19:06:30 GMT+0800 (CST)\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -99,21 +99,30 @@ msgstr ""
 msgid "Appears on posts and pages in the sidebar."
 msgstr ""
 
-#: ../uix-portfolio.php:548 ../uix-portfolio.php:606
+#: ../uix-portfolio.php:551 ../uix-portfolio.php:615
 msgid ""
 "<div class=\"notice notice-success\"><p>Operation successfully completed!"
 "</p></div>"
 msgstr ""
 
-#: ../uix-portfolio.php:759 ../inc/infinite-scroll.php:28
+#: ../uix-portfolio.php:553
+msgid ""
+"<div class=\"notice notice-error\"><p><strong>There was a problem copying your "
+"template files:</strong> \n"
+"Your host root directory in WordPress can not be found. Please check your "
+"server settings. You can upload files to theme templates directory using FTP."
+"</p></div>"
+msgstr ""
+
+#: ../uix-portfolio.php:768 ../inc/infinite-scroll.php:28
 msgid "Load More"
 msgstr ""
 
-#: ../uix-portfolio.php:895 ../uix-portfolio.php:903
+#: ../uix-portfolio.php:904 ../uix-portfolio.php:912
 msgid "Newer Posts"
 msgstr ""
 
-#: ../uix-portfolio.php:897 ../uix-portfolio.php:904
+#: ../uix-portfolio.php:906 ../uix-portfolio.php:913
 msgid "Older Posts"
 msgstr ""
 
