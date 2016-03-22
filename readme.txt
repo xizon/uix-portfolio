@@ -1,7 +1,7 @@
 === Uix Portfolio ===
 Contributors: UIUX Lab
-Author URI: http://uiux.cc
-Plugin URL: http://uiux.cc/wp-plugins/uix-portfolio/
+Author URI: https://uiux.cc
+Plugin URL: https://uiux.cc/wp-plugins/uix-portfolio/
 Tags: portfolio, post type
 Requires at least: 4.2
 Tested up to: 4.4.2

@@ -1,10 +1,10 @@
 <?php
 /*
 Plugin Name: Uix Portfolio
-Plugin URI: http://uiux.cc/wp-plugins/uix-portfolio/
+Plugin URI: https://uiux.cc/wp-plugins/uix-portfolio/
 Description: Readily organize & present your fine works with our free portfolio post type plugin.
 Author: UIUX Lab
-Author URI: http://uiux.cc
+Author URI: https://uiux.cc
 Version: 1.0.0
 Text Domain: uix-portfolio
 License: GPLv2 or later
@@ -250,7 +250,7 @@ class UixPortfolio {
 	
 		require_once 'inc/plugin-update-checker.php';
 		$myUpdateChecker = PucFactory::buildUpdateChecker(
-			'http://uiux.cc/wp-plugins/'.self::get_slug().'/update/info.json',
+			'https://uiux.cc/wp-plugins/'.self::get_slug().'/update/info.json',
 			__FILE__
 		);
 
