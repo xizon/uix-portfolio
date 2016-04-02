@@ -25,7 +25,7 @@ function uix_portfolio_metaboxes( array $meta_boxes ) {
 		'fields'		=> array(
 			array(
 				'name'	=> __( 'Video URL', 'uix-portfolio' ),
-				'desc'	=>  __( 'Enter in a video URL that is compatible with WordPress\'s built-in oEmbed feature.', 'uix-portfolio' ) .' <a href="http://codex.wordpress.org/Embeds" target="_blank">'. __( 'Learn More', 'uix-portfolio' ). '</a>',
+				'desc'	=>  __( 'Enter in a video URL that is compatible with WordPress\'s built-in oEmbed feature. E.g.,https://www.youtube.com/watch?v=abc', 'uix-portfolio' ) .'',
 				'id'	=> 'uix_portfolio_video',
 				'type'	=> 'text',
 				

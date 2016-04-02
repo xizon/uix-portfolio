@@ -5,7 +5,7 @@ msgstr ""
 "Project-Id-Version: Uix Portfolio 1.0.0\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/tags/_s\n"
 "POT-Creation-Date: 2015-06-12 21:51:31+0000\n"
-"POT-Revision-Date: Thu Mar 17 2016 02:52:54 GMT+0800 (CST)\n"
+"POT-Revision-Date: Sat Apr 02 2016 21:30:18 GMT+0800 (CST)\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -29,7 +29,7 @@ msgid "Uix Portfolio"
 msgstr ""
 
 #. URI of the plugin
-msgid "http://uiux.cc/wp-plugins/uix-portfolio"
+msgid "https://uiux.cc/wp-plugins/uix-portfolio"
 msgstr ""
 
 #. Description of the plugin
@@ -43,7 +43,7 @@ msgid "UIUX Lab"
 msgstr ""
 
 #. Author URI of the plugin
-msgid "http://uiux.cc"
+msgid "https://uiux.cc"
 msgstr ""
 
 #: ../uix-portfolio.php:183 ../customizer-extras/options-init.php:54
@@ -768,7 +768,7 @@ msgid "Parent"
 msgstr ""
 
 #: ../post-extensions/portfolio.php:95 ../theme_templates/single-uix-portfolio.
-#: php:92
+#: php:80
 msgid "Edit"
 msgstr ""
 
@@ -815,11 +815,7 @@ msgstr ""
 #: ../post-extensions/post-extensions-init.php:28
 msgid ""
 "Enter in a video URL that is compatible with WordPress's built-in oEmbed "
-"feature."
-msgstr ""
-
-#: ../post-extensions/post-extensions-init.php:28
-msgid "Learn More"
+"feature. E.g.,https://www.youtube.com/watch?v=abc"
 msgstr ""
 
 #. Description of the plugin
@@ -935,18 +931,10 @@ msgstr ""
 msgid "Begin activating plugin"
 msgstr ""
 
-#: ../theme_templates/single-uix-portfolio.php:77
-msgid "Pages:"
-msgstr ""
-
-#: ../theme_templates/single-uix-portfolio.php:81
-msgid "Page"
-msgstr ""
-
-#: ../theme_templates/single-uix-portfolio.php:113
+#: ../theme_templates/single-uix-portfolio.php:101
 msgid "Previous Post"
 msgstr ""
 
-#: ../theme_templates/single-uix-portfolio.php:114
+#: ../theme_templates/single-uix-portfolio.php:102
 msgid "Next Post"
 msgstr ""
