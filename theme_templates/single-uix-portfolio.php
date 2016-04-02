@@ -69,19 +69,7 @@ while ( have_posts() ) : the_post();
                                               
                                                         
                                                         <!-- ==================  Post Content ==================  -->	 
-                                                        <?php 
-                                                                    
-                                                                    the_content();
-                                                                    
-                                                                    wp_link_pages( array(
-                                                                        'before'      => '<div class="page-links"><span class="page-links-title">' . __( 'Pages:', 'uix-portfolio' ) . '</span>',
-                                                                        'after'       => '</div>',
-                                                                        'link_before' => '<span>',
-                                                                        'link_after'  => '</span>',
-                                                                        'pagelink'    => '<span class="screen-reader-text">' . __( 'Page', 'uix-portfolio' ) . ' </span>%',
-                                                                        'separator'   => '<span class="screen-reader-text">, </span>',
-                                                                    ) );
-                                                               ?>
+                                                        <?php the_content(); ?>
                                                                
                                                         <!-- ==================  /Post Content ==================  -->	 
                                                         
