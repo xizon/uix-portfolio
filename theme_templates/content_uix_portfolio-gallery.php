@@ -75,7 +75,7 @@ if ( is_singular() ) {
          <div id="post-<?php the_ID(); ?>">
          
                  <div class="item-screenshot">
-                    <a class="featured-image" href="<?php echo esc_url( get_permalink() );?>" title="<?php the_title();?>">
+                    <a class="featured-image" href="<?php echo esc_url( get_permalink() );?>" title="<?php echo esc_attr( get_the_title() ); ?>">
                         <figure>
                            
 								<?php
@@ -131,7 +131,7 @@ if ( is_singular() ) {
                     </a>
                 </div>
                 <h3 class="portfolio-entry-title">
-                    <a href="<?php echo esc_url( get_permalink() );?>" title="<?php the_title();?>">
+                    <a href="<?php echo esc_url( get_permalink() );?>" title="<?php echo esc_attr( get_the_title() ); ?>">
                        <?php the_title();?>
                     </a>
                 </h3>
