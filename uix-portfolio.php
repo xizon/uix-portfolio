@@ -104,8 +104,7 @@ class UixPortfolio {
 	
 		  //Check if screen’s ID, base, post type, and taxonomy, among other data points
 		  $currentScreen = get_current_screen();
-		  
-		
+		 
 		  if( $currentScreen->base === "customize" ) {
 			  
 				if ( is_admin()) {
@@ -116,10 +115,10 @@ class UixPortfolio {
 				}
   
 		  } 
-	
+		
 
 	}
-	
+
 	
 	
 	/**
@@ -763,6 +762,24 @@ class UixPortfolio {
 
 	}	
 		
+	/**
+	 * Get URL of first image in a post
+	 * 
+	 */
+	public static function getfirstpic() {
+		global $post, $posts;
+		$first_img = '';
+		ob_start();
+		ob_end_clean();
+		$output = preg_match_all('/<img.+src=[\'"]([^\'"]+)[\'"].*>/i', $post->post_content, $matches);
+		if( count( $matches[1] ) > 0 ) { 
+		    return $matches [1] [0];
+		} else {
+			return '';
+		}
+	
+	}
+			
 
 	/*
 	 * Load more button

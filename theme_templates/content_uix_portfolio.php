@@ -42,13 +42,10 @@ if ( is_singular() ) {
     
     <?php 
 	
-    if ( is_array( $attachments ) ) {
+    if ( ( is_array( $attachments ) && !empty( $attachments ) ) || ( !empty( $first_img ) ) ) {
         $thumbnail = '';
     }
     ?>
-    
- 
-    
 
     <?php
     // Loop through each attachment ID
