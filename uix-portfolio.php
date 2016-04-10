@@ -26,7 +26,11 @@ class UixPortfolio {
 	public static function init() {
 	
 		self::meta_boxes();
+		self::featured_image_support();
 		
+		add_action( 'admin_print_scripts-edit.php', array( __CLASS__, 'check_current_post_type' ) );
+		add_action( 'admin_print_scripts-post-new.php', array( __CLASS__, 'check_current_post_type' ) );
+		add_action( 'admin_print_scripts-post.php', array( __CLASS__, 'check_current_post_type' ) );
 		add_filter( 'plugin_action_links_' . plugin_basename( __FILE__ ), array( __CLASS__, 'actions_links' ), -10 );
 		add_action( 'admin_enqueue_scripts', array( __CLASS__, 'backstage_scripts' ) );
 		add_action( 'wp_enqueue_scripts', array( __CLASS__, 'frontpage_scripts' ) );
@@ -40,7 +44,7 @@ class UixPortfolio {
 		add_action( 'admin_menu', array( __CLASS__, 'options_admin_menu' ) );
 		add_action( 'init', array( __CLASS__, 'post_views' ) );
 		add_action( 'init', array( __CLASS__, 'customizer' ) );
-		add_action( 'after_setup_theme', array( __CLASS__, 'image_sizes' ) );
+		add_action( 'after_setup_theme', array( __CLASS__, 'add_featured_image_support' ), 11 );
 		add_action( 'wp_head', array( __CLASS__, 'cat' ) );
 		add_action( 'wp_head', array( __CLASS__, 'infinite_scroll' ) );
 		add_action( 'wp_head', array( __CLASS__, 'filterable' ) );
@@ -49,8 +53,7 @@ class UixPortfolio {
 		add_filter( 'body_class', array( __CLASS__, 'new_class' ) );
 		add_action( 'widgets_init', array( __CLASS__, 'register_my_widget' ) );
 		
-
-		
+	
 
 	}
 	
@@ -224,21 +227,46 @@ class UixPortfolio {
 	 }
 	
 	
+	/*
+	 * Check the post type of the current page in wp-admin
+	 * 
+	 */
+	public static function check_current_post_type() {
+		global $typenow;
+		if ( 'uix-portfolio' == $typenow ) {
+			//do something
+		} 
+	}
+	
+	
 	
 	/*
-	 * Adds image sizes for portfolio items
-	 *
-	 * @link	http://codex.wordpress.org/Function_Reference/add_image_size
-	 *
+	 * Featured Image
+	 * Add support for a custom default image
 	 */
-	public static function image_sizes() {
+	public static function featured_image_support() {
+		require_once 'inc/featured-image-column.php';
+	} 
 	
-		add_theme_support( 'post-thumbnails' );
-	    
+
+	public static function add_featured_image_support() {
+		
+		
+		$supportedTypes = get_theme_support( 'post-thumbnails' );
+		$thePostType = 'uix-portfolio';
+		
+		if( $supportedTypes === false ) {
+			add_theme_support( 'post-thumbnails', array( $thePostType ) ); 
+		} elseif ( is_array( $supportedTypes ) ) {
+			$supportedTypes[0][] = $thePostType;
+			add_theme_support( 'post-thumbnails', $supportedTypes[0] );
+		}
+	
+	
 		//---
 		add_image_size( 'uix-portfolio-entry', get_theme_mod( 'custom_uix_portfolio_cover_size_w', 475 ), get_theme_mod( 'custom_uix_portfolio_cover_size_h', 329 ), true );
 		add_image_size( 'uix-portfolio-gallery-post', get_theme_mod( 'custom_uix_portfolio_single_size_w', 1920 ), get_theme_mod( 'custom_uix_portfolio_single_size_h', 9999 ), false );
-
+	
 	}
 	
 
