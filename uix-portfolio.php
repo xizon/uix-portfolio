@@ -233,7 +233,9 @@ class UixPortfolio {
 	 */
 	public static function image_sizes() {
 	
-	
+		add_theme_support( 'post-thumbnails' );
+	    
+		//---
 		add_image_size( 'uix-portfolio-entry', get_theme_mod( 'custom_uix_portfolio_cover_size_w', 475 ), get_theme_mod( 'custom_uix_portfolio_cover_size_h', 329 ), true );
 		add_image_size( 'uix-portfolio-gallery-post', get_theme_mod( 'custom_uix_portfolio_single_size_w', 1920 ), get_theme_mod( 'custom_uix_portfolio_single_size_h', 9999 ), false );
 

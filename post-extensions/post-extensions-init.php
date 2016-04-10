@@ -12,8 +12,6 @@
 function uix_portfolio_metaboxes( array $meta_boxes ) {
 
 
-
-
 	// Portfolio
 	$meta_boxes[] = array(
 		'id'			=> 'uix-portfolio-meta',

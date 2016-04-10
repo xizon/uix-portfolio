@@ -1,12 +1,5 @@
 <?php
 
-
-/**
- * Thumbnail support for portfolio posts
- *
- */
-add_theme_support( 'post-thumbnails', array( 'uix-portfolio' ) );
-
 /*
  * Removing a Meta Box
  * 
