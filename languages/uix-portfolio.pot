@@ -5,7 +5,7 @@ msgstr ""
 "Project-Id-Version: Uix Portfolio 1.0.0\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/tags/_s\n"
 "POT-Creation-Date: 2015-06-12 21:51:31+0000\n"
-"POT-Revision-Date: Sat Apr 02 2016 21:30:18 GMT+0800 (CST)\n"
+"POT-Revision-Date: Sun Apr 10 2016 22:24:13 GMT+0800 (CST)\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -46,44 +46,44 @@ msgstr ""
 msgid "https://uiux.cc"
 msgstr ""
 
-#: ../uix-portfolio.php:183 ../customizer-extras/options-init.php:54
+#: ../uix-portfolio.php:185 ../customizer-extras/options-init.php:54
 msgid "Uix Portfolio Settings"
 msgstr ""
 
-#: ../uix-portfolio.php:184 ../uix-portfolio.php:264
+#: ../uix-portfolio.php:186 ../uix-portfolio.php:293
 msgid "Settings"
 msgstr ""
 
-#: ../uix-portfolio.php:199 ../uix-portfolio.php:200
+#: ../uix-portfolio.php:201 ../uix-portfolio.php:202
 msgid "Helper"
 msgstr ""
 
-#: ../uix-portfolio.php:265 ../uix-portfolio.php:363 ../helper/settings.php:69
+#: ../uix-portfolio.php:294 ../uix-portfolio.php:392 ../helper/settings.php:69
 msgid "How to use?"
 msgstr ""
 
-#: ../uix-portfolio.php:362
+#: ../uix-portfolio.php:391
 msgid ""
 "Do you want to create a portfolio website with WordPress?  Learn how to add "
 "portfolio to your themes."
 msgstr ""
 
-#: ../uix-portfolio.php:366
+#: ../uix-portfolio.php:395
 #, php-format
 msgid "<a href=\"%1$s\">Hide Notice</a>"
 msgstr ""
 
-#: ../uix-portfolio.php:378
+#: ../uix-portfolio.php:407
 msgid ""
 "<strong>You need to create Uix Portfolio template files in your templates "
 "directory. You can create the files on the WordPress admin panel.</strong>"
 msgstr ""
 
-#: ../uix-portfolio.php:378 ../helper/tabs/usage.php:22
+#: ../uix-portfolio.php:407 ../helper/tabs/usage.php:22
 msgid "Create now!"
 msgstr ""
 
-#: ../uix-portfolio.php:378 ../helper/tabs/temp.php:27
+#: ../uix-portfolio.php:407 ../helper/tabs/temp.php:27
 msgid ""
 "As a workaround you can use FTP, access the Uix Portfolio template files "
 "path <code>/wp-content/plugins/uix-portfolio/theme_templates/</code> and "
@@ -91,36 +91,36 @@ msgid ""
 "content/themes/{your-theme}/</code>. "
 msgstr ""
 
-#: ../uix-portfolio.php:467
+#: ../uix-portfolio.php:496
 msgid "Primary Sidebar"
 msgstr ""
 
-#: ../uix-portfolio.php:469
+#: ../uix-portfolio.php:498
 msgid "Appears on posts and pages in the sidebar."
 msgstr ""
 
-#: ../uix-portfolio.php:558 ../uix-portfolio.php:622
+#: ../uix-portfolio.php:587 ../uix-portfolio.php:651
 msgid ""
 "<div class=\"notice notice-success\"><p>Operation successfully completed!"
 "</p></div>"
 msgstr ""
 
-#: ../uix-portfolio.php:560
+#: ../uix-portfolio.php:589
 msgid ""
 "<div class=\"notice notice-error\"><p><strong>There was a problem copying your "
 "template files:</strong> Please check your server settings. You can upload "
 "files to theme templates directory using FTP.</p></div>"
 msgstr ""
 
-#: ../uix-portfolio.php:775 ../inc/infinite-scroll.php:28
+#: ../uix-portfolio.php:822 ../inc/infinite-scroll.php:28
 msgid "Load More"
 msgstr ""
 
-#: ../uix-portfolio.php:911 ../uix-portfolio.php:919
+#: ../uix-portfolio.php:958 ../uix-portfolio.php:966
 msgid "Newer Posts"
 msgstr ""
 
-#: ../uix-portfolio.php:913 ../uix-portfolio.php:920
+#: ../uix-portfolio.php:960 ../uix-portfolio.php:967
 msgid "Older Posts"
 msgstr ""
 
@@ -318,7 +318,7 @@ msgid "OFF"
 msgstr ""
 
 #: ../customizer-extras/kirki/includes/class-kirki-toolkit.php:79 ../post-
-#: extensions/portfolio.php:92
+#: extensions/portfolio.php:85
 msgid "All"
 msgstr ""
 
@@ -689,6 +689,43 @@ msgstr ""
 msgid "Number of posts to show:"
 msgstr ""
 
+#. Name of the plugin
+msgid "Featured Image Column"
+msgstr ""
+
+#. URI of the plugin
+msgid "http://austin.passy.co/wordpress-plugins/featured-image-column"
+msgstr ""
+
+#. Description of the plugin
+msgid "Adds a column to the edit screen with the featured image if it exists."
+msgstr ""
+
+#. Author of the plugin
+msgid "Austin Passy"
+msgstr ""
+
+#. Author URI of the plugin
+msgid "http://austin.passy.co"
+msgstr ""
+
+#: ../inc/featured-image-column.php:70
+#, php-format
+msgid "by <a href=\"%s\">Austin Passy</a>"
+msgstr ""
+
+#: ../inc/featured-image-column.php:80
+msgid "Allowed Post Types"
+msgstr ""
+
+#: ../inc/featured-image-column.php:94
+msgid "By default all post types that support \"thumbnails\" are selected."
+msgstr ""
+
+#: ../inc/featured-image-column.php:219
+msgid "Image"
+msgstr ""
+
 #: ../inc/github-checker.php:120
 msgid "There is no changelog available."
 msgstr ""
@@ -714,105 +751,105 @@ msgstr ""
 msgid "Unknown update checker status \"%s\""
 msgstr ""
 
-#: ../post-extensions/portfolio.php:42
+#: ../post-extensions/portfolio.php:35
 msgid "Portfolio Item"
 msgstr ""
 
-#: ../post-extensions/portfolio.php:43 ../post-extensions/portfolio.php:46
+#: ../post-extensions/portfolio.php:36 ../post-extensions/portfolio.php:39
 msgid "Add New Item"
 msgstr ""
 
-#: ../post-extensions/portfolio.php:44
+#: ../post-extensions/portfolio.php:37
 msgid "Add New Portfolio Item"
 msgstr ""
 
-#: ../post-extensions/portfolio.php:45
+#: ../post-extensions/portfolio.php:38
 msgid "Edit Item"
 msgstr ""
 
-#: ../post-extensions/portfolio.php:47
+#: ../post-extensions/portfolio.php:40
 msgid "View Item"
 msgstr ""
 
-#: ../post-extensions/portfolio.php:48
+#: ../post-extensions/portfolio.php:41
 msgid "Search Items"
 msgstr ""
 
-#: ../post-extensions/portfolio.php:49
+#: ../post-extensions/portfolio.php:42
 msgid "No Items Found"
 msgstr ""
 
-#: ../post-extensions/portfolio.php:50
+#: ../post-extensions/portfolio.php:43
 msgid "No Items Found In Trash"
 msgstr ""
 
-#: ../post-extensions/portfolio.php:87 ../post-extensions/portfolio.php:89
+#: ../post-extensions/portfolio.php:80 ../post-extensions/portfolio.php:82
 msgid "Categories"
 msgstr ""
 
-#: ../post-extensions/portfolio.php:88 ../post-extensions/portfolio.php:224 ..
+#: ../post-extensions/portfolio.php:81 ../post-extensions/portfolio.php:217 ..
 #: /theme_templates/taxonomy-uix_portfolio_category.php:67
 msgid "Category"
 msgstr ""
 
-#: ../post-extensions/portfolio.php:90
+#: ../post-extensions/portfolio.php:83
 msgid "Search"
 msgstr ""
 
-#: ../post-extensions/portfolio.php:91
+#: ../post-extensions/portfolio.php:84
 msgid "Popular"
 msgstr ""
 
-#: ../post-extensions/portfolio.php:93 ../post-extensions/portfolio.php:94
+#: ../post-extensions/portfolio.php:86 ../post-extensions/portfolio.php:87
 msgid "Parent"
 msgstr ""
 
-#: ../post-extensions/portfolio.php:95 ../theme_templates/single-uix-portfolio.
+#: ../post-extensions/portfolio.php:88 ../theme_templates/single-uix-portfolio.
 #: php:80
 msgid "Edit"
 msgstr ""
 
-#: ../post-extensions/portfolio.php:96
+#: ../post-extensions/portfolio.php:89
 msgid "Update"
 msgstr ""
 
-#: ../post-extensions/portfolio.php:97
+#: ../post-extensions/portfolio.php:90
 msgid "Add New"
 msgstr ""
 
-#: ../post-extensions/portfolio.php:98
+#: ../post-extensions/portfolio.php:91
 msgid "New"
 msgstr ""
 
-#: ../post-extensions/portfolio.php:99
+#: ../post-extensions/portfolio.php:92
 msgid "Separate with commas"
 msgstr ""
 
-#: ../post-extensions/portfolio.php:100
+#: ../post-extensions/portfolio.php:93
 msgid "Add or remove"
 msgstr ""
 
-#: ../post-extensions/portfolio.php:101
+#: ../post-extensions/portfolio.php:94
 msgid "Choose from the most used"
 msgstr ""
 
-#: ../post-extensions/portfolio.php:222
+#: ../post-extensions/portfolio.php:215
 msgid "Thumbnail"
 msgstr ""
 
-#: ../post-extensions/portfolio.php:225
+#: ../post-extensions/portfolio.php:218
 msgid "Author"
 msgstr ""
 
-#: ../post-extensions/post-extensions-init.php:20
+#: ../post-extensions/post-extensions-init.php:18
 msgid "Item Settings"
 msgstr ""
 
-#: ../post-extensions/post-extensions-init.php:27
+#: ../post-extensions/post-extensions-init.php:25
 msgid "Video URL"
 msgstr ""
 
-#: ../post-extensions/post-extensions-init.php:28
+#: ../post-extensions/post-extensions-init.php:26
 msgid ""
 "Enter in a video URL that is compatible with WordPress's built-in oEmbed "
 "feature. E.g.,https://www.youtube.com/watch?v=abc"
