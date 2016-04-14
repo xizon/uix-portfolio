@@ -33,7 +33,11 @@ if ( is_singular() ) {
             foreach ( $attachments as $attachment ) :
                 $img_url	= wp_get_attachment_url( $attachment );
                 $img_alt	= get_post_meta( $attachment, '_wp_attachment_image_alt', true );
-                $img_html	= wp_get_attachment_image( $attachment, 'uix-portfolio-gallery-post' ); ?>
+                $img_html	= wp_get_attachment_image( $attachment, 'uix-portfolio-gallery-post' ); 
+				$img_html   = preg_replace( '/(width|height)=\"\d*\"\s/', '', $img_html );
+				
+				if ( !empty( $img_html ) ) {
+				?>
                 <li>
                     <?php
                     // Display image with lightbox
@@ -47,7 +51,10 @@ if ( is_singular() ) {
                         <?php echo $img_html; ?>
                     <?php } ?>
                 </li>
-            <?php endforeach; ?>
+            <?php 
+				}
+			endforeach; 
+			?>
     
 
 			</ul><!-- .slides -->
@@ -112,7 +119,7 @@ if ( is_singular() ) {
 														
 														echo preg_replace( '/(width|height)=\"\d*\"\s/', '', $img_html );
 														
-														break;
+														if ( !empty( $img_html ) ) break;
 														
 													endforeach; 
 
