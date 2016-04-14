@@ -5,7 +5,7 @@ msgstr ""
 "Project-Id-Version: Uix Portfolio 1.0.0\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/tags/_s\n"
 "POT-Creation-Date: 2015-06-12 21:51:31+0000\n"
-"POT-Revision-Date: Sun Apr 10 2016 22:24:13 GMT+0800 (CST)\n"
+"POT-Revision-Date: Thu Apr 14 2016 19:30:48 GMT+0800 (CST)\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -50,7 +50,7 @@ msgstr ""
 msgid "Uix Portfolio Settings"
 msgstr ""
 
-#: ../uix-portfolio.php:186 ../uix-portfolio.php:293
+#: ../uix-portfolio.php:186 ../uix-portfolio.php:296
 msgid "Settings"
 msgstr ""
 
@@ -58,32 +58,32 @@ msgstr ""
 msgid "Helper"
 msgstr ""
 
-#: ../uix-portfolio.php:294 ../uix-portfolio.php:392 ../helper/settings.php:69
+#: ../uix-portfolio.php:297 ../uix-portfolio.php:395 ../helper/settings.php:69
 msgid "How to use?"
 msgstr ""
 
-#: ../uix-portfolio.php:391
+#: ../uix-portfolio.php:394
 msgid ""
 "Do you want to create a portfolio website with WordPress?  Learn how to add "
 "portfolio to your themes."
 msgstr ""
 
-#: ../uix-portfolio.php:395
+#: ../uix-portfolio.php:398
 #, php-format
 msgid "<a href=\"%1$s\">Hide Notice</a>"
 msgstr ""
 
-#: ../uix-portfolio.php:407
+#: ../uix-portfolio.php:410
 msgid ""
 "<strong>You need to create Uix Portfolio template files in your templates "
 "directory. You can create the files on the WordPress admin panel.</strong>"
 msgstr ""
 
-#: ../uix-portfolio.php:407 ../helper/tabs/usage.php:22
+#: ../uix-portfolio.php:410 ../helper/tabs/usage.php:22
 msgid "Create now!"
 msgstr ""
 
-#: ../uix-portfolio.php:407 ../helper/tabs/temp.php:27
+#: ../uix-portfolio.php:410 ../helper/tabs/temp.php:27
 msgid ""
 "As a workaround you can use FTP, access the Uix Portfolio template files "
 "path <code>/wp-content/plugins/uix-portfolio/theme_templates/</code> and "
@@ -91,36 +91,36 @@ msgid ""
 "content/themes/{your-theme}/</code>. "
 msgstr ""
 
-#: ../uix-portfolio.php:496
+#: ../uix-portfolio.php:499
 msgid "Primary Sidebar"
 msgstr ""
 
-#: ../uix-portfolio.php:498
+#: ../uix-portfolio.php:501
 msgid "Appears on posts and pages in the sidebar."
 msgstr ""
 
-#: ../uix-portfolio.php:587 ../uix-portfolio.php:651
+#: ../uix-portfolio.php:590 ../uix-portfolio.php:654
 msgid ""
 "<div class=\"notice notice-success\"><p>Operation successfully completed!"
 "</p></div>"
 msgstr ""
 
-#: ../uix-portfolio.php:589
+#: ../uix-portfolio.php:592
 msgid ""
 "<div class=\"notice notice-error\"><p><strong>There was a problem copying your "
 "template files:</strong> Please check your server settings. You can upload "
 "files to theme templates directory using FTP.</p></div>"
 msgstr ""
 
-#: ../uix-portfolio.php:822 ../inc/infinite-scroll.php:28
+#: ../uix-portfolio.php:825 ../inc/infinite-scroll.php:28
 msgid "Load More"
 msgstr ""
 
-#: ../uix-portfolio.php:958 ../uix-portfolio.php:966
+#: ../uix-portfolio.php:961 ../uix-portfolio.php:969
 msgid "Newer Posts"
 msgstr ""
 
-#: ../uix-portfolio.php:960 ../uix-portfolio.php:967
+#: ../uix-portfolio.php:963 ../uix-portfolio.php:970
 msgid "Older Posts"
 msgstr ""
 
@@ -503,38 +503,42 @@ msgid "Features"
 msgstr ""
 
 #: ../helper/tabs/about.php:21
-msgid "* Create a template with page navigation to display all portfolio items."
+msgid "* List of Retina-Ready."
 msgstr ""
 
 #: ../helper/tabs/about.php:22
-msgid "* Regenerate thumbnails after changing their size."
+msgid "* Create a template with page navigation to display all portfolio items."
 msgstr ""
 
 #: ../helper/tabs/about.php:23
-msgid "* Adding Categories support to a Custom Post Type in WordPress."
+msgid "* Regenerate thumbnails after changing their size."
 msgstr ""
 
 #: ../helper/tabs/about.php:24
-msgid "* It contains about three different layouts to choose from."
+msgid "* Adding Categories support to a Custom Post Type in WordPress."
 msgstr ""
 
 #: ../helper/tabs/about.php:25
-msgid "* You can create portfolio item with support for post formats."
+msgid "* It contains about three different layouts to choose from."
 msgstr ""
 
 #: ../helper/tabs/about.php:26
-msgid "* Portfolio List Pages support the infinite scroll functionality."
+msgid "* You can create portfolio item with support for post formats."
 msgstr ""
 
 #: ../helper/tabs/about.php:27
-msgid "* There are some simple options to the theme customizer."
+msgid "* Portfolio List Pages support the infinite scroll functionality."
 msgstr ""
 
 #: ../helper/tabs/about.php:28
-msgid "* Filterable Portfolio to display portfolio items to your site."
+msgid "* There are some simple options to the theme customizer."
 msgstr ""
 
 #: ../helper/tabs/about.php:29
+msgid "* Filterable Portfolio to display portfolio items to your site."
+msgstr ""
+
+#: ../helper/tabs/about.php:30
 msgid ""
 "* The plugin supports a powerful Masonry grid layout  that will present your "
 "content in a dynamic, fluid fashion that looks and feels great both on "

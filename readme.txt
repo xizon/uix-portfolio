@@ -21,6 +21,7 @@ This plugin registers a custom post type for portfolio items. It also registers 
 
 = Features =
 
+* List of Retina-Ready.
 * Create a template with page navigation to display all portfolio items. 
 * Regenerate thumbnails after changing their size. 
 * Adding Categories support to a Custom Post Type in WordPress. 

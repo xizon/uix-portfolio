@@ -52,6 +52,7 @@ class UixPortfolio {
 		add_action( 'wp_head', array( __CLASS__, 'gallery_app' ) );
 		add_filter( 'body_class', array( __CLASS__, 'new_class' ) );
 		add_action( 'widgets_init', array( __CLASS__, 'register_my_widget' ) );
+		add_filter( 'post_thumbnail_html', array( __CLASS__, 'remove_thumbnail_dimensions' ), 10, 4 );
 		
 	
 
@@ -170,6 +171,23 @@ class UixPortfolio {
 
 	}
 	
+	/*
+	 
+	 * Filter to remove image dimension attributes 
+	 *
+	 * 
+	 *
+	 */
+	public static function remove_thumbnail_dimensions( $html, $post_id, $post_image_id, $post_thumbnail ) {
+	
+		if ( $post_thumbnail == 'uix-portfolio-entry' || $post_thumbnail == 'uix-portfolio-retina-entry' ){
+			$html = preg_replace( '/(width|height)=\"\d*\"\s/', "", $html );
+		}
+		return $html;
+
+	}
+	
+
 	
 	/*
 	 * Create customizable menu in backstage  panel
@@ -266,6 +284,9 @@ class UixPortfolio {
 		//---
 		add_image_size( 'uix-portfolio-entry', get_theme_mod( 'custom_uix_portfolio_cover_size_w', 475 ), get_theme_mod( 'custom_uix_portfolio_cover_size_h', 329 ), true );
 		add_image_size( 'uix-portfolio-gallery-post', get_theme_mod( 'custom_uix_portfolio_single_size_w', 1920 ), get_theme_mod( 'custom_uix_portfolio_single_size_h', 9999 ), false );
+		
+		//--- Add image sizes for retina
+		add_image_size( 'uix-portfolio-retina-entry', get_theme_mod( 'custom_uix_portfolio_cover_size_w', 475 )*2, get_theme_mod( 'custom_uix_portfolio_cover_size_h', 329 )*2, true );
 	
 	}
 	

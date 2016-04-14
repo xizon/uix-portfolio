@@ -90,6 +90,7 @@ if ( is_singular() ) {
 												the_post_thumbnail( 'uix-portfolio-entry', array(
 													'alt' => get_the_title(),
 													'class'	=> 'portfolio-img',
+													'data-uix-portfolio-retina' => wp_get_attachment_image_src( get_post_thumbnail_id( get_the_ID() ), 'uix-portfolio-retina-entry' )[0],
 												) ); 												
 												
 												
@@ -102,9 +103,14 @@ if ( is_singular() ) {
 													foreach ( $attachments as $attachment ) :
 														$img_url	= wp_get_attachment_url( $attachment );
 														$img_alt	= get_post_meta( $attachment, '_wp_attachment_image_alt', true );
-														$img_html	= wp_get_attachment_image( $attachment, 'uix-portfolio-entry' ); 
+														$img_html	= wp_get_attachment_image( $attachment, 'uix-portfolio-entry', false, array(
+																								'alt' => get_the_title(),
+																								'class'	=> 'portfolio-img',
+																								'data-uix-portfolio-retina' => wp_get_attachment_image_src( $attachment, 'uix-portfolio-retina-entry' )[0],
+																							   )
+																							); 
 														
-														echo $img_html;
+														echo preg_replace( '/(width|height)=\"\d*\"\s/', '', $img_html );
 														
 														break;
 														

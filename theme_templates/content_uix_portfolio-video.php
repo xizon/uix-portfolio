@@ -48,6 +48,7 @@ if ( is_singular() ) {
                                     the_post_thumbnail( 'uix-portfolio-entry', array(
                                         'alt' => get_the_title(),
                                         'class'	=> 'portfolio-img',
+										'data-uix-portfolio-retina' => wp_get_attachment_image_src( get_post_thumbnail_id( get_the_ID() ), 'uix-portfolio-retina-entry' )[0],
                                     ) ); 
                                     ?>
                                     

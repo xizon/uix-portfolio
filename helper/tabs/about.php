@@ -18,6 +18,7 @@ if( !isset( $_GET[ 'tab' ] ) || $_GET[ 'tab' ] == 'about' ) {
         <?php _e( 'Features', 'uix-portfolio' ); ?>
         </h3>  
         <p>
+        <?php _e( '* List of Retina-Ready.', 'uix-portfolio' ); ?><br>
         <?php _e( '* Create a template with page navigation to display all portfolio items.', 'uix-portfolio' ); ?><br>
         <?php _e( '* Regenerate thumbnails after changing their size.', 'uix-portfolio' ); ?><br>
         <?php _e( '* Adding Categories support to a Custom Post Type in WordPress.', 'uix-portfolio' ); ?><br>
