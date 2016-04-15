@@ -263,3 +263,4 @@ function uix_portfolio_taxonomy_cols_display( $columns, $post_id ) {
 	}
 }
 add_action( 'manage_uix-portfolio_posts_custom_column', 'uix_portfolio_taxonomy_cols_display', 10, 2 );
+

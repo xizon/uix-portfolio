@@ -170,7 +170,7 @@ class UixPortfolio {
 		return $classes;
 
 	}
-	
+
 	/*
 	 
 	 * Filter to remove image dimension attributes 

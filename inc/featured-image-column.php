@@ -200,8 +200,8 @@ if ( !class_exists( 'Featured_Image_Column' ) ) {
 		 * @since 	0.1
 		 */
 		function style() {
-			wp_register_style( 'featured-image-column', apply_filters( 'featured_image_column_css', plugin_dir_url( __FILE__ ) . 'css/column.css' ), null, self::version );
-			wp_enqueue_style( 'featured-image-column' );
+			//wp_register_style( 'featured-image-column', apply_filters( 'featured_image_column_css', plugin_dir_url( __FILE__ ) . 'css/column.css' ), null, self::version );
+			//wp_enqueue_style( 'featured-image-column' );
 		}
 		
 		/**
