@@ -5,7 +5,7 @@ msgstr ""
 "Project-Id-Version: Uix Portfolio 1.0.0\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/tags/_s\n"
 "POT-Creation-Date: 2015-06-12 21:51:31+0000\n"
-"POT-Revision-Date: Thu Apr 14 2016 19:30:48 GMT+0800 (CST)\n"
+"POT-Revision-Date: Wed Apr 20 2016 02:39:24 GMT+0800 (CST)\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -46,44 +46,44 @@ msgstr ""
 msgid "https://uiux.cc"
 msgstr ""
 
-#: ../uix-portfolio.php:185 ../customizer-extras/options-init.php:54
+#: ../uix-portfolio.php:203 ../customizer-extras/options-init.php:54
 msgid "Uix Portfolio Settings"
 msgstr ""
 
-#: ../uix-portfolio.php:186 ../uix-portfolio.php:296
+#: ../uix-portfolio.php:204 ../uix-portfolio.php:314
 msgid "Settings"
 msgstr ""
 
-#: ../uix-portfolio.php:201 ../uix-portfolio.php:202
+#: ../uix-portfolio.php:219 ../uix-portfolio.php:220
 msgid "Helper"
 msgstr ""
 
-#: ../uix-portfolio.php:297 ../uix-portfolio.php:395 ../helper/settings.php:69
+#: ../uix-portfolio.php:315 ../uix-portfolio.php:413 ../helper/settings.php:69
 msgid "How to use?"
 msgstr ""
 
-#: ../uix-portfolio.php:394
+#: ../uix-portfolio.php:412
 msgid ""
 "Do you want to create a portfolio website with WordPress?  Learn how to add "
 "portfolio to your themes."
 msgstr ""
 
-#: ../uix-portfolio.php:398
+#: ../uix-portfolio.php:416
 #, php-format
 msgid "<a href=\"%1$s\">Hide Notice</a>"
 msgstr ""
 
-#: ../uix-portfolio.php:410
+#: ../uix-portfolio.php:428
 msgid ""
 "<strong>You need to create Uix Portfolio template files in your templates "
 "directory. You can create the files on the WordPress admin panel.</strong>"
 msgstr ""
 
-#: ../uix-portfolio.php:410 ../helper/tabs/usage.php:22
+#: ../uix-portfolio.php:428 ../helper/tabs/usage.php:22
 msgid "Create now!"
 msgstr ""
 
-#: ../uix-portfolio.php:410 ../helper/tabs/temp.php:27
+#: ../uix-portfolio.php:428 ../helper/tabs/temp.php:27
 msgid ""
 "As a workaround you can use FTP, access the Uix Portfolio template files "
 "path <code>/wp-content/plugins/uix-portfolio/theme_templates/</code> and "
@@ -91,36 +91,36 @@ msgid ""
 "content/themes/{your-theme}/</code>. "
 msgstr ""
 
-#: ../uix-portfolio.php:499
+#: ../uix-portfolio.php:517
 msgid "Primary Sidebar"
 msgstr ""
 
-#: ../uix-portfolio.php:501
+#: ../uix-portfolio.php:519
 msgid "Appears on posts and pages in the sidebar."
 msgstr ""
 
-#: ../uix-portfolio.php:590 ../uix-portfolio.php:654
+#: ../uix-portfolio.php:608 ../uix-portfolio.php:672
 msgid ""
 "<div class=\"notice notice-success\"><p>Operation successfully completed!"
 "</p></div>"
 msgstr ""
 
-#: ../uix-portfolio.php:592
+#: ../uix-portfolio.php:610
 msgid ""
 "<div class=\"notice notice-error\"><p><strong>There was a problem copying your "
 "template files:</strong> Please check your server settings. You can upload "
 "files to theme templates directory using FTP.</p></div>"
 msgstr ""
 
-#: ../uix-portfolio.php:825 ../inc/infinite-scroll.php:28
+#: ../uix-portfolio.php:843 ../inc/infinite-scroll.php:28
 msgid "Load More"
 msgstr ""
 
-#: ../uix-portfolio.php:961 ../uix-portfolio.php:969
+#: ../uix-portfolio.php:979 ../uix-portfolio.php:987
 msgid "Newer Posts"
 msgstr ""
 
-#: ../uix-portfolio.php:963 ../uix-portfolio.php:970
+#: ../uix-portfolio.php:981 ../uix-portfolio.php:988
 msgid "Older Posts"
 msgstr ""
 
@@ -738,19 +738,19 @@ msgstr ""
 msgid "Loading..."
 msgstr ""
 
-#: ../inc/plugin-update-checker.php:637
+#: ../inc/plugin-update-checker.php:635
 msgid "Check for updates"
 msgstr ""
 
-#: ../inc/plugin-update-checker.php:681
+#: ../inc/plugin-update-checker.php:679
 msgid "This plugin is up to date."
 msgstr ""
 
-#: ../inc/plugin-update-checker.php:683
+#: ../inc/plugin-update-checker.php:681
 msgid "A new version of this plugin is available."
 msgstr ""
 
-#: ../inc/plugin-update-checker.php:685
+#: ../inc/plugin-update-checker.php:683
 #, php-format
 msgid "Unknown update checker status \"%s\""
 msgstr ""
@@ -845,15 +845,15 @@ msgstr ""
 msgid "Author"
 msgstr ""
 
-#: ../post-extensions/post-extensions-init.php:18
-msgid "Item Settings"
+#: ../post-extensions/post-extensions-init.php:70
+msgid "Video Settings"
 msgstr ""
 
-#: ../post-extensions/post-extensions-init.php:25
+#: ../post-extensions/post-extensions-init.php:77
 msgid "Video URL"
 msgstr ""
 
-#: ../post-extensions/post-extensions-init.php:26
+#: ../post-extensions/post-extensions-init.php:78
 msgid ""
 "Enter in a video URL that is compatible with WordPress's built-in oEmbed "
 "feature. E.g.,https://www.youtube.com/watch?v=abc"
