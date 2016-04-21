@@ -20,6 +20,7 @@ if( isset( $_GET[ 'tab' ] ) && $_GET[ 'tab' ] == 'credits' ) {
             <li><a href="https://github.com/woothemes/FlexSlider" target="_blank" rel="nofollow">Flexslider</a></li>
             <li><a href="http://masonry.desandro.com/v2/index.html" target="_blank" rel="nofollow">Masonry</a></li>
             <li><a href="http://www.no-margin-for-errors.com/projects/prettyphoto-jquery-lightbox-clone/#prettyPhoto" target="_blank" rel="nofollow">prettyPhoto</a></li>
+            <li><a href="http://frostywebdesigns.com/" target="_blank" rel="nofollow">Featured Image Column</a></li>
             <li><a href="https://github.com/Vestride/Shuffle" target="_blank" rel="nofollow">Shuffle (filtering and sorting)</a></li>
             
 
