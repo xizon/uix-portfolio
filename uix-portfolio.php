@@ -80,6 +80,9 @@ class UixPortfolio {
 			// Shuffle
 			wp_enqueue_script( 'js-shuffle-3.1.1', self::plug_directory() .'assets/js/jquery.shuffle.js', array( 'jquery' ), '3.1.1', true );
 			
+			// Waitforimages
+			wp_enqueue_script( 'js-waitforimages-1.4', self::plug_directory() .'assets/js/jquery.waitforimages.js', array( 'jquery' ), '1.4', true );
+	
 			// Masonry
 			wp_enqueue_script( 'js-masonry-2.1.08', self::plug_directory() .'assets/js/masonry.js', array( 'jquery' ), '2.1.08', true );
 			
