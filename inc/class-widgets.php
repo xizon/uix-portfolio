@@ -43,32 +43,40 @@ class Uix_Portfolio_Recent_Portfolio_Widget extends WP_Widget {
 			<h4 class="widget-title recent-portfolio">
 				<?php echo esc_html( $title ); ?>
 			</h4>
-			<ul>
+			<ul class="uix-portfolio-widget">
 
 				<?php
 					while ( $recent_portfolio->have_posts() ) :
 						$recent_portfolio->the_post();
 						$tmp_more = $GLOBALS['more'];
 						$GLOBALS['more'] = 0;
+						
+						$li_class = '';
+						if ( !has_post_thumbnail() ) $li_class = 'nothumb';
+							
+						
 				?>
-				<li class="recent-portfolio-item">
-                      <a href="<?php the_permalink(); ?>">
-						  <?php 
-                            if ( has_post_thumbnail() ) {
+				<li class="uix-portfolio-recent-item <?php echo $li_class; ?>">
+                      
+						  <?php if ( has_post_thumbnail() ) { ?>
+                           <div class="item-thumb">
+                               <a href="<?php the_permalink(); ?>">
+                           <?php
                                 the_post_thumbnail( 'uix-portfolio-entry', array(
                                     'alt' => get_the_title(),
-                                    'class'	=> 'portfolio-img',
+									'data-uix-portfolio-retina' => wp_get_attachment_image_src( get_post_thumbnail_id( get_the_ID() ), 'uix-portfolio-retina-entry' )[0],
                                 ) ); 
-								   
-								   echo '<p>'.get_the_title().'</p>';
-								
-                            } else {
-                                the_title();
-                                
-                            }
-							
-						   ?>
-                       </a>
+							?>
+                                </a>
+                            </div>
+                            <?php } ?>
+                       
+                       <div class="item-info">
+                           <div class="item-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></div>
+                           <div class="item-data"><?php the_date(); ?></a></div>
+
+                       </div>
+                     
     
 				</li>
 				<?php endwhile; ?>
