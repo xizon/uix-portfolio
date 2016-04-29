@@ -5,7 +5,7 @@ msgstr ""
 "Project-Id-Version: Uix Portfolio 1.0.0\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/tags/_s\n"
 "POT-Creation-Date: 2015-06-12 21:51:31+0000\n"
-"POT-Revision-Date: Wed Apr 20 2016 02:39:24 GMT+0800 (CST)\n"
+"POT-Revision-Date: Fri Apr 29 2016 20:33:43 GMT+0800 (CST)\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -46,44 +46,44 @@ msgstr ""
 msgid "https://uiux.cc"
 msgstr ""
 
-#: ../uix-portfolio.php:203 ../customizer-extras/options-init.php:54
+#: ../uix-portfolio.php:207 ../customizer-extras/options-init.php:54
 msgid "Uix Portfolio Settings"
 msgstr ""
 
-#: ../uix-portfolio.php:204 ../uix-portfolio.php:314
+#: ../uix-portfolio.php:208 ../uix-portfolio.php:338
 msgid "Settings"
 msgstr ""
 
-#: ../uix-portfolio.php:219 ../uix-portfolio.php:220
+#: ../uix-portfolio.php:223 ../uix-portfolio.php:224
 msgid "Helper"
 msgstr ""
 
-#: ../uix-portfolio.php:315 ../uix-portfolio.php:413 ../helper/settings.php:69
+#: ../uix-portfolio.php:339 ../uix-portfolio.php:437 ../helper/settings.php:69
 msgid "How to use?"
 msgstr ""
 
-#: ../uix-portfolio.php:412
+#: ../uix-portfolio.php:436
 msgid ""
 "Do you want to create a portfolio website with WordPress?  Learn how to add "
 "portfolio to your themes."
 msgstr ""
 
-#: ../uix-portfolio.php:416
+#: ../uix-portfolio.php:440
 #, php-format
 msgid "<a href=\"%1$s\">Hide Notice</a>"
 msgstr ""
 
-#: ../uix-portfolio.php:428
+#: ../uix-portfolio.php:452
 msgid ""
 "<strong>You need to create Uix Portfolio template files in your templates "
 "directory. You can create the files on the WordPress admin panel.</strong>"
 msgstr ""
 
-#: ../uix-portfolio.php:428 ../helper/tabs/usage.php:22
+#: ../uix-portfolio.php:452 ../helper/tabs/usage.php:22
 msgid "Create now!"
 msgstr ""
 
-#: ../uix-portfolio.php:428 ../helper/tabs/temp.php:27
+#: ../uix-portfolio.php:452 ../helper/tabs/temp.php:27
 msgid ""
 "As a workaround you can use FTP, access the Uix Portfolio template files "
 "path <code>/wp-content/plugins/uix-portfolio/theme_templates/</code> and "
@@ -91,36 +91,36 @@ msgid ""
 "content/themes/{your-theme}/</code>. "
 msgstr ""
 
-#: ../uix-portfolio.php:517
+#: ../uix-portfolio.php:541
 msgid "Primary Sidebar"
 msgstr ""
 
-#: ../uix-portfolio.php:519
+#: ../uix-portfolio.php:543
 msgid "Appears on posts and pages in the sidebar."
 msgstr ""
 
-#: ../uix-portfolio.php:608 ../uix-portfolio.php:672
+#: ../uix-portfolio.php:632 ../uix-portfolio.php:696
 msgid ""
 "<div class=\"notice notice-success\"><p>Operation successfully completed!"
 "</p></div>"
 msgstr ""
 
-#: ../uix-portfolio.php:610
+#: ../uix-portfolio.php:634
 msgid ""
 "<div class=\"notice notice-error\"><p><strong>There was a problem copying your "
 "template files:</strong> Please check your server settings. You can upload "
 "files to theme templates directory using FTP.</p></div>"
 msgstr ""
 
-#: ../uix-portfolio.php:843 ../inc/infinite-scroll.php:28
+#: ../uix-portfolio.php:867 ../inc/infinite-scroll.php:28
 msgid "Load More"
 msgstr ""
 
-#: ../uix-portfolio.php:979 ../uix-portfolio.php:987
+#: ../uix-portfolio.php:1003 ../uix-portfolio.php:1011
 msgid "Newer Posts"
 msgstr ""
 
-#: ../uix-portfolio.php:981 ../uix-portfolio.php:988
+#: ../uix-portfolio.php:1005 ../uix-portfolio.php:1012
 msgid "Older Posts"
 msgstr ""
 
@@ -132,60 +132,72 @@ msgstr ""
 msgid "Portfolio Layout"
 msgstr ""
 
-#: ../customizer-extras/options-init.php:106
+#: ../customizer-extras/options-init.php:104
+msgid "Cover Photo Size"
+msgstr ""
+
+#: ../customizer-extras/options-init.php:110
+msgid "Large"
+msgstr ""
+
+#: ../customizer-extras/options-init.php:111
+msgid "Small"
+msgstr ""
+
+#: ../customizer-extras/options-init.php:119
 msgid "Add Infinite Scroll to Your Portfolio"
 msgstr ""
 
-#: ../customizer-extras/options-init.php:107
+#: ../customizer-extras/options-init.php:120
 msgid ""
 "Automatically append the next page of posts (via AJAX) to your page when a "
 "user scrolls to the bottom or clicks button of loading from the bottom."
 msgstr ""
 
-#: ../customizer-extras/options-init.php:119
+#: ../customizer-extras/options-init.php:132
 msgid "Infinite Scrolling Occurs when You Scroll to The Bottom"
 msgstr ""
 
-#: ../customizer-extras/options-init.php:120
+#: ../customizer-extras/options-init.php:133
 msgid ""
 "Close to the bottom the refresh occurs, and this option acts on posts. When "
 "this option is enabled, you will see the effect."
 msgstr ""
 
-#: ../customizer-extras/options-init.php:131
+#: ../customizer-extras/options-init.php:144
 msgid "Image Size for Cover Thumbnails"
 msgstr ""
 
-#: ../customizer-extras/options-init.php:143 ../customizer-extras/options-init.
-#: php:174
+#: ../customizer-extras/options-init.php:156 ../customizer-extras/options-init.
+#: php:187
 msgid "Max Width (in px)"
 msgstr ""
 
-#: ../customizer-extras/options-init.php:153 ../customizer-extras/options-init.
-#: php:184
+#: ../customizer-extras/options-init.php:166 ../customizer-extras/options-init.
+#: php:197
 msgid "Max Height (in px)"
 msgstr ""
 
-#: ../customizer-extras/options-init.php:162
+#: ../customizer-extras/options-init.php:175
 msgid "Image Size for Entry"
 msgstr ""
 
-#: ../customizer-extras/options-init.php:225
+#: ../customizer-extras/options-init.php:238
 msgid "Close"
 msgstr ""
 
-#: ../customizer-extras/options-init.php:287
+#: ../customizer-extras/options-init.php:300
 msgid "Custom CSS"
 msgstr ""
 
-#: ../customizer-extras/options-init.php:288
+#: ../customizer-extras/options-init.php:301
 msgid ""
 "You can overview the original styles to overwrite it. It will be on creating "
 "new styles to your website, without modifying original <code>.css</code> "
 "files."
 msgstr ""
 
-#: ../customizer-extras/options-init.php:291
+#: ../customizer-extras/options-init.php:304
 msgid "CSS file root directory:"
 msgstr ""
 
@@ -685,48 +697,33 @@ msgstr ""
 msgid "Recent Portfolio"
 msgstr ""
 
-#: ../inc/class-widgets.php:112
+#: ../inc/class-widgets.php:120
 msgid "Title:"
 msgstr ""
 
-#: ../inc/class-widgets.php:115
+#: ../inc/class-widgets.php:123
 msgid "Number of posts to show:"
 msgstr ""
 
 #. Name of the plugin
+#: ../inc/featured-image-column.php:63
 msgid "Featured Image Column"
 msgstr ""
 
-#. URI of the plugin
-msgid "http://austin.passy.co/wordpress-plugins/featured-image-column"
-msgstr ""
-
-#. Description of the plugin
-msgid "Adds a column to the edit screen with the featured image if it exists."
-msgstr ""
-
-#. Author of the plugin
-msgid "Austin Passy"
-msgstr ""
-
-#. Author URI of the plugin
-msgid "http://austin.passy.co"
-msgstr ""
-
-#: ../inc/featured-image-column.php:70
+#: ../inc/featured-image-column.php:64
 #, php-format
 msgid "by <a href=\"%s\">Austin Passy</a>"
 msgstr ""
 
-#: ../inc/featured-image-column.php:80
+#: ../inc/featured-image-column.php:74
 msgid "Allowed Post Types"
 msgstr ""
 
-#: ../inc/featured-image-column.php:94
+#: ../inc/featured-image-column.php:88
 msgid "By default all post types that support \"thumbnails\" are selected."
 msgstr ""
 
-#: ../inc/featured-image-column.php:219
+#: ../inc/featured-image-column.php:213
 msgid "Image"
 msgstr ""
 
@@ -809,7 +806,7 @@ msgid "Parent"
 msgstr ""
 
 #: ../post-extensions/portfolio.php:88 ../theme_templates/single-uix-portfolio.
-#: php:80
+#: php:62
 msgid "Edit"
 msgstr ""
 
@@ -972,10 +969,14 @@ msgstr ""
 msgid "Begin activating plugin"
 msgstr ""
 
-#: ../theme_templates/single-uix-portfolio.php:101
+#: ../theme_templates/single-uix-portfolio.php:52
 msgid "Previous Post"
 msgstr ""
 
-#: ../theme_templates/single-uix-portfolio.php:102
+#: ../theme_templates/single-uix-portfolio.php:53
 msgid "Next Post"
+msgstr ""
+
+#: ../theme_templates/single-uix-portfolio.php:88
+msgid "views"
 msgstr ""

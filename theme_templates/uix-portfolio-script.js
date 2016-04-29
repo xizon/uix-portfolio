@@ -37,6 +37,23 @@
 			 slideshow:3000,
 			 utoplay_slideshow: false
 		 });
+		 
+		/*! 
+		 * ************************************
+		 * Fixed height for post list
+		 *************************************
+		 */
+		$( '.uix-portfolio-tiles' ).not( '#uix-portfolio-masonry-gallery' ).waitForImages(function() {
+			var th = $( '.uix-portfolio-tiles .item .image img:first' ).height();
+		
+			if ( th > 0 ) {
+				$( '.uix-portfolio-tiles .item-video > .image' ).each( function() {	
+					$( this ).css( 'height', th + 'px' );
+				});
+	
+			}
+			
+		});
 		
 		
 		/*! 

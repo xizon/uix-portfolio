@@ -73,7 +73,7 @@ class Uix_Portfolio_Recent_Portfolio_Widget extends WP_Widget {
                        
                        <div class="item-info">
                            <div class="item-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></div>
-                           <div class="item-data"><?php the_date(); ?></a></div>
+                           <div class="item-date"><?php the_date(); ?></a></div>
 
                        </div>
                      

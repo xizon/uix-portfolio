@@ -34,7 +34,7 @@ if ( !function_exists( 'uix_portfolio_masonry_init' ) ) {
 				
 				masonryObj.waitForImages(function() {
 				  masonryObj.masonry({
-					itemSelector: '.portfolio-item'
+					itemSelector: '.item'
 				  });
 				}); 
 			

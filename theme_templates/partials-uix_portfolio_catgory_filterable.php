@@ -26,7 +26,7 @@ wp_list_categories(array(
 	'exclude'            => '', //Sets the Categories to be excluded. This must be in the form of an array (ex: 1, 2, 3).
 	'exclude_tree'       => '',//Exclude category-tree from the results. This parameter takes a comma-separated list of category ids. The parameter include must be empty. 
 	'include'            => '',//Only include the categories detailed in a comma-separated list by category id.
-	'hierarchical'       => 1, //Displays the children Categories in a hierarchical order under its Category parent  -->  1 (True - default) 0 (False)
+	'hierarchical'       => 0, //Displays the children Categories in a hierarchical order under its Category parent  -->  1 (True - default) 0 (False)
 	'title_li'           => '', //Set the title and style of the outer list item. Defaults to "Categories". If present but empty, the outer list item will not be displayed. 
 	'show_option_none'   => __( 'No categories', 'uix-portfolio'), //Set the text to show when no categories are listed. Defaults to "No categories".
 	'number'             => null, //Sets the number of Categories to display. This causes the SQL LIMIT value to be defined. Default to no LIMIT.

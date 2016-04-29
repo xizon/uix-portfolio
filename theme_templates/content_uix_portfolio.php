@@ -104,14 +104,9 @@ if ( is_singular() ) {
     $cat_termlist = get_the_term_list( get_the_ID(), 'uix_portfolio_category', '', ', ', '' );
 ?>
 
-    <div class="portfolio-item portfolio-item-<?php echo $wp_count; ?> <?php echo UixPortfolio::cat_class( $cat_termlist ); ?> infinite-scroll-list" <?php echo UixPortfolio::cat_class_filter( $cat_termlist ); ?> >
-    
-         <div id="post-<?php the_ID(); ?>">
-         
-             <div class="item-screenshot">
-                <a class="featured-image" href="<?php echo esc_url( get_permalink() );?>" title="<?php echo esc_attr( get_the_title() ); ?>">
-                    <figure>
-                       
+     <div id="post-<?php the_ID(); ?>" class="item item-<?php echo $wp_count; ?> <?php echo UixPortfolio::cat_class( $cat_termlist ); ?> infinite-scroll-list" <?php echo UixPortfolio::cat_class_filter( $cat_termlist ); ?>>
+        <span class="image">
+            <a href="<?php echo esc_url( get_permalink() );?>" title="<?php echo esc_attr( get_the_title() ); ?>">
 						 <?php if ( has_post_thumbnail()) { ?>
                       
                                 <?php
@@ -156,26 +151,25 @@ if ( is_singular() ) {
 							    ?>
                          
                          <?php } ?>
-                       
-                     
-                        <figcaption>
-                            <p>
-                            <?php the_excerpt(); ?>
-                            </p>
-                        </figcaption>
-                    </figure>
-                
-                </a>
-            </div>
-            <h3 class="portfolio-entry-title">
-                <a href="<?php echo esc_url( get_permalink() );?>" title="<?php echo esc_attr( get_the_title() ); ?>">
-                   <?php the_title();?>
-                </a>
-            </h3>
+            </a>
+        </span>
         
-        </div><!-- #post-## -->
 
-    </div>
+        <h3><a href="<?php echo esc_url( get_permalink() );?>" title="<?php echo esc_attr( get_the_title() ); ?>"><?php the_title();?></a>
+        </h3>
+
+        
+        <?php if ( has_excerpt() ) {  ?>
+            <div class="content">
+             <a href="<?php echo esc_url( get_permalink() );?>" title="<?php echo esc_attr( get_the_title() ); ?>">
+             <?php the_excerpt(); ?>
+             </a>
+            </div>
+        <?php } ?>
+
+    </div><!-- /.item -->
+
+
     
 
 

@@ -32,7 +32,7 @@ if ( !function_exists( 'uix_portfolio_filterable_init' ) ) {
 				 */
 				var filterBox = $( '#uix-portfolio-filter-stage' ),
 					filterNav = $( '#uix-portfolio-cat-list-filter' ),
-					filterItemSelector = '.portfolio-item';
+					filterItemSelector = '.item';
 				
 				
 				 filterBox.shuffle({

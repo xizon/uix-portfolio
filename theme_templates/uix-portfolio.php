@@ -119,7 +119,10 @@ get_header(); ?>
         
                             <!-- ==================  Post list ==================  -->
                           
-                            <div class="uix-portfolio-list" <?php echo $filterable_id.$masonry_id; ?>>
+                            <div class="uix-portfolio-tiles <?php if ( get_theme_mod( 'custom_uix_portfolio_coversize', 'large' ) == 'small' ) { echo 'small'; }; ?>" <?php echo $filterable_id.$masonry_id; ?>>
+                            
+                            
+                            
                             
                             <?php echo $infinitescroll_section_1; ?> 
                             
@@ -163,18 +166,12 @@ get_header(); ?>
                             
                             <?php echo $infinitescroll_section_2; ?> 
                             
-                            </div><!-- /.uix-portfolio-list -->
+                            </div><!-- /.uix-portfolio-tiles -->
                                 
                          
                             <!-- ==================  /Post list ==================  -->
                             
-                            
-                             
-                             
-                             
-                             
-                    
-                            
+                     
                             <!-- ==================  Pagination ==================  -->
                             <div class="clear"></div>
                             <div class="uix-portfolio-pagination">
@@ -205,7 +202,7 @@ get_header(); ?>
                          
             </section>
 
-    </div><!-- /.container -->
+    </div><!-- /.uix-portfolio-container -->
 
 
 
