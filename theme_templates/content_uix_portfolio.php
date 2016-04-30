@@ -161,9 +161,8 @@ if ( is_singular() ) {
         
         <?php if ( has_excerpt() ) {  ?>
             <div class="content">
-             <a href="<?php echo esc_url( get_permalink() );?>" title="<?php echo esc_attr( get_the_title() ); ?>">
              <?php the_excerpt(); ?>
-             </a>
+             <a href="<?php echo esc_url( get_permalink() );?>" title="<?php echo esc_attr( get_the_title() ); ?>"></a>
             </div>
         <?php } ?>
 

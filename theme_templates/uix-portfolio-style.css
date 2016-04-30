@@ -35,6 +35,10 @@
 	
 }
 
+.uix-portfolio-heading{
+	text-align:center;
+}
+
 
 /* 
  * -------------------------
@@ -183,6 +187,7 @@
 	filter:alpha(opacity=0);  
 	-moz-opacity:0;   
 	opacity: 0;
+	overflow:hidden;
 	
 	-moz-transition:.2s ease-in-out; 
 	-o-transition:.2s ease-in-out;
@@ -190,17 +195,22 @@
 	transition:.2s ease-in-out;
 	
 	/* Centering text (multiple lines) */
-	/*
 	display: flex;
 	justify-content: center;
 	flex-direction: column;
-	height:90%;
-	*/
+	height:69%;
 	
 }
 
 .uix-portfolio-tiles .item .content a{
-	color:#fff;
+	display:block;
+	background-color:transparent;
+	height:100%;
+	width:100%;
+	position:absolute;
+	top:0;
+	left:0;
+	
 }
 
 
