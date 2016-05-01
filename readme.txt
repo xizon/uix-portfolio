@@ -42,7 +42,7 @@ This plugin registers a custom post type for portfolio items. It also registers 
  - Masonry (http://masonry.desandro.com/)
  - prettyPhoto (http://www.no-margin-for-errors.com/projects/prettyphoto-jquery-lightbox-clone/#prettyPhoto)
  - Shuffle (filtering and sorting) (https://github.com/Vestride/Shuffle)
- 
+ - waitForImages (https://github.com/alexanderdickson/waitForImages)
  
  
 

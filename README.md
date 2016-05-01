@@ -30,6 +30,7 @@ Initial Release.
 - WP 4.4.1
 - WP 4.4.2
 - WP 4.5
+- WP 4.5.1
 
 
 ###Features
@@ -57,6 +58,8 @@ Initial Release.
 - [Masonry](http://masonry.desandro.com/v2/index.html)
 - [prettyPhoto](http://www.no-margin-for-errors.com/projects/prettyphoto-jquery-lightbox-clone/#prettyPhoto)
 - [Shuffle (filtering and sorting)](https://github.com/Vestride/Shuffle)
+- [waitForImages](https://github.com/alexanderdickson/waitForImages)
+
 
 ###How to use?
 

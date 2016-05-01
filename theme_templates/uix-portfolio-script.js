@@ -53,6 +53,10 @@
 	
 			}
 			
+			//filterable
+			$( '#uix-portfolio-cat-list-filter li:first a' ).trigger( 'click' ); 
+			
+			
 		});
 		
 		
