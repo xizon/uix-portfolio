@@ -72,25 +72,11 @@ if ( !function_exists( 'uix_portfolio_infinite_scroll_init' ) ) {
 		$successAct = '
 		
 		        var result = $( data ).find( uix_po_inscrollbox + " " + uix_po_inscrollloop ),
-					nextHref = $( data ).find( uix_po_inscrollNext + " a" ).attr( "href" ),
-					imgtotal = $( data ).find( uix_po_inscrollbox + " " + uix_po_inscrollloop + " img" ).length;
+					nextHref = $( data ).find( uix_po_inscrollNext + " a" ).attr( "href" );
 				
-				
-				if ( imgtotal > 0 ) {
-					
-					$( data ).find( uix_po_inscrollbox + " " + uix_po_inscrollloop + " img" ).load(function() {
-						
-						if( !--imgtotal ) {
-								'.$successActFun.'
-						}
-	
-					});
-
-					
-				} else {
-					
+				$( uix_po_inscrollbox ).waitForImages(function() {
 					'.$successActFun.'
-				}
+				});
 				
 				uix_po_preventList = false;
 			
