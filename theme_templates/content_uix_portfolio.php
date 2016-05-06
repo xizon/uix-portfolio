@@ -7,6 +7,18 @@
  
 //Get portfolio list number
 global $wp_count;
+
+// Layout
+$layout = get_theme_mod( 'custom_uix_portfolio_layout', 'standard' );
+ 
+// Thumbnail size
+if ( $layout == 'masonry' ) { 
+    $thumbnail_size = 'uix-portfolio-autoheight-entry';
+	$thumbnail_retina_size = 'uix-portfolio-autoheight-retina-entry';
+} else {
+	$thumbnail_size = 'uix-portfolio-entry';
+	$thumbnail_retina_size = 'uix-portfolio-retina-entry';
+}
  
 
 if ( is_singular() ) { 
@@ -107,14 +119,17 @@ if ( is_singular() ) {
      <div id="post-<?php the_ID(); ?>" class="item item-<?php echo $wp_count; ?> <?php echo UixPortfolio::cat_class( $cat_termlist ); ?> infinite-scroll-list" <?php echo UixPortfolio::cat_class_filter( $cat_termlist ); ?>>
         <span class="image">
             <a href="<?php echo esc_url( get_permalink() );?>" title="<?php echo esc_attr( get_the_title() ); ?>">
+            
+               <?php if ( $layout == 'masonry' ) { ?>
+               
 						 <?php if ( has_post_thumbnail()) { ?>
                       
                                 <?php
                                 // Display post thumbnail
-                                the_post_thumbnail( 'uix-portfolio-entry', array(
+                                the_post_thumbnail( $thumbnail_size, array(
                                     'alt' => get_the_title(),
                                     'class'	=> 'portfolio-img',
-									'data-uix-portfolio-retina' => wp_get_attachment_image_src( get_post_thumbnail_id( get_the_ID() ), 'uix-portfolio-retina-entry' )[0],
+									'data-uix-portfolio-retina' => wp_get_attachment_image_src( get_post_thumbnail_id( get_the_ID() ), $thumbnail_retina_size )[0],
                                 ) ); 
                                 ?>
                                 
@@ -131,10 +146,10 @@ if ( is_singular() ) {
 									foreach ( $attachments as $attachment ) :
 										$img_url	= wp_get_attachment_url( $attachment );
 										$img_alt	= get_post_meta( $attachment, '_wp_attachment_image_alt', true );
-										$img_html	= wp_get_attachment_image( $attachment, 'uix-portfolio-entry', false, array(
+										$img_html	= wp_get_attachment_image( $attachment, $thumbnail_size, false, array(
 																				'alt' => get_the_title(),
 																				'class'	=> 'portfolio-img',
-																				'data-uix-portfolio-retina' => wp_get_attachment_image_src( $attachment, 'uix-portfolio-retina-entry' )[0],
+																				'data-uix-portfolio-retina' => wp_get_attachment_image_src( $attachment, $thumbnail_retina_size )[0],
 																			   )
 																			); 
 
@@ -151,6 +166,8 @@ if ( is_singular() ) {
 							    ?>
                          
                          <?php } ?>
+                         
+                         
             </a>
         </span>
         

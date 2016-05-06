@@ -307,10 +307,12 @@ class UixPortfolio {
 	
 		//---
 		add_image_size( 'uix-portfolio-entry', get_theme_mod( 'custom_uix_portfolio_cover_size_w', 475 ), get_theme_mod( 'custom_uix_portfolio_cover_size_h', 329 ), true );
+		add_image_size( 'uix-portfolio-autoheight-entry', get_theme_mod( 'custom_uix_portfolio_cover_size_w', 475 ), 9999, false );
 		add_image_size( 'uix-portfolio-gallery-post', get_theme_mod( 'custom_uix_portfolio_single_size_w', 1920 ), get_theme_mod( 'custom_uix_portfolio_single_size_h', 9999 ), false );
 		
 		//--- Add image sizes for retina
 		add_image_size( 'uix-portfolio-retina-entry', get_theme_mod( 'custom_uix_portfolio_cover_size_w', 475 )*2, get_theme_mod( 'custom_uix_portfolio_cover_size_h', 329 )*2, true );
+		add_image_size( 'uix-portfolio-autoheight-retina-entry', get_theme_mod( 'custom_uix_portfolio_cover_size_w', 475 )*2, 9999, false );
 	
 	}
 	

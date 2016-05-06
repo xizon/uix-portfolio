@@ -8,6 +8,19 @@
 //Get portfolio list number
 global $wp_count;
 
+// Layout
+$layout = get_theme_mod( 'custom_uix_portfolio_layout', 'standard' );
+
+// Thumbnail size
+if ( $layout == 'masonry' ) { 
+    $thumbnail_size = 'uix-portfolio-autoheight-entry';
+	$thumbnail_retina_size = 'uix-portfolio-autoheight-retina-entry';
+} else {
+	$thumbnail_size = 'uix-portfolio-entry';
+	$thumbnail_retina_size = 'uix-portfolio-retina-entry';
+}
+
+
 if ( is_singular() ) { 
 /* ==================  single ==================  */  
 ?>
@@ -35,19 +48,17 @@ if ( is_singular() ) {
         <span class="image">
             <a href="<?php echo esc_url( get_permalink() );?>" title="<?php echo esc_attr( get_the_title() ); ?>">
 
+            
                  <?php if ( has_post_thumbnail()) { ?>
-                 
-                  
-                     
+                    
                         <?php
                         // Display post thumbnail
-                        the_post_thumbnail( 'uix-portfolio-entry', array(
+                        the_post_thumbnail( $thumbnail_size, array(
                             'alt' => get_the_title(),
                             'class'	=> 'portfolio-img',
-                            'data-uix-portfolio-retina' => wp_get_attachment_image_src( get_post_thumbnail_id( get_the_ID() ), 'uix-portfolio-retina-entry' )[0],
+                            'data-uix-portfolio-retina' => wp_get_attachment_image_src( get_post_thumbnail_id( get_the_ID() ), $thumbnail_retina_size )[0],
                         ) ); 
                         ?>
-                        
                    
     
                  <?php } else { ?>
