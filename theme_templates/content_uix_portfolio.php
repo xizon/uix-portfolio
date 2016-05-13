@@ -120,7 +120,6 @@ if ( is_singular() ) {
         <span class="image">
             <a href="<?php echo esc_url( get_permalink() );?>" title="<?php echo esc_attr( get_the_title() ); ?>">
             
-               <?php if ( $layout == 'masonry' ) { ?>
                
 						 <?php if ( has_post_thumbnail()) { ?>
                       

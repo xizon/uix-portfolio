@@ -39,6 +39,17 @@
 	text-align:center;
 }
 
+.uix-portfolio-heading-desc{
+	font-size:13px;
+	text-align:center;
+	font-weight:500;
+	filter:alpha(opacity=50);  
+	-moz-opacity:0.5;   
+	opacity: 0.5; 
+	
+}
+
+
 
 /* 
  * -------------------------
@@ -380,13 +391,10 @@
 */ 
 .uix-portfolio-pagination{
 	clear:both;
-	padding:2em 0;
-	font-size: 14px;
+	padding:1.5em 0;
+	font-size: 12px;
 	text-align:center;
-
 }
-
-
 
 .uix-portfolio-pagination ul,
 .uix-portfolio-pagination li{
