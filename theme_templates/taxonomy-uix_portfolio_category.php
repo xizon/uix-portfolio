@@ -32,27 +32,22 @@ $per = intval( get_theme_mod( 'custom_uix_portfolio_show', 10 ) );
 global $wp_count;
 
 // Infinite scroll support
-$infinitescroll_section_1 = '';
-$infinitescroll_section_2 = '';
+$infinitescroll_attr = '';
 $infinitescroll_enable = false;
 
 if ( get_theme_mod( 'custom_uix_portfolio_infinitescroll_list', false ) ) {
   //if true
-  $infinitescroll_section_1 = '<div id="uix-portfolio-infinite-scroll-content">';	
-  $infinitescroll_section_2 = '</div><!-- /.uix-portfolio-infinite-scroll-content -->';
+  $infinitescroll_attr = 'id="uix-portfolio-infinite-scroll-content"';	
   $infinitescroll_enable = true;
 
 } 
 
 
 // Masonry
-$masonry_id = '';
+$masonry_class = '';
 if ( $layout == 'masonry' ) {
-	
 	add_action( 'wp_footer', 'uix_portfolio_masonry_init', 100 );
-	
-	$masonry_id = 'id="uix-portfolio-masonry-gallery"';
-	
+	$masonry_class = 'uix-portfolio-masonry-gallery';
 }
 
 
@@ -103,10 +98,8 @@ get_header();
         
                             <!-- ==================  Post list ==================  -->
                             
-                            <div class="uix-portfolio-tiles <?php if ( get_theme_mod( 'custom_uix_portfolio_coversize', 'large' ) == 'small' ) { echo 'small'; }; ?>" <?php echo $masonry_id; ?>>
-                            
-                            <?php echo $infinitescroll_section_1; ?> 
-                            
+                            <div class="uix-portfolio-tiles <?php echo get_theme_mod( 'custom_uix_portfolio_coversize', 'medium' ); ?> <?php echo $masonry_class; ?>" <?php echo $infinitescroll_attr; ?>>
+                          
                             <?php 
                             
                                 // Query
@@ -152,8 +145,7 @@ get_header();
                                 <?php get_template_part( 'content', 'none' ); ?>
                     
                             <?php } ?>
-                            
-                            <?php echo $infinitescroll_section_2; ?> 
+       
                             
                             </div><!-- /.uix-portfolio-tiles -->
                             

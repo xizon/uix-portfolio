@@ -36,8 +36,8 @@ if ( !function_exists( 'uix_portfolio_infinite_scroll_init' ) ) {
 		if ( get_theme_mod( 'custom_uix_portfolio_layout' ) == 'masonry' ) {
 			$masonrySCript = "
 			
-				var masonryObj = $( '#uix-portfolio-masonry-gallery' );
-			    masonryObj.append( result ).masonry( 'appended', result, true );
+				var masonryObj = $( '.uix-portfolio-masonry-gallery' );
+			    masonryObj.masonry( 'appended', result, true );
 			
 				
 			

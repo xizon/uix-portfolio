@@ -101,13 +101,14 @@ if ( class_exists( 'Kirki' )  && class_exists( 'UixPortfolio' )  ) {
 	Kirki::add_field( $uix_portfolio_kirki_config_id, array(
 		'type'        => 'radio',
 		'settings'    => 'custom_uix_portfolio_coversize',
-		'label'       => __( 'Cover Photo Size', 'uix-portfolio' ),
+		'label'       => __( 'Thumbnail Size', 'uix-portfolio' ),
 		'description' => '',
 		'section'     => 'panel-theme-uix-portfolio',
-		'default'     => 'large',
+		'default'     => 'medium',
 		'priority'    => 10,
 		'choices'     => array(
 			'large'   => __( 'Large', 'uix-portfolio' ),
+			'medium' => __( 'Medium', 'uix-portfolio' ),
 			'small' => __( 'Small', 'uix-portfolio' ),
 		),
 	) );

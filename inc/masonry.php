@@ -30,7 +30,7 @@ if ( !function_exists( 'uix_portfolio_masonry_init' ) ) {
 				 * Initialize Portfolio Masonry
 				 *************************************
 				 */
-				var masonryObj = $( '#uix-portfolio-masonry-gallery' );
+				var masonryObj = $( '.uix-portfolio-masonry-gallery' );
 				
 				masonryObj.waitForImages(function() {
 				  masonryObj.masonry({
