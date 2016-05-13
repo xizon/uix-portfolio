@@ -37,7 +37,9 @@ if ( !function_exists( 'uix_portfolio_infinite_scroll_init' ) ) {
 			$masonrySCript = "
 			
 				var masonryObj = $( '.uix-portfolio-masonry-gallery' );
-			    masonryObj.masonry( 'appended', result, true );
+				setTimeout(function(){
+					masonryObj.masonry( 'appended', result, true );
+				},uix_po_loadSpeed);
 			
 				
 			
