@@ -37,9 +37,7 @@ if ( !function_exists( 'uix_portfolio_infinite_scroll_init' ) ) {
 			$masonrySCript = "
 			
 				var masonryObj = $( '.uix-portfolio-masonry-gallery' );
-				setTimeout(function(){
-					masonryObj.masonry( 'appended', result, true );
-				},uix_po_loadSpeed);
+				masonryObj.masonry( 'appended', result, true );
 			
 				
 			
@@ -76,7 +74,7 @@ if ( !function_exists( 'uix_portfolio_infinite_scroll_init' ) ) {
 		        var result = $( data ).find( uix_po_inscrollbox + " " + uix_po_inscrollloop ),
 					nextHref = $( data ).find( uix_po_inscrollNext + " a" ).attr( "href" );
 				
-				$( uix_po_inscrollbox ).waitForImages(function() {
+				result.imagesLoaded(function() {
 					'.$successActFun.'
 				});
 				

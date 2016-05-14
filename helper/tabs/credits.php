@@ -22,7 +22,7 @@ if( isset( $_GET[ 'tab' ] ) && $_GET[ 'tab' ] == 'credits' ) {
             <li><a href="http://www.no-margin-for-errors.com/projects/prettyphoto-jquery-lightbox-clone/#prettyPhoto" target="_blank" rel="nofollow">prettyPhoto</a></li>
             <li><a href="http://frostywebdesigns.com/" target="_blank" rel="nofollow">Featured Image Column</a></li>
             <li><a href="https://github.com/Vestride/Shuffle" target="_blank" rel="nofollow">Shuffle (filtering and sorting)</a></li>
-            <li><a href="https://github.com/alexanderdickson/waitForImages" target="_blank" rel="nofollow">waitForImages</a></li>
+            <li><a href="https://github.com/desandro/imagesloaded" target="_blank" rel="nofollow">imagesloaded</a></li>
             
             
 
