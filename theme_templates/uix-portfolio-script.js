@@ -49,7 +49,7 @@
 			if ( th > 0 ) {
 				$( '.uix-portfolio-tiles .item-video > .image' ).each( function() {	
 				    //Check if element exists in .item-video 
-					if ( $( this ).find( 'iframe' ).length > 0 ) $( this ).css( 'height', th - 3 + 'px' );
+					if ( $( this ).find( 'iframe' ).length > 0 ) $( this ).css( 'height', th + 'px' );
 				});
 	
 			}
