@@ -43,7 +43,9 @@
 		 * Fixed height for post list
 		 *************************************
 		 */
-		$( '.uix-portfolio-tiles' ).not( '.uix-portfolio-masonry-gallery' ).imagesLoaded(function() {
+		 
+		 imagesLoaded( '.uix-portfolio-tiles:not(.uix-portfolio-masonry-gallery)' ).on( 'always', function() {
+			 
 			var th = $( '.uix-portfolio-tiles .item .image img:first' ).height();
 		
 			if ( th > 0 ) {

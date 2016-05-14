@@ -32,7 +32,7 @@ if ( !function_exists( 'uix_portfolio_masonry_init' ) ) {
 				 */
 				var masonryObj = $( '.uix-portfolio-masonry-gallery' );
 				
-				masonryObj.imagesLoaded(function() {
+				imagesLoaded( masonryObj ).on( 'always', function() {
 				  masonryObj.masonry({
 					itemSelector: '.item'
 				  });

@@ -74,7 +74,7 @@ if ( !function_exists( 'uix_portfolio_infinite_scroll_init' ) ) {
 		        var result = $( data ).find( uix_po_inscrollbox + " " + uix_po_inscrollloop ),
 					nextHref = $( data ).find( uix_po_inscrollNext + " a" ).attr( "href" );
 				
-				result.imagesLoaded(function() {
+				imagesLoaded( result ).on( "always", function() {
 					'.$successActFun.'
 				});
 				
