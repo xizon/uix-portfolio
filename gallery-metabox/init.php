@@ -163,7 +163,7 @@ if ( ! class_exists( 'gallery_metabox' ) ) {
                                                 <div class="thumbnail">\
                                                     <img src="' + attachment.url + '" />\
                                                 </div>\
-                                               <a href="#" class="uix-gmb-remove" title="<?php _e( 'Remove image', 'uix-portfolio' ); ?>"><div class="media-modal-icon"></div></a>\
+                                               <a href="#" class="uix-gmb-remove" title="<?php esc_attr_e( 'Remove image', 'uix-portfolio' ); ?>"><div class="media-modal-icon"></div></a>\
                                             </div>\
                                         </li>');
                                 }

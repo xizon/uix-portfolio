@@ -77,6 +77,9 @@ class UixPortfolio {
 			// Easing
 			wp_enqueue_script( 'jquery-easing-1.3', self::plug_directory() .'assets/js/jquery.easing.js', array( 'jquery' ), '1.3', false );	
 			
+			// Modernizr.
+			wp_enqueue_script( 'modernizr-3.3.1', self::plug_directory() .'assets/js/modernizr.min.js', false, '3.3.1', false );
+					
 			// Shuffle
 			wp_enqueue_script( 'js-shuffle-3.1.1', self::plug_directory() .'assets/js/jquery.shuffle.js', array( 'jquery' ), '3.1.1', true );
 	

@@ -8,13 +8,15 @@
 
 class Uix_Portfolio_Recent_Portfolio_Widget extends WP_Widget {
 
-
 	public function __construct() {
-		parent::__construct( 'Uix_Portfolio_recent_portfolio_widget', __( 'Recent Portfolio (Uix Portfolio Widget)', 'uix-portfolio' ), array(
-			'classname'   => 'Uix_Portfolio_recent_portfolio_widget',
+		$widget_ops = array(
+			'classname' => 'widget_uix_portfolio_recentposts',
 			'description' => __( 'Use this widget to list your recent portfolio.', 'uix-portfolio' ),
-		) );
+			'customize_selective_refresh' => true,
+		);
+		parent::__construct( 'uix_portfolio_recentposts', __( 'Recent Portfolio (Uix Portfolio Widget)', 'uix-portfolio' ), $widget_ops );
 	}
+	
 
 	/**
 	 * Output the HTML for this widget.
@@ -22,35 +24,37 @@ class Uix_Portfolio_Recent_Portfolio_Widget extends WP_Widget {
 	 */
 	public function widget( $args, $instance ) {
 
-		$number = empty( $instance['number'] ) ? 2 : absint( $instance['number'] );
-		$title  = apply_filters( 'widget_title', empty( $instance['title'] ) ? __( 'Recent Portfolio', 'uix-portfolio' ) : $instance['title'], $instance, $this->id_base );
+		$number = ( ! empty( $instance['number'] ) ) ? absint( $instance['number'] ) : 2;
+		if ( ! $number )
+			$number = 2;
+		
+		$title  = apply_filters( 'widget_title', !isset( $instance['title'] ) ? __( 'Recent Portfolio', 'uix-portfolio' ) : $instance['title'], $instance, $this->id_base );
+		$show_date = isset( $instance['show_date'] ) ? $instance['show_date'] : false;
 
 		$recent_portfolio = new WP_Query( array(
-			'order'          => 'DESC',
-			'posts_per_page' => $number,
-			'no_found_rows'  => true,
-			'post_status'    => 'publish',
-			'post__not_in'   => get_option( 'sticky_posts' ),
-			'post_type'      => 'uix-portfolio',
+		    'post_type'           => 'uix-portfolio',
+			'posts_per_page'      => $number,
+			'no_found_rows'       => true,
+			'post_status'         => 'publish',
+			'ignore_sticky_posts' => true
+			
 		) );
 
 		if ( $recent_portfolio->have_posts() ) :
-			$tmp_content_width = $GLOBALS['content_width'];
-			$GLOBALS['content_width'] = 220;
-
+	
 			echo $args['before_widget'];
 			?>
-			<h4 class="widget-title recent-portfolio">
-				<?php echo esc_html( $title ); ?>
-			</h4>
+			 <?php
+             if ( !empty( $title ) ) {
+                echo $args['before_title'] . $title . $args['after_title'];
+             }
+             ?>
 			<ul class="uix-portfolio-widget">
 
 				<?php
 					while ( $recent_portfolio->have_posts() ) :
 						$recent_portfolio->the_post();
-						$tmp_more = $GLOBALS['more'];
-						$GLOBALS['more'] = 0;
-						
+		
 						$li_class = '';
 						if ( !has_post_thumbnail() ) $li_class = 'nothumb';
 							
@@ -73,7 +77,9 @@ class Uix_Portfolio_Recent_Portfolio_Widget extends WP_Widget {
                        
                        <div class="item-info">
                            <div class="item-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></div>
-                           <div class="item-date"><?php the_date(); ?></a></div>
+                           <?php if ( $show_date ) { ?>
+                               <div class="item-date"><?php echo get_the_date(); ?></div>
+                           <?php } ?>
 
                        </div>
                      
@@ -90,8 +96,6 @@ class Uix_Portfolio_Recent_Portfolio_Widget extends WP_Widget {
 			// Reset the post globals as this query will have stomped on it.
 			wp_reset_postdata();
 
-			$GLOBALS['more']          = $tmp_more;
-			$GLOBALS['content_width'] = $tmp_content_width;
 
 		endif; // End check for recent_portfoliol posts.
 	}
@@ -102,9 +106,11 @@ class Uix_Portfolio_Recent_Portfolio_Widget extends WP_Widget {
 	 * Here is where any validation should happen.
 	 *
 	 */
-	function update( $new_instance, $instance ) {
-		$instance['title']  = strip_tags( $new_instance['title'] );
-		$instance['number'] = empty( $new_instance['number'] ) ? 2 : absint( $new_instance['number'] );
+	function update( $new_instance, $old_instance ) {
+		$instance = $old_instance;
+		$instance['title'] = sanitize_text_field( $new_instance['title'] );
+		$instance['number'] = (int) $new_instance['number'];
+		$instance['show_date'] = isset( $new_instance['show_date'] ) ? (bool) $new_instance['show_date'] : true;
 		
 		return $instance;
 	}
@@ -114,15 +120,22 @@ class Uix_Portfolio_Recent_Portfolio_Widget extends WP_Widget {
 	 *
 	 */
 	function form( $instance ) {
-		$title  = empty( $instance['title'] ) ? '' : esc_attr( $instance['title'] );
-		$number = empty( $instance['number'] ) ? 2 : absint( $instance['number'] );
+		$instance  = wp_parse_args( (array) $instance, array( 'title' => __( 'Recent Portfolio', 'uix-portfolio' ), 'number' => 2 ) );
+		$title     = sanitize_text_field( $instance['title'] );
+		$number    = absint( $instance['number'] );
+		$show_date = isset( $instance['show_date'] ) ? (bool) $instance['show_date'] : true;
 		?>
 			<p><label for="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>"><?php _e( 'Title:', 'uix-portfolio' ); ?></label>
 			<input id="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>" class="widefat" name="<?php echo esc_attr( $this->get_field_name( 'title' ) ); ?>" type="text" value="<?php echo esc_attr( $title ); ?>"></p>
 
-			<p><label for="<?php echo esc_attr( $this->get_field_id( 'number' ) ); ?>"><?php _e( 'Number of posts to show:', 'uix-portfolio' ); ?></label>
-			<input id="<?php echo esc_attr( $this->get_field_id( 'number' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'number' ) ); ?>" type="text" value="<?php echo esc_attr( $number ); ?>" size="3"></p>
+		<p><label for="<?php echo $this->get_field_id( 'number' ); ?>"><?php _e( 'Number of portfolio to show:', 'uix-portfolio' ); ?></label>
+		<input class="tiny-text" id="<?php echo $this->get_field_id( 'number' ); ?>" name="<?php echo $this->get_field_name( 'number' ); ?>" type="number" step="1" min="1" value="<?php echo $number; ?>" size="3" />
+        </p>
 
+		<p><input class="checkbox" type="checkbox"<?php checked( $show_date ); ?> id="<?php echo $this->get_field_id( 'show_date' ); ?>" name="<?php echo $this->get_field_name( 'show_date' ); ?>" />
+		<label for="<?php echo $this->get_field_id( 'show_date' ); ?>"><?php _e( 'Display post date?', 'uix-portfolio' ); ?></label>
+        </p>
+  
 
 		<?php
 	}

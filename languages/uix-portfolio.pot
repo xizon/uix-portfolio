@@ -5,7 +5,7 @@ msgstr ""
 "Project-Id-Version: Uix Portfolio 1.0.0\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/tags/_s\n"
 "POT-Creation-Date: 2015-06-12 21:51:31+0000\n"
-"POT-Revision-Date: Sat May 14 2016 02:29:31 GMT+0800 (CST)\n"
+"POT-Revision-Date: Tue May 24 2016 21:26:27 GMT+0800 (CST)\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -46,44 +46,44 @@ msgstr ""
 msgid "https://uiux.cc"
 msgstr ""
 
-#: ../uix-portfolio.php:207 ../customizer-extras/options-init.php:54
+#: ../uix-portfolio.php:210 ../customizer-extras/options-init.php:54
 msgid "Uix Portfolio Settings"
 msgstr ""
 
-#: ../uix-portfolio.php:208 ../uix-portfolio.php:340
+#: ../uix-portfolio.php:211 ../uix-portfolio.php:343
 msgid "Settings"
 msgstr ""
 
-#: ../uix-portfolio.php:223 ../uix-portfolio.php:224
+#: ../uix-portfolio.php:226 ../uix-portfolio.php:227
 msgid "Helper"
 msgstr ""
 
-#: ../uix-portfolio.php:341 ../uix-portfolio.php:439 ../helper/settings.php:69
+#: ../uix-portfolio.php:344 ../uix-portfolio.php:442 ../helper/settings.php:69
 msgid "How to use?"
 msgstr ""
 
-#: ../uix-portfolio.php:438
+#: ../uix-portfolio.php:441
 msgid ""
 "Do you want to create a portfolio website with WordPress?  Learn how to add "
 "portfolio to your themes."
 msgstr ""
 
-#: ../uix-portfolio.php:442
+#: ../uix-portfolio.php:445
 #, php-format
 msgid "<a href=\"%1$s\">Hide Notice</a>"
 msgstr ""
 
-#: ../uix-portfolio.php:454
+#: ../uix-portfolio.php:457
 msgid ""
 "<strong>You need to create Uix Portfolio template files in your templates "
 "directory. You can create the files on the WordPress admin panel.</strong>"
 msgstr ""
 
-#: ../uix-portfolio.php:454 ../helper/tabs/usage.php:22
+#: ../uix-portfolio.php:457 ../helper/tabs/usage.php:22
 msgid "Create now!"
 msgstr ""
 
-#: ../uix-portfolio.php:454 ../helper/tabs/temp.php:27
+#: ../uix-portfolio.php:457 ../helper/tabs/temp.php:27
 msgid ""
 "As a workaround you can use FTP, access the Uix Portfolio template files "
 "path <code>/wp-content/plugins/uix-portfolio/theme_templates/</code> and "
@@ -91,36 +91,36 @@ msgid ""
 "content/themes/{your-theme}/</code>. "
 msgstr ""
 
-#: ../uix-portfolio.php:543
+#: ../uix-portfolio.php:546
 msgid "Primary Sidebar"
 msgstr ""
 
-#: ../uix-portfolio.php:545
+#: ../uix-portfolio.php:548
 msgid "Appears on posts and pages in the sidebar."
 msgstr ""
 
-#: ../uix-portfolio.php:634 ../uix-portfolio.php:698
+#: ../uix-portfolio.php:637 ../uix-portfolio.php:701
 msgid ""
 "<div class=\"notice notice-success\"><p>Operation successfully completed!"
 "</p></div>"
 msgstr ""
 
-#: ../uix-portfolio.php:636
+#: ../uix-portfolio.php:639
 msgid ""
 "<div class=\"notice notice-error\"><p><strong>There was a problem copying your "
 "template files:</strong> Please check your server settings. You can upload "
 "files to theme templates directory using FTP.</p></div>"
 msgstr ""
 
-#: ../uix-portfolio.php:869 ../inc/infinite-scroll.php:28
+#: ../uix-portfolio.php:872 ../inc/infinite-scroll.php:28
 msgid "Load More"
 msgstr ""
 
-#: ../uix-portfolio.php:1005 ../uix-portfolio.php:1013
+#: ../uix-portfolio.php:1008 ../uix-portfolio.php:1016
 msgid "Newer Posts"
 msgstr ""
 
-#: ../uix-portfolio.php:1007 ../uix-portfolio.php:1014
+#: ../uix-portfolio.php:1010 ../uix-portfolio.php:1017
 msgid "Older Posts"
 msgstr ""
 
@@ -203,26 +203,6 @@ msgstr ""
 
 #: ../customizer-extras/options-init.php:305
 msgid "CSS file root directory:"
-msgstr ""
-
-#. Name of the plugin
-msgid "Kirki Toolkit"
-msgstr ""
-
-#. URI of the plugin
-msgid "http://kirki.org"
-msgstr ""
-
-#. Description of the plugin
-msgid "The ultimate WordPress Customizer Toolkit"
-msgstr ""
-
-#. Author of the plugin
-msgid "Aristeides Stathopoulos"
-msgstr ""
-
-#. Author URI of the plugin
-msgid "http://aristeides.com"
 msgstr ""
 
 #: ../customizer-extras/kirki/includes/class-kirki-toolkit.php:52
@@ -689,24 +669,28 @@ msgid ""
 "Customize\"</strong>.</h4>"
 msgstr ""
 
-#: ../inc/class-widgets.php:13
-msgid "Recent Portfolio (Uix Portfolio Widget)"
-msgstr ""
-
-#: ../inc/class-widgets.php:15
+#: ../inc/class-widgets.php:14
 msgid "Use this widget to list your recent portfolio."
 msgstr ""
 
-#: ../inc/class-widgets.php:26
+#: ../inc/class-widgets.php:17
+msgid "Recent Portfolio (Uix Portfolio Widget)"
+msgstr ""
+
+#: ../inc/class-widgets.php:31 ../inc/class-widgets.php:123
 msgid "Recent Portfolio"
 msgstr ""
 
-#: ../inc/class-widgets.php:120
+#: ../inc/class-widgets.php:128
 msgid "Title:"
 msgstr ""
 
-#: ../inc/class-widgets.php:123
-msgid "Number of posts to show:"
+#: ../inc/class-widgets.php:131
+msgid "Number of portfolio to show:"
+msgstr ""
+
+#: ../inc/class-widgets.php:136
+msgid "Display post date?"
 msgstr ""
 
 #. Name of the plugin
