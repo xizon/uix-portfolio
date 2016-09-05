@@ -71,27 +71,27 @@ class UixPortfolio {
 	    global $uix_portfolio_temp;
         if ( $uix_portfolio_temp === true ) { 
 			// Add flexslider
-			wp_enqueue_script( 'js-flexslider-2.5.0', self::plug_directory() .'assets/js/jquery.flexslider.min.js', array( 'jquery' ), '2.5.0', true );	
-			wp_enqueue_style( 'flexslider-2.5.0', self::plug_directory() .'assets/css/flexslider.css', false, '2.5.0', 'all' );
+			wp_enqueue_script( 'flexslider', self::plug_directory() .'assets/js/jquery.flexslider.min.js', array( 'jquery' ), '2.5.0', true );	
+			wp_enqueue_style( 'flexslider', self::plug_directory() .'assets/css/flexslider.css', false, '2.5.0', 'all' );
 			
 			// Easing
-			wp_enqueue_script( 'jquery-easing-1.3', self::plug_directory() .'assets/js/jquery.easing.js', array( 'jquery' ), '1.3', false );	
+			wp_enqueue_script( 'jquery-easing', self::plug_directory() .'assets/js/jquery.easing.js', array( 'jquery' ), '1.3', false );	
 			
 			// Modernizr.
-			wp_enqueue_script( 'modernizr-3.3.1', self::plug_directory() .'assets/js/modernizr.min.js', false, '3.3.1', false );
+			wp_enqueue_script( 'modernizr', self::plug_directory() .'assets/js/modernizr.min.js', false, '3.3.1', false );
 					
 			// Shuffle
-			wp_enqueue_script( 'js-shuffle-3.1.1', self::plug_directory() .'assets/js/jquery.shuffle.js', array( 'jquery' ), '3.1.1', true );
+			wp_enqueue_script( 'shuffle', self::plug_directory() .'assets/js/jquery.shuffle.js', array( 'jquery' ), '3.1.1', true );
 	
 			// imagesloaded
-			wp_enqueue_script( 'js-imagesloaded-4.1.0', self::plug_directory() .'assets/js/imagesloaded.min.js', array( 'jquery' ), '4.1.0', true );	
+			wp_enqueue_script( 'imagesloaded', self::plug_directory() .'assets/js/imagesloaded.min.js', array( 'jquery' ), '4.1.0', true );	
 					
 			// Masonry
-			wp_enqueue_script( 'js-masonry-2.1.08', self::plug_directory() .'assets/js/masonry.js', array( 'jquery' ), '2.1.08', true );
+			wp_enqueue_script( 'masonry', self::plug_directory() .'assets/js/masonry.js', array( 'jquery' ), '2.1.08', true );
 			
 			// prettyPhoto
-			wp_enqueue_script(  'js-prettyPhoto-3.1.5', self::plug_directory() .'assets/js/jquery.prettyPhoto.js', array( 'jquery' ), '3.1.5', true );
-			wp_enqueue_style(  'prettyPhoto-3.1.5', self::plug_directory() .'assets/css/jquery.prettyPhoto.css', false, '3.1.5', 'all');
+			wp_enqueue_script(  'prettyPhoto', self::plug_directory() .'assets/js/jquery.prettyPhoto.js', array( 'jquery' ), '3.1.5', true );
+			wp_enqueue_style(  'prettyPhoto', self::plug_directory() .'assets/css/jquery.prettyPhoto.css', false, '3.1.5', 'all');
 					
 					
 			//Main stylesheets and scripts to Front-End
