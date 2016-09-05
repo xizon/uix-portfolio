@@ -87,7 +87,7 @@ class UixPortfolio {
 			wp_enqueue_script( 'imagesloaded', self::plug_directory() .'assets/js/imagesloaded.min.js', array( 'jquery' ), '4.1.0', true );	
 					
 			// Masonry
-			wp_enqueue_script( 'masonry', self::plug_directory() .'assets/js/masonry.js', array( 'jquery' ), '2.1.08', true );
+			wp_enqueue_script( 'masonry', self::plug_directory() .'assets/js/masonry.js', array( 'jquery' ), '3.3.2', true );
 			
 			// prettyPhoto
 			wp_enqueue_script(  'prettyPhoto', self::plug_directory() .'assets/js/jquery.prettyPhoto.js', array( 'jquery' ), '3.1.5', true );
