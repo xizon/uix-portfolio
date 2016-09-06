@@ -43,10 +43,11 @@ class Uix_Portfolio_Dropdown_Walker_Portfolio_Category extends Walker_Category {
 
 			if ( 'list' == $args['style'] ) {
 		
-					$output .= "\t<li";
-					$class = 'cat-item cat-item-' . $category->term_id;
+					$output           .= "\t<li";
+					$class             = 'cat-item cat-item-' . $category->term_id;
+					$current_category  = $args[ 'current_category' ];
 		
-					if ( !empty($current_category) ) {
+					if ( !empty( $current_category ) ) {
 		
 							$_current_category = get_term( $current_category, $category->taxonomy );
 							if ( $category->term_id == $current_category ) {
