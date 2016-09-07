@@ -49,7 +49,7 @@ Or, upload the plugin to wordpress, Activate it. (Access the path (/wp-content/p
         
         
         <p>
-           <?php _e( '<h4 class="uix-bg-custom-title">5. Or use the Uix Slides Widget to add it to a sidebar. Go to <strong>"Appearance -> Widgets"</strong> in the WordPress Administration Screens. Find the <strong>"Recent Portfolio (Uix Portfolio Widget)"</strong> in the list of Widgets and click and drag the Widget to the spot you wish it to appear.</h4>', 'uix-portfolio' ); ?>
+           <?php _e( '<h4 class="uix-bg-custom-title">5. Or use the Uix Portfolio Widget to add it to a sidebar. Go to <strong>"Appearance -> Widgets"</strong> in the WordPress Administration Screens. Find the <strong>"Recent Portfolio (Uix Portfolio Widget)"</strong> in the list of Widgets and click and drag the Widget to the spot you wish it to appear.</h4>', 'uix-portfolio' ); ?>
         </p>  
         <p>
            <img src="<?php echo UixPortfolio::plug_directory(); ?>helper/img/widget-1.jpg" alt=""> <br>           

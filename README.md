@@ -89,7 +89,7 @@ Please check if you have the **10** template files `uix-portfolio-style.css`, `u
 ![](https://github.com/xizon/Uix-Portfolio/blob/master/helper/img/add-menu-2.jpg)
 
 
-5.Or use the Uix Slides Widget to add it to a sidebar. Go to **"Appearance -> Widgets"** in the WordPress Administration Screens. Find the **"Recent Portfolio (Uix Portfolio Widget)"** in the list of Widgets and click and drag the Widget to the spot you wish it to appear.
+5.Or use the Uix Portfolio Widget to add it to a sidebar. Go to **"Appearance -> Widgets"** in the WordPress Administration Screens. Find the **"Recent Portfolio (Uix Portfolio Widget)"** in the list of Widgets and click and drag the Widget to the spot you wish it to appear.
 
 ![](https://github.com/xizon/Uix-Portfolio/blob/master/helper/img/widget-1.jpg)
 

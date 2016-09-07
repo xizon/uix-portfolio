@@ -59,7 +59,7 @@ Or, upload the plugin to wordpress, Activate it. (Access the path (/wp-content/p
 
 4. In your dashboard go to Appearance and select Menus. You’ll be able to add items to the menu. On the left you have your portfolio pages.
 
-5. Or use the Uix Slides Widget to add it to a sidebar. Go to "Appearance -> Widgets" in the WordPress Administration Screens. Find the "Recent Portfolio (Uix Portfolio Widget)" in the list of Widgets and click and drag the Widget to the spot you wish it to appear.
+5. Or use the Uix Portfolio Widget to add it to a sidebar. Go to "Appearance -> Widgets" in the WordPress Administration Screens. Find the "Recent Portfolio (Uix Portfolio Widget)" in the list of Widgets and click and drag the Widget to the spot you wish it to appear.
 
 6. Create uix portfolio item and publish portfolio then.
 
