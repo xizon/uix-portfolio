@@ -43,7 +43,6 @@ class UixPortfolio {
 		add_action( 'admin_init', array( __CLASS__, 'nag_ignore' ) );
 		add_action( 'admin_menu', array( __CLASS__, 'options_admin_menu' ) );
 		add_action( 'init', array( __CLASS__, 'post_views' ) );
-		add_action( 'init', array( __CLASS__, 'customizer' ) );
 		add_action( 'wp_head', array( __CLASS__, 'cat' ) );
 		add_action( 'wp_head', array( __CLASS__, 'infinite_scroll' ) );
 		add_action( 'wp_head', array( __CLASS__, 'filterable' ) );
@@ -58,6 +57,7 @@ class UixPortfolio {
 	
 
 	}
+	
 	
 	
 	/*
@@ -371,21 +371,7 @@ class UixPortfolio {
 
 	}
 	
-	/*
-	 * Building WordPress themes using the Kirki Customizer
-	 *
-	 *
-	 */
-	public static function customizer() {
-		
-		if ( !class_exists( 'Kirki' ) ) {
-		    require_once 'customizer-extras/kirki/kirki.php';
-		}
-		
-		require_once 'customizer-extras/options-init.php';
-
-
-	}	
+	
 	
 	/*
 	 *  Gallery metabox
