@@ -1,1 +1,1 @@
-# Please use `[Uix Products](https://github.com/xizon/Uix-Products)` instead.
+# Please use `https://github.com/xizon/Uix-Products` instead.
