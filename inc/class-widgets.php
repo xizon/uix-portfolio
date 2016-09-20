@@ -110,7 +110,7 @@ class Uix_Portfolio_Recent_Portfolio_Widget extends WP_Widget {
 		$instance = $old_instance;
 		$instance['title'] = sanitize_text_field( $new_instance['title'] );
 		$instance['number'] = (int) $new_instance['number'];
-		$instance['show_date'] = isset( $new_instance['show_date'] ) ? (bool) $new_instance['show_date'] : true;
+		$instance['show_date'] = isset( $new_instance['show_date'] ) ? (bool) $new_instance['show_date'] : false;
 		
 		return $instance;
 	}
@@ -123,7 +123,7 @@ class Uix_Portfolio_Recent_Portfolio_Widget extends WP_Widget {
 		$instance  = wp_parse_args( (array) $instance, array( 'title' => __( 'Recent Portfolio', 'uix-portfolio' ), 'number' => 2 ) );
 		$title     = sanitize_text_field( $instance['title'] );
 		$number    = absint( $instance['number'] );
-		$show_date = isset( $instance['show_date'] ) ? (bool) $instance['show_date'] : true;
+		$show_date = isset( $instance['show_date'] ) ? (bool) $instance['show_date'] : false;
 		?>
 			<p><label for="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>"><?php _e( 'Title:', 'uix-portfolio' ); ?></label>
 			<input id="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>" class="widefat" name="<?php echo esc_attr( $this->get_field_name( 'title' ) ); ?>" type="text" value="<?php echo esc_attr( $title ); ?>"></p>
