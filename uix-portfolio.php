@@ -432,31 +432,12 @@ class UixPortfolio {
 		  $currentScreen = get_current_screen();
 
 		  if( ( self::inc_str( $currentScreen->id, 'uix_portfolio' ) || self::inc_str( $currentScreen->id, 'uix-portfolio' ) ) && !self::inc_str( $currentScreen->id, '_page_' ) ) {
-			  add_action( 'admin_notices', array( __CLASS__, 'usage_notice_app' ) );
 			  add_action( 'admin_notices', array( __CLASS__, 'template_notice_required' ) );
 		  }
 		
 	
 	}	
-	
-	public static function usage_notice_app() {
-		
-		global $current_user ;
-		$user_id = $current_user->ID;
-		
-		/* Check that the user hasn't already clicked to ignore the message */
-		if ( ! get_user_meta( $user_id, self::NOTICEID ) ) {
-			echo '<div class="updated"><p>
-				'.__( 'Do you want to create a portfolio website with WordPress?  Learn how to add portfolio to your themes.', 'uix-portfolio' ).'
-				<a href="' . admin_url( "admin.php?page=".self::HELPER."&tab=usage" ) . '">' . __( 'How to use?', 'uix-portfolio' ) . '</a>
-				 | 
-			';
-			printf( __( '<a href="%1$s">Hide Notice</a>' ), '?post_type='.self::get_slug().'&'.self::NOTICEID.'=0');
-			
-			echo "</p></div>";
-		}
-	
-	}	
+
 	
 	public static function template_notice_required() {
 		
