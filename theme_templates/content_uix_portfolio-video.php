@@ -53,10 +53,11 @@ if ( is_singular() ) {
                     
                         <?php
                         // Display post thumbnail
+		                $imgarr = wp_get_attachment_image_src( get_post_thumbnail_id( get_the_ID() ), $thumbnail_retina_size );
                         the_post_thumbnail( $thumbnail_size, array(
                             'alt' => get_the_title(),
                             'class'	=> 'portfolio-img',
-                            'data-uix-portfolio-retina' => wp_get_attachment_image_src( get_post_thumbnail_id( get_the_ID() ), $thumbnail_retina_size )[0],
+                            'data-uix-portfolio-retina' => $imgarr[0],
                         ) ); 
                         ?>
                    

@@ -66,9 +66,10 @@ class Uix_Portfolio_Recent_Portfolio_Widget extends WP_Widget {
                            <div class="item-thumb">
                                <a href="<?php the_permalink(); ?>">
                            <?php
+								$imgarr = wp_get_attachment_image_src( get_post_thumbnail_id( get_the_ID() ), 'uix-portfolio-retina-entry' );
                                 the_post_thumbnail( 'uix-portfolio-entry', array(
                                     'alt' => get_the_title(),
-									'data-uix-portfolio-retina' => wp_get_attachment_image_src( get_post_thumbnail_id( get_the_ID() ), 'uix-portfolio-retina-entry' )[0],
+									'data-uix-portfolio-retina' => $imgarr[0],
                                 ) ); 
 							?>
                                 </a>

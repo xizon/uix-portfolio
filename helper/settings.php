@@ -60,24 +60,24 @@ function uix_portfolio_options_page(){
 	} 
 	
 	$tabs = array();
-	$tabs[] = [
+	$tabs[] = array(
 	    'tab'     =>  'about', 
 		'title'   =>  __( 'About', 'uix-portfolio' )
-	];
-	$tabs[] = [
+	);
+	$tabs[] = array(
 	    'tab'     =>  'usage', 
 		'title'   =>  __( 'How to use?', 'uix-portfolio' )
-	];
+	);
 	
-	$tabs[] = [
+	$tabs[] = array(
 	    'tab'     =>  'credits', 
 		'title'   =>  __( 'Credits', 'uix-portfolio' )
-	];
+	);
 	
-	$tabs[] = [
+	$tabs[] = array(
 	    'tab'     =>  'temp', 
 		'title'   =>  __( 'Template Files', 'uix-portfolio' )
-	];
+	);
 
 	
 	?>
