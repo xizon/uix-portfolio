@@ -5,7 +5,7 @@ Plugin URI: https://uiux.cc/wp-plugins/uix-portfolio/
 Description: Readily organize & present your fine works with our free portfolio post type plugin.
 Author: UIUX Lab
 Author URI: https://uiux.cc
-Version: 1.0.1
+Version: 1.0.2
 Text Domain: uix-portfolio
 License: GPLv2 or later
 */
@@ -237,10 +237,11 @@ class UixPortfolio {
 			array( __CLASS__, 'uix_portfolio_options_page' )
 		);
 		
-		add_action("load-{$hook}", create_function('','
-			header("Location: '.admin_url( "customize.php" ).'");
+		
+		add_action("load-{$hook}", function( $caps ) {
+			header( "Location: " . admin_url( "customize.php" ) );
 			exit;
-		'));
+		 });
 	
 	
         //helper
